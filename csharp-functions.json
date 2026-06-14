@@ -1,0 +1,10 @@
+{
+  "type": "csharp-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, donus degeri ve overload ornekleri.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    // Basit fonksiyon\n    static int Square(int x)\n    {\n        return x * x;\n    }\n\n    // Birden fazla parametre\n    static int Add(int a, int b)\n    {\n        return a + b;\n    }\n\n    // Opsiyonel parametre\n    static string Greet(string name, string greeting = \"Merhaba\")\n    {\n        return greeting + \", \" + name + \"!\";\n    }\n\n    // Fonksiyon overload\n    static double Multiply(double a, double b)\n    {\n        return a * b;\n    }\n\n    static int Multiply(int a, int b)\n    {\n        return a * b;\n    }\n\n    static void Main()\n    {\n        Console.WriteLine(\"Kare: \" + Square(5));\n        Console.WriteLine(\"Toplam: \" + Add(3, 7));\n        Console.WriteLine(Greet(\"Ayse\"));\n        Console.WriteLine(Greet(\"Mehmet\", \"Selam\"));\n        Console.WriteLine(\"Tam carpim: \" + Multiply(4, 5));\n        Console.WriteLine(\"Ondalik carpim: \" + Multiply(2.5, 3.0));\n    }\n}"
+}
