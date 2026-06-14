@@ -1,0 +1,10 @@
+{
+  "type": "python-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Liste uzerinde ekleme, guncelleme, filtreleme.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "students = [\n    {\"name\": \"Ahmet\", \"grade\": 85},\n    {\"name\": \"Ayse\", \"grade\": 92},\n    {\"name\": \"Mehmet\", \"grade\": 67},\n    {\"name\": \"Zeynep\", \"grade\": 78},\n    {\"name\": \"Can\", \"grade\": 55},\n]\n\nprint(\"Tum ogrenciler:\")\nfor s in students:\n    print(f\"{s['name']}: {s['grade']}\")\n\n# Yeni ogrenci ekleme\nstudents.append({\"name\": \"Elif\", \"grade\": 88})\nprint(f\"\\nElif eklendi. Toplam ogrenci: {len(students)}\")\n\n# Not güncelleme\nfor s in students:\n    if s[\"name\"] == \"Mehmet\":\n        s[\"grade\"] = 70\n        print(f\"\\nMehmet'in notu guncellendi: {s['grade']}\")\n\n# Geçenler / kalanlar\npassing = [s for s in students if s[\"grade\"] >= 60]\nfailing = [s for s in students if s[\"grade\"] < 60]\n\nprint(f\"\\nGecen ogrenci sayisi: {len(passing)}\")\nprint(f\"Kalan ogrenci sayisi: {len(failing)}\")\n\n# Sıralama (en yüksekten en düşüğe)\nprint(\"\\nNot siralamasi (yuksekten alcaga):\")\nfor s in sorted(students, key=lambda x: x[\"grade\"], reverse=True):\n    print(f\"{s['name']}: {s['grade']}\")\n\n# Ortalama\navg = sum(s[\"grade\"] for s in students) / len(students)\nprint(f\"\\nSinif ortalamasi: {avg:.2f}\")\n"
+}

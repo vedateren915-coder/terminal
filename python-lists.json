@@ -1,0 +1,10 @@
+{
+  "type": "python-lists",
+  "title": "Listeler ve Tuple'lar",
+  "subtitle": "Liste ve tuple islemleri, dilimleme.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "numbers = [10, 25, 3, 47, 8]\nprint(\"Orijinal liste:\", numbers)\n\nnumbers.sort()\nprint(\"Siralanmis:\", numbers)\n\nnumbers.append(100)\nprint(\"Eleman eklendi:\", numbers)\n\nnumbers.remove(3)\nprint(\"3 silindi:\", numbers)\n\n# Dilimleme (slicing)\nprint(\"\\nDilimleme:\")\nprint(\"Ilk 3 eleman:\", numbers[:3])\nprint(\"Son 2 eleman:\", numbers[-2:])\nprint(\"Ters cevrilmis:\", numbers[::-1])\n\n# Tuple - degistirilemez\npoint = (3, 4)\nprint(\"\\nTuple:\", point)\nprint(\"x =\", point[0], \", y =\", point[1])\n\n# Tuple unpacking\nx, y = point\nprint(\"Unpacked:\", x, y)\n\n# Liste icinde liste (matris)\nmatrix = [[1, 2], [3, 4], [5, 6]]\nprint(\"\\nMatris:\")\nfor row in matrix:\n    print(row)\n"
+}

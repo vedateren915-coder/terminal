@@ -1,0 +1,10 @@
+{
+  "type": "python-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "from collections import Counter\n\ntext = \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\"\n\n# Kelimelere ayir (noktalama isaretlerini temizle)\nclean_text = text.replace(\".\", \"\").replace(\",\", \"\").replace(\"!\", \"\")\nwords = clean_text.lower().split()\n\nprint(\"Toplam kelime sayisi:\", len(words))\nprint(\"Toplam karakter sayisi:\", len(text))\n\n# Kelime frekansi\nword_count = Counter(words)\n\nprint(\"\\nKelime frekanslari:\")\nfor word, count in word_count.most_common():\n    print(f\"'{word}': {count} kez\")\n\n# En uzun kelime\nlongest_word = max(words, key=len)\nprint(f\"\\nEn uzun kelime: '{longest_word}' ({len(longest_word)} karakter)\")\n\n# Ortalama kelime uzunlugu\navg_length = sum(len(w) for w in words) / len(words)\nprint(f\"Ortalama kelime uzunlugu: {avg_length:.2f}\")\n"
+}

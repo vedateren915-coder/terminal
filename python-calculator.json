@@ -1,0 +1,10 @@
+{
+  "type": "python-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "def calculate(a, b, op):\n    if op == \"+\":\n        return a + b\n    elif op == \"-\":\n        return a - b\n    elif op == \"*\":\n        return a * b\n    elif op == \"/\":\n        if b == 0:\n            print(\"Hata: Sifira bolme!\")\n            return None\n        return a / b\n    else:\n        print(\"Gecersiz islem:\", op)\n        return None\n\n\nx, y = 15, 4\n\nprint(f\"x = {x}, y = {y}\")\nprint(f\"x + y = {calculate(x, y, '+')}\")\nprint(f\"x - y = {calculate(x, y, '-')}\")\nprint(f\"x * y = {calculate(x, y, '*')}\")\nprint(f\"x / y = {calculate(x, y, '/')}\")\n\n# Sifira bolme testi\nprint(\"\\nSifira bolme testi:\")\ncalculate(10, 0, \"/\")\n\n# Yuzde hesaplama\ntotal = 250\ndiscount = 15\nfinal_price = total - (total * discount / 100)\nprint(f\"\\n{total} TL'nin %{discount} indirimli hali: {final_price} TL\")\n\n# Operator listesiyle toplu islem\nprint(\"\\nTum islemler:\")\nfor op in [\"+\", \"-\", \"*\", \"/\"]:\n    print(f\"{x} {op} {y} = {calculate(x, y, op)}\")\n"
+}

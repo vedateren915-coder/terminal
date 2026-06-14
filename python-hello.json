@@ -1,0 +1,10 @@
+{
+  "type": "python-hello",
+  "title": "Python Merhaba Dunya",
+  "subtitle": "Basit Python konsol programi ornegi.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "print(\"Merhaba, Playground!\")\n\nname = \"Dunya\"\nprint(\"Merhaba, \" + name + \"!\")\n\n# f-string ile\ngreeting = f\"Selam, {name}! Python ile kod yaziyoruz.\"\nprint(greeting)\n\n# Sayilarla islem\nnumbers = [5, 12, 8, 1, 9, 3]\nprint(\"Sayilar:\", numbers)\nprint(\"En buyuk sayi:\", max(numbers))\nprint(\"En kucuk sayi:\", min(numbers))\nprint(\"Toplam:\", sum(numbers))\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "python-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Fonksiyonlar ile menu tabanli akis ornegi.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "todo_list = []\n\n\ndef show_menu():\n    print(\"\\n=== YAPILACAKLAR LISTESI ===\")\n    print(\"1. Gorev Ekle\")\n    print(\"2. Gorevleri Listele\")\n    print(\"3. Gorev Sil\")\n    print(\"4. Cikis\")\n\n\ndef add_task(task):\n    todo_list.append(task)\n    print(f\"Eklendi: '{task}'\")\n\n\ndef list_tasks():\n    if not todo_list:\n        print(\"Liste bos.\")\n        return\n\n    for i, task in enumerate(todo_list, start=1):\n        print(f\"{i}. {task}\")\n\n\ndef remove_task(index):\n    if 0 <= index < len(todo_list):\n        removed = todo_list.pop(index)\n        print(f\"Silindi: '{removed}'\")\n    else:\n        print(\"Gecersiz numara.\")\n\n\n# Simulasyon: kullanici girisleri onceden tanimli\nshow_menu()\n\nprint(\"\\n> Secim: 1\")\nadd_task(\"Markete git\")\n\nprint(\"\\n> Secim: 1\")\nadd_task(\"Kod yaz\")\n\nprint(\"\\n> Secim: 1\")\nadd_task(\"Spor yap\")\n\nprint(\"\\n> Secim: 2\")\nlist_tasks()\n\nprint(\"\\n> Secim: 3 (1. gorevi sil)\")\nremove_task(0)\n\nprint(\"\\n> Secim: 2\")\nlist_tasks()\n\nprint(\"\\n> Secim: 4\")\nprint(\"Programdan cikiliyor...\")\n"
+}

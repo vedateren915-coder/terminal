@@ -1,0 +1,10 @@
+{
+  "type": "python-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve tip donusumu.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "age = 25\nprice = 19.99\nname = \"Ahmet\"\nis_active = True\n\nprint(\"Isim:\", name)\nprint(\"Yas:\", age)\nprint(\"Fiyat:\", price)\nprint(\"Aktif mi:\", is_active)\n\n# Tip kontrolu\nprint(\"\\nTip kontrolleri:\")\nprint(type(age))\nprint(type(price))\nprint(type(name))\nprint(type(is_active))\n\n# Tip donusumu\nage_text = str(age)\nparsed_age = int(\"30\")\nparsed_price = float(\"9.5\")\n\nprint(\"\\nDonusturulen degerler:\")\nprint(\"Yas metni:\", age_text, \"- tip:\", type(age_text))\nprint(\"Parsed yas:\", parsed_age)\nprint(\"Parsed fiyat:\", parsed_price)\n\n# Coklu atama\nx, y, z = 1, 2, 3\nprint(\"\\nCoklu atama:\", x, y, z)\n"
+}

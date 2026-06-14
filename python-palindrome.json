@@ -1,0 +1,10 @@
+{
+  "type": "python-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "def is_palindrome(text):\n    cleaned = text.lower().replace(\" \", \"\")\n    return cleaned == cleaned[::-1]\n\n\ndef is_number_palindrome(number):\n    text = str(number)\n    return text == text[::-1]\n\n\nwords = [\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"]\n\nprint(\"Kelime testleri:\")\nfor word in words:\n    print(f\"'{word}' palindrome mu: {is_palindrome(word)}\")\n\nprint(\"\\nSayi testleri:\")\nnumbers = [12321, 12345, 1001, 5]\nfor num in numbers:\n    print(f\"{num} palindrome mu: {is_number_palindrome(num)}\")\n\n# Bir cumledeki palindrome kelimeleri bulma\nsentence = \"anna ve oto kelimeleri palindrome ama python degil\"\nprint(\"\\nCumledeki palindrome kelimeler:\")\nfor word in sentence.split():\n    if is_palindrome(word) and len(word) > 1:\n        print(\"-\", word)\n"
+}

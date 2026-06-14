@@ -1,0 +1,10 @@
+{
+  "type": "python-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "import random\n\nrandom.seed(42)  # Tekrarlanabilir sonuc icin sabit seed\ntarget = random.randint(1, 100)\n\nprint(\"Sayi tahmin oyunu basladi! (1-100 arasi)\")\nprint(\"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\")\n\nguesses = [50, 75, 62, 68, 65, 66]\nfound = False\n\nfor guess in guesses:\n    print(\"Tahmin:\", guess)\n\n    if guess == target:\n        print(\"Tebrikler! Dogru tahmin:\", target)\n        found = True\n        break\n    elif guess < target:\n        print(\"Daha buyuk bir sayi dene.\\n\")\n    else:\n        print(\"Daha kucuk bir sayi dene.\\n\")\n\nif not found:\n    print(f\"\\nTahmin edilemedi. Dogru sayi: {target}\")\n\nprint(f\"\\nToplam deneme sayisi: {len(guesses)}\")\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "python-dictionary",
+  "title": "Dictionary Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "ages = {\"Ali\": 25, \"Veli\": 30, \"Ayse\": 28}\n\nprint(\"Tum kayitlar:\")\nfor name, age in ages.items():\n    print(f\"{name} -> {age} yasinda\")\n\n# Anahtar kontrolu\nif \"Ali\" in ages:\n    print(\"\\nAli'nin yasi:\", ages[\"Ali\"])\n\n# Guncelleme\nages[\"Ali\"] = 26\nprint(\"Ali'nin yeni yasi:\", ages[\"Ali\"])\n\n# Yeni eleman ekleme\nages[\"Can\"] = 22\nprint(\"\\nCan eklendi:\", ages)\n\n# Silme\ndel ages[\"Veli\"]\nprint(\"\\nVeli silindikten sonra:\", ages)\n\n# get() ile güvenli erişim\nprint(\"\\nOlmayan anahtar:\", ages.get(\"Zeynep\", \"Bulunamadi\"))\n\n# Anahtarlar ve degerler\nprint(\"\\nAnahtarlar:\", list(ages.keys()))\nprint(\"Degerler:\", list(ages.values()))\n\n# Dictionary comprehension\ndoubled = {k: v * 2 for k, v in ages.items()}\nprint(\"\\nYaslar 2 ile carpildi:\", doubled)\n"
+}

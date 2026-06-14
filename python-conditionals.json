@@ -1,0 +1,10 @@
+{
+  "type": "python-conditionals",
+  "title": "Kosullar (if/elif/else)",
+  "subtitle": "Kosullu ifadeler ve karsilastirma operatorleri.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "score = 78\n\nif score >= 90:\n    grade = \"AA\"\nelif score >= 70:\n    grade = \"BA\"\nelif score >= 50:\n    grade = \"CC\"\nelse:\n    grade = \"FF\"\n\nprint(\"Not:\", score, \"-> Harf notu:\", grade)\n\n# Ternary (kosullu ifade)\nnumber = 7\nparity = \"Cift\" if number % 2 == 0 else \"Tek\"\nprint(f\"\\n{number} sayisi {parity}\")\n\n# and / or / not\nage = 20\nhas_id = True\n\nif age >= 18 and has_id:\n    print(\"\\nGirise izin verildi.\")\nelse:\n    print(\"\\nGiris reddedildi.\")\n\n# in operatoru\nfruits = [\"elma\", \"armut\", \"muz\"]\nif \"elma\" in fruits:\n    print(\"\\nElma listede var.\")\n\n# Zincirleme karsilastirma\nx = 5\nif 1 < x < 10:\n    print(\"\\nx, 1 ile 10 arasinda.\")\n"
+}

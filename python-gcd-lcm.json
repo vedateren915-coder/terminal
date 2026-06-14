@@ -1,0 +1,10 @@
+{
+  "type": "python-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "import math\n\n\ndef gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\n\ndef lcm(a, b):\n    return (a * b) // gcd(a, b)\n\n\nnum1, num2 = 48, 18\n\nprint(f\"Sayilar: {num1} ve {num2}\")\nprint(f\"EBOB (kendi fonksiyonumuz): {gcd(num1, num2)}\")\nprint(f\"EKOK (kendi fonksiyonumuz): {lcm(num1, num2)}\")\n\n# math modulu ile dogrulama\nprint(f\"\\nmath.gcd: {math.gcd(num1, num2)}\")\nprint(f\"math.lcm: {math.lcm(num1, num2)}\")\n\n# Birden fazla cift icin tablo\nprint(\"\\nFarkli sayi ciftleri:\")\npairs = [(12, 18), (7, 13), (100, 75), (24, 36)]\n\nfor a, b in pairs:\n    print(f\"GCD({a},{b}) = {gcd(a, b)}, LCM({a},{b}) = {lcm(a, b)}\")\n"
+}

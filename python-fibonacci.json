@@ -1,0 +1,10 @@
+{
+  "type": "python-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif, recursive ve memoization ile fibonacci.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "def fibonacci_iterative(n):\n    if n <= 1:\n        return n\n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n\ndef fibonacci_recursive(n):\n    if n <= 1:\n        return n\n    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)\n\n\n# Memoization ile hizlandirma\nmemo = {}\n\ndef fibonacci_memo(n):\n    if n in memo:\n        return memo[n]\n    if n <= 1:\n        return n\n    result = fibonacci_memo(n - 1) + fibonacci_memo(n - 2)\n    memo[n] = result\n    return result\n\n\nprint(\"Iteratif Fibonacci (0-10):\")\nprint([fibonacci_iterative(i) for i in range(11)])\n\nprint(\"\\nRecursive Fibonacci (0-10):\")\nprint([fibonacci_recursive(i) for i in range(11)])\n\nprint(\"\\nMemoization ile 30. Fibonacci:\", fibonacci_memo(30))\nprint(\"Iteratif ile 30. Fibonacci:\", fibonacci_iterative(30))\n"
+}

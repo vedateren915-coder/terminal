@@ -1,0 +1,10 @@
+{
+  "type": "python-search",
+  "title": "Arama Algoritmalari",
+  "subtitle": "Dogrusal ve binary arama ornekleri.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "def linear_search(arr, target):\n    for i, value in enumerate(arr):\n        if value == target:\n            return i\n    return -1\n\n\ndef binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n\n    return -1\n\n\nnumbers = [4, 12, 7, 23, 9, 1, 18]\ntarget = 23\n\nlinear_result = linear_search(numbers, target)\nprint(f\"Dogrusal arama: {target} indeks {linear_result}'de bulundu\")\n\n# Binary arama icin dizi siralanmali\nsorted_numbers = sorted(numbers)\nprint(\"\\nSirali dizi:\", sorted_numbers)\n\nbinary_result = binary_search(sorted_numbers, target)\nprint(f\"Binary arama: {target} indeks {binary_result}'de bulundu\")\n\nnot_found = linear_search(numbers, 99)\nprint(f\"\\n99 araniyor (bulunamayacak): {not_found}\")\n\n# Python'un kendi 'in' operatoru ve index()\nprint(\"\\n'in' operatoru ile kontrol:\", target in numbers)\nprint(\"index() ile konum:\", numbers.index(target))\n"
+}

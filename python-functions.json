@@ -1,0 +1,10 @@
+{
+  "type": "python-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, varsayilan deger, *args, **kwargs.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "def square(x):\n    return x * x\n\ndef add(a, b):\n    return a + b\n\n# Varsayilan parametre\ndef greet(name, greeting=\"Merhaba\"):\n    return f\"{greeting}, {name}!\"\n\n# *args ile degisken sayida parametre\ndef total(*numbers):\n    return sum(numbers)\n\n# **kwargs ile anahtar kelime parametreleri\ndef print_info(**info):\n    for key, value in info.items():\n        print(f\"{key}: {value}\")\n\n# Lambda fonksiyon\nmultiply = lambda a, b: a * b\n\nprint(\"Kare:\", square(5))\nprint(\"Toplam:\", add(3, 7))\nprint(greet(\"Ayse\"))\nprint(greet(\"Mehmet\", \"Selam\"))\nprint(\"Coklu toplam:\", total(1, 2, 3, 4, 5))\n\nprint(\"\\nKullanici bilgisi:\")\nprint_info(name=\"Zeynep\", age=28, city=\"Ankara\")\n\nprint(\"\\nLambda carpim:\", multiply(4, 5))\n"
+}

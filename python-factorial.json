@@ -1,0 +1,10 @@
+{
+  "type": "python-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive, iteratif ve math modulu ile.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "import math\n\n\ndef factorial_recursive(n):\n    if n <= 1:\n        return 1\n    return n * factorial_recursive(n - 1)\n\n\ndef factorial_iterative(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n\n\nprint(\"Faktoriyel tablosu (0-10):\")\nfor i in range(11):\n    print(f\"{i}! = {factorial_iterative(i)}\")\n\nprint(\"\\nRecursive 5! =\", factorial_recursive(5))\nprint(\"Iteratif 5! =\", factorial_iterative(5))\nprint(\"math.factorial(5) =\", math.factorial(5))\n\n# Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\nn, r = 5, 2\ncombination = factorial_iterative(n) // (factorial_iterative(r) * factorial_iterative(n - r))\nprint(f\"\\nC({n},{r}) = {combination}\")\n\n# math.comb ile dogrulama\nprint(f\"math.comb({n},{r}) = {math.comb(n, r)}\")\n"
+}

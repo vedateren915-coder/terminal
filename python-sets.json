@@ -1,0 +1,10 @@
+{
+  "type": "python-sets",
+  "title": "Set Islemleri",
+  "subtitle": "Kume operasyonlari: birlesim, kesisim, fark.",
+  "category": "Python",
+  "color": "green",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "python",
+  "code": "fruits_a = {\"elma\", \"armut\", \"muz\", \"karpuz\"}\nfruits_b = {\"muz\", \"karpuz\", \"uzum\", \"kiraz\"}\n\nprint(\"Set A:\", fruits_a)\nprint(\"Set B:\", fruits_b)\n\n# Birlesim\nunion = fruits_a | fruits_b\nprint(\"\\nBirlesim (A | B):\", union)\n\n# Kesisim\nintersection = fruits_a & fruits_b\nprint(\"Kesisim (A & B):\", intersection)\n\n# Fark\ndifference = fruits_a - fruits_b\nprint(\"Fark (A - B):\", difference)\n\n# Simetrik fark\nsym_diff = fruits_a ^ fruits_b\nprint(\"Simetrik fark (A ^ B):\", sym_diff)\n\n# Eleman ekleme/cikarma\nfruits_a.add(\"ananas\")\nprint(\"\\nAnanas eklendi:\", fruits_a)\n\nfruits_a.discard(\"elma\")\nprint(\"Elma cikarildi:\", fruits_a)\n\n# Liste -> Set (tekrarlari kaldirma)\nnumbers = [1, 2, 2, 3, 3, 3, 4, 5, 5]\nunique_numbers = set(numbers)\nprint(\"\\nOrijinal liste:\", numbers)\nprint(\"Benzersiz elemanlar:\", unique_numbers)\n\n# Kontrol\nprint(\"\\n'muz' set A'da var mi:\", \"muz\" in fruits_a)\n"
+}
