@@ -1,0 +1,10 @@
+{
+  "type": "csharp-arrays",
+  "title": "Diziler ve Listeler",
+  "subtitle": "Array ve List<T> kullanim ornekleri.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        // Dizi tanimlama\n        int[] numbers = { 10, 25, 3, 47, 8 };\n        Console.WriteLine(\"Dizi uzunlugu: \" + numbers.Length);\n\n        Array.Sort(numbers);\n        Console.WriteLine(\"Siralanmis dizi: \" + string.Join(\", \", numbers));\n\n        // List kullanimi\n        List<string> names = new List<string>();\n        names.Add(\"Ali\");\n        names.Add(\"Veli\");\n        names.Add(\"Ayse\");\n\n        Console.WriteLine(\"\\nIsim listesi:\");\n        foreach (string name in names)\n        {\n            Console.WriteLine(\"- \" + name);\n        }\n\n        names.Remove(\"Veli\");\n        Console.WriteLine(\"\\nVeli silindikten sonra eleman sayisi: \" + names.Count);\n\n        // Liste icinde arama\n        bool containsAyse = names.Contains(\"Ayse\");\n        Console.WriteLine(\"Ayse listede mi: \" + containsAyse);\n\n        // Dizi toplamı\n        int total = 0;\n        foreach (int n in numbers)\n        {\n            total += n;\n        }\n        Console.WriteLine(\"\\nToplam: \" + total);\n    }\n}"
+}
