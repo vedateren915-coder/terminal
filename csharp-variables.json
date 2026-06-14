@@ -1,0 +1,10 @@
+{
+  "type": "csharp-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve degisken tanimlama.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        int age = 25;\n        double price = 19.99;\n        string name = \"Ahmet\";\n        bool isActive = true;\n        char grade = 'A';\n\n        Console.WriteLine(\"Isim: \" + name);\n        Console.WriteLine(\"Yas: \" + age);\n        Console.WriteLine(\"Fiyat: \" + price);\n        Console.WriteLine(\"Aktif mi: \" + isActive);\n        Console.WriteLine(\"Not: \" + grade);\n\n        // Tip donusumu\n        string ageText = age.ToString();\n        int parsedAge = int.Parse(\"30\");\n\n        Console.WriteLine(\"Yas metni: \" + ageText);\n        Console.WriteLine(\"Donusturulen yas: \" + parsedAge);\n\n        // var ile otomatik tip cikarimi\n        var city = \"Istanbul\";\n        Console.WriteLine(\"Sehir: \" + city);\n    }\n}"
+}
