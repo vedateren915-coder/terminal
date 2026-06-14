@@ -1,0 +1,10 @@
+{
+  "type": "csharp-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    static int GCD(int a, int b)\n    {\n        while (b != 0)\n        {\n            int temp = b;\n            b = a % b;\n            a = temp;\n        }\n        return a;\n    }\n\n    static int LCM(int a, int b)\n    {\n        return (a * b) / GCD(a, b);\n    }\n\n    static void Main()\n    {\n        int num1 = 48;\n        int num2 = 18;\n\n        int gcd = GCD(num1, num2);\n        int lcm = LCM(num1, num2);\n\n        Console.WriteLine($\"Sayilar: {num1} ve {num2}\");\n        Console.WriteLine($\"EBOB (GCD): {gcd}\");\n        Console.WriteLine($\"EKOK (LCM): {lcm}\");\n\n        // Birden fazla çift için tablo\n        Console.WriteLine(\"\\nFarkli sayi ciftleri:\");\n        int[,] pairs = { { 12, 18 }, { 7, 13 }, { 100, 75 }, { 24, 36 } };\n\n        for (int i = 0; i < pairs.GetLength(0); i++)\n        {\n            int a = pairs[i, 0];\n            int b = pairs[i, 1];\n            Console.WriteLine($\"GCD({a},{b}) = {GCD(a, b)}, LCM({a},{b}) = {LCM(a, b)}\");\n        }\n    }\n}"
+}

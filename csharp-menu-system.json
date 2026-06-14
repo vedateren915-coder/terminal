@@ -1,0 +1,10 @@
+{
+  "type": "csharp-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Switch-case ile menu tabanli akis ornegi.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static List<string> todoList = new List<string>();\n\n    static void ShowMenu()\n    {\n        Console.WriteLine(\"\\n=== YAPILACAKLAR LISTESI ===\");\n        Console.WriteLine(\"1. Gorev Ekle\");\n        Console.WriteLine(\"2. Gorevleri Listele\");\n        Console.WriteLine(\"3. Gorev Sil\");\n        Console.WriteLine(\"4. Cikis\");\n    }\n\n    static void AddTask(string task)\n    {\n        todoList.Add(task);\n        Console.WriteLine($\"Eklendi: '{task}'\");\n    }\n\n    static void ListTasks()\n    {\n        if (todoList.Count == 0)\n        {\n            Console.WriteLine(\"Liste bos.\");\n            return;\n        }\n\n        for (int i = 0; i < todoList.Count; i++)\n        {\n            Console.WriteLine($\"{i + 1}. {todoList[i]}\");\n        }\n    }\n\n    static void RemoveTask(int index)\n    {\n        if (index >= 0 && index < todoList.Count)\n        {\n            Console.WriteLine($\"Silindi: '{todoList[index]}'\");\n            todoList.RemoveAt(index);\n        }\n        else\n        {\n            Console.WriteLine(\"Gecersiz numara.\");\n        }\n    }\n\n    static void Main()\n    {\n        // Simulasyon: kullanici girisleri onceden tanimli\n        ShowMenu();\n\n        Console.WriteLine(\"\\n> Secim: 1\");\n        AddTask(\"Markete git\");\n\n        Console.WriteLine(\"\\n> Secim: 1\");\n        AddTask(\"Kod yaz\");\n\n        Console.WriteLine(\"\\n> Secim: 1\");\n        AddTask(\"Spor yap\");\n\n        Console.WriteLine(\"\\n> Secim: 2\");\n        ListTasks();\n\n        Console.WriteLine(\"\\n> Secim: 3 (1. gorevi sil)\");\n        RemoveTask(0);\n\n        Console.WriteLine(\"\\n> Secim: 2\");\n        ListTasks();\n\n        Console.WriteLine(\"\\n> Secim: 4\");\n        Console.WriteLine(\"Programdan cikiliyor...\");\n    }\n}"
+}

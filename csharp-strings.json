@@ -1,0 +1,10 @@
+{
+  "type": "csharp-strings",
+  "title": "String Islemleri",
+  "subtitle": "Metin manipulasyonu ve formatlama.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        string text = \"  Merhaba Playground!  \";\n\n        Console.WriteLine(\"Orijinal: '\" + text + \"'\");\n        Console.WriteLine(\"Trim: '\" + text.Trim() + \"'\");\n        Console.WriteLine(\"Buyuk harf: \" + text.ToUpper());\n        Console.WriteLine(\"Kucuk harf: \" + text.ToLower());\n        Console.WriteLine(\"Uzunluk: \" + text.Length);\n\n        string clean = text.Trim();\n        Console.WriteLine(\"\\nIceriyor mu 'Play': \" + clean.Contains(\"Play\"));\n        Console.WriteLine(\"Baslangic 'Merhaba': \" + clean.StartsWith(\"Merhaba\"));\n\n        // Bölme\n        string sentence = \"elma,armut,muz,karpuz\";\n        string[] fruits = sentence.Split(',');\n        Console.WriteLine(\"\\nMeyveler:\");\n        foreach (string fruit in fruits)\n        {\n            Console.WriteLine(\"- \" + fruit);\n        }\n\n        // Birleştirme\n        string joined = string.Join(\" | \", fruits);\n        Console.WriteLine(\"\\nBirlestirilmis: \" + joined);\n\n        // Değiştirme\n        string replaced = clean.Replace(\"Playground\", \"Dunya\");\n        Console.WriteLine(\"\\nDegistirilmis: \" + replaced);\n\n        // String interpolation\n        string name = \"Zeynep\";\n        int score = 95;\n        Console.WriteLine($\"\\n{name} sinavdan {score} puan aldi.\");\n\n        // Substring\n        string sub = clean.Substring(0, 7);\n        Console.WriteLine(\"\\nIlk 7 karakter: \" + sub);\n    }\n}"
+}

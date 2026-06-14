@@ -1,0 +1,10 @@
+{
+  "type": "csharp-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    static double Calculate(double a, double b, string op)\n    {\n        switch (op)\n        {\n            case \"+\": return a + b;\n            case \"-\": return a - b;\n            case \"*\": return a * b;\n            case \"/\":\n                if (b == 0)\n                {\n                    Console.WriteLine(\"Hata: Sifira bolme!\");\n                    return double.NaN;\n                }\n                return a / b;\n            default:\n                Console.WriteLine(\"Gecersiz islem: \" + op);\n                return double.NaN;\n        }\n    }\n\n    static void Main()\n    {\n        double x = 15;\n        double y = 4;\n\n        Console.WriteLine($\"x = {x}, y = {y}\");\n        Console.WriteLine($\"x + y = {Calculate(x, y, \"+\")}\");\n        Console.WriteLine($\"x - y = {Calculate(x, y, \"-\")}\");\n        Console.WriteLine($\"x * y = {Calculate(x, y, \"*\")}\");\n        Console.WriteLine($\"x / y = {Calculate(x, y, \"/\")}\");\n\n        // Sifira bolme testi\n        Console.WriteLine(\"\\nSifira bolme testi:\");\n        Calculate(10, 0, \"/\");\n\n        // Yüzde hesaplama\n        double total = 250;\n        double discount = 15;\n        double finalPrice = total - (total * discount / 100);\n        Console.WriteLine($\"\\n{total} TL'nin %{discount} indirimli hali: {finalPrice} TL\");\n    }\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "csharp-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Linq;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        string text = \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\";\n\n        // Kelimelere ayir\n        string[] words = text.Split(new char[] { ' ', '.', ',', '!' }, StringSplitOptions.RemoveEmptyEntries);\n\n        Console.WriteLine(\"Toplam kelime sayisi: \" + words.Length);\n        Console.WriteLine(\"Toplam karakter sayisi: \" + text.Length);\n\n        // Kelime frekansi\n        Dictionary<string, int> wordCount = new Dictionary<string, int>();\n\n        foreach (string word in words)\n        {\n            string lowerWord = word.ToLower();\n            if (wordCount.ContainsKey(lowerWord))\n            {\n                wordCount[lowerWord]++;\n            }\n            else\n            {\n                wordCount[lowerWord] = 1;\n            }\n        }\n\n        Console.WriteLine(\"\\nKelime frekanslari:\");\n        foreach (var pair in wordCount.OrderByDescending(p => p.Value))\n        {\n            Console.WriteLine($\"'{pair.Key}': {pair.Value} kez\");\n        }\n\n        // En uzun kelime\n        string longestWord = words.OrderByDescending(w => w.Length).First();\n        Console.WriteLine($\"\\nEn uzun kelime: '{longestWord}' ({longestWord.Length} karakter)\");\n\n        // Ortalama kelime uzunlugu\n        double avgLength = words.Average(w => w.Length);\n        Console.WriteLine($\"Ortalama kelime uzunlugu: {avgLength:F2}\");\n    }\n}"
+}

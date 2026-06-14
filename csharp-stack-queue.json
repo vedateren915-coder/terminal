@@ -1,0 +1,10 @@
+{
+  "type": "csharp-stack-queue",
+  "title": "Stack ve Queue",
+  "subtitle": "Yigin ve kuyruk veri yapilari.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        // Stack (LIFO - Son giren ilk cikar)\n        Stack<string> stack = new Stack<string>();\n        stack.Push(\"Birinci\");\n        stack.Push(\"Ikinci\");\n        stack.Push(\"Ucuncu\");\n\n        Console.WriteLine(\"Stack icerigi (en ustten):\");\n        while (stack.Count > 0)\n        {\n            Console.WriteLine(stack.Pop());\n        }\n\n        // Queue (FIFO - Ilk giren ilk cikar)\n        Queue<string> queue = new Queue<string>();\n        queue.Enqueue(\"Musteri 1\");\n        queue.Enqueue(\"Musteri 2\");\n        queue.Enqueue(\"Musteri 3\");\n\n        Console.WriteLine(\"\\nQueue icerigi (siradan):\");\n        while (queue.Count > 0)\n        {\n            Console.WriteLine(queue.Dequeue());\n        }\n\n        // Peek kullanimi\n        Stack<int> numbers = new Stack<int>();\n        numbers.Push(10);\n        numbers.Push(20);\n        Console.WriteLine(\"\\nStack tepesi (Peek): \" + numbers.Peek());\n        Console.WriteLine(\"Stack eleman sayisi: \" + numbers.Count);\n    }\n}"
+}

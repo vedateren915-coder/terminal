@@ -1,0 +1,10 @@
+{
+  "type": "csharp-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static bool IsPrime(int number)\n    {\n        if (number < 2) return false;\n\n        for (int i = 2; i * i <= number; i++)\n        {\n            if (number % i == 0) return false;\n        }\n        return true;\n    }\n\n    static void Main()\n    {\n        Console.WriteLine(\"1-50 arasindaki asal sayilar:\");\n        List<int> primes = new List<int>();\n\n        for (int i = 1; i <= 50; i++)\n        {\n            if (IsPrime(i))\n            {\n                primes.Add(i);\n            }\n        }\n\n        Console.WriteLine(string.Join(\", \", primes));\n        Console.WriteLine(\"\\nToplam asal sayi adedi: \" + primes.Count);\n\n        // Tekil kontrol\n        int testNumber = 97;\n        Console.WriteLine($\"\\n{testNumber} asal mi: {IsPrime(testNumber)}\");\n\n        testNumber = 100;\n        Console.WriteLine($\"{testNumber} asal mi: {IsPrime(testNumber)}\");\n    }\n}"
+}

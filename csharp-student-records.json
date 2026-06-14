@@ -1,0 +1,10 @@
+{
+  "type": "csharp-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Liste uzerinde ekleme, guncelleme, filtreleme.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nclass Student\n{\n    public string Name;\n    public int Grade;\n\n    public Student(string name, int grade)\n    {\n        Name = name;\n        Grade = grade;\n    }\n}\n\nclass Program\n{\n    static void Main()\n    {\n        List<Student> students = new List<Student>\n        {\n            new Student(\"Ahmet\", 85),\n            new Student(\"Ayse\", 92),\n            new Student(\"Mehmet\", 67),\n            new Student(\"Zeynep\", 78),\n            new Student(\"Can\", 55)\n        };\n\n        Console.WriteLine(\"Tum ogrenciler:\");\n        foreach (var s in students)\n        {\n            Console.WriteLine($\"{s.Name}: {s.Grade}\");\n        }\n\n        // Yeni ogrenci ekleme\n        students.Add(new Student(\"Elif\", 88));\n        Console.WriteLine($\"\\nElif eklendi. Toplam ogrenci: {students.Count}\");\n\n        // Not güncelleme\n        var student = students.First(s => s.Name == \"Mehmet\");\n        student.Grade = 70;\n        Console.WriteLine($\"\\nMehmet'in notu guncellendi: {student.Grade}\");\n\n        // Geçenler / kalanlar\n        var passing = students.Where(s => s.Grade >= 60).ToList();\n        var failing = students.Where(s => s.Grade < 60).ToList();\n\n        Console.WriteLine($\"\\nGecen ogrenci sayisi: {passing.Count}\");\n        Console.WriteLine($\"Kalan ogrenci sayisi: {failing.Count}\");\n\n        // Sıralama (en yüksekten en düşüğe)\n        Console.WriteLine(\"\\nNot siralamasi (yuksekten alcaga):\");\n        foreach (var s in students.OrderByDescending(s => s.Grade))\n        {\n            Console.WriteLine($\"{s.Name}: {s.Grade}\");\n        }\n\n        // Ortalama\n        double avg = students.Average(s => s.Grade);\n        Console.WriteLine($\"\\nSinif ortalamasi: {avg:F2}\");\n    }\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "csharp-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif ve recursive fibonacci hesaplama.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    // Iteratif yontem\n    static long FibonacciIterative(int n)\n    {\n        if (n <= 1) return n;\n\n        long a = 0, b = 1;\n        for (int i = 2; i <= n; i++)\n        {\n            long temp = a + b;\n            a = b;\n            b = temp;\n        }\n        return b;\n    }\n\n    // Recursive yontem\n    static long FibonacciRecursive(int n)\n    {\n        if (n <= 1) return n;\n        return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);\n    }\n\n    static void Main()\n    {\n        Console.WriteLine(\"Iteratif Fibonacci (0-10):\");\n        for (int i = 0; i <= 10; i++)\n        {\n            Console.Write(FibonacciIterative(i) + \" \");\n        }\n        Console.WriteLine();\n\n        Console.WriteLine(\"\\nRecursive Fibonacci (0-10):\");\n        for (int i = 0; i <= 10; i++)\n        {\n            Console.Write(FibonacciRecursive(i) + \" \");\n        }\n        Console.WriteLine();\n\n        Console.WriteLine(\"\\n20. Fibonacci sayisi: \" + FibonacciIterative(20));\n    }\n}"
+}

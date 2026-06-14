@@ -1,0 +1,10 @@
+{
+  "type": "csharp-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\n\nclass Program\n{\n    static bool IsPalindrome(string text)\n    {\n        string cleaned = text.ToLower().Replace(\" \", \"\");\n        int left = 0;\n        int right = cleaned.Length - 1;\n\n        while (left < right)\n        {\n            if (cleaned[left] != cleaned[right])\n            {\n                return false;\n            }\n            left++;\n            right--;\n        }\n        return true;\n    }\n\n    static bool IsNumberPalindrome(int number)\n    {\n        int original = number;\n        int reversed = 0;\n\n        while (number > 0)\n        {\n            reversed = reversed * 10 + (number % 10);\n            number /= 10;\n        }\n\n        return original == reversed;\n    }\n\n    static void Main()\n    {\n        string[] words = { \"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\" };\n\n        Console.WriteLine(\"Kelime testleri:\");\n        foreach (string word in words)\n        {\n            Console.WriteLine($\"'{word}' palindrome mu: {IsPalindrome(word)}\");\n        }\n\n        Console.WriteLine(\"\\nSayi testleri:\");\n        int[] numbers = { 12321, 12345, 1001, 5 };\n        foreach (int num in numbers)\n        {\n            Console.WriteLine($\"{num} palindrome mu: {IsNumberPalindrome(num)}\");\n        }\n    }\n}"
+}

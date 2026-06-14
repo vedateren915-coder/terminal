@@ -1,0 +1,10 @@
+{
+  "type": "csharp-dictionary",
+  "title": "Dictionary Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "C#",
+  "color": "purple",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "csharp",
+  "code": "using System;\nusing System.Collections.Generic;\n\nclass Program\n{\n    static void Main()\n    {\n        Dictionary<string, int> ages = new Dictionary<string, int>();\n        ages[\"Ali\"] = 25;\n        ages[\"Veli\"] = 30;\n        ages[\"Ayse\"] = 28;\n\n        Console.WriteLine(\"Tum kayitlar:\");\n        foreach (KeyValuePair<string, int> entry in ages)\n        {\n            Console.WriteLine(entry.Key + \" -> \" + entry.Value + \" yasinda\");\n        }\n\n        // Anahtar kontrolu\n        if (ages.ContainsKey(\"Ali\"))\n        {\n            Console.WriteLine(\"\\nAli'nin yasi: \" + ages[\"Ali\"]);\n        }\n\n        // Guncelleme\n        ages[\"Ali\"] = 26;\n        Console.WriteLine(\"Ali'nin yeni yasi: \" + ages[\"Ali\"]);\n\n        // Silme\n        ages.Remove(\"Veli\");\n        Console.WriteLine(\"\\nVeli silindikten sonra kayit sayisi: \" + ages.Count);\n\n        // TryGetValue\n        if (ages.TryGetValue(\"Ayse\", out int ayseAge))\n        {\n            Console.WriteLine(\"Ayse'nin yasi: \" + ayseAge);\n        }\n    }\n}"
+}
