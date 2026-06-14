@@ -1,0 +1,11 @@
+[
+  {
+    "type": "csharp-hello",
+    "title": "C# Merhaba Dunya",
+    "subtitle": "Basit C# konsol uygulamasi ornegi.",
+    "category": "C#",
+    "color": "purple",
+    "icon": "chevron.left.forwardslash.chevron.right",
+    "language": "csharp"
+  }
+]
