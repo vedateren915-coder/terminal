@@ -1,0 +1,10 @@
+{
+  "type": "java-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "import java.util.ArrayList;\n\npublic class Main {\n\n    static boolean isPrime(int number) {\n        if (number < 2) return false;\n\n        for (int i = 2; (long) i * i <= number; i++) {\n            if (number % i == 0) return false;\n        }\n        return true;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"1-50 arasindaki asal sayilar:\");\n        ArrayList<Integer> primes = new ArrayList<>();\n\n        for (int i = 1; i <= 50; i++) {\n            if (isPrime(i)) {\n                primes.add(i);\n            }\n        }\n\n        System.out.println(primes);\n        System.out.println(\"\\nToplam asal sayi adedi: \" + primes.size());\n\n        // Tekil kontrol\n        int testNumber = 97;\n        System.out.println(\"\\n\" + testNumber + \" asal mi: \" + isPrime(testNumber));\n\n        testNumber = 100;\n        System.out.println(testNumber + \" asal mi: \" + isPrime(testNumber));\n    }\n}"
+}

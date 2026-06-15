@@ -1,0 +1,10 @@
+{
+  "type": "java-conditionals",
+  "title": "Kosullar (if/switch)",
+  "subtitle": "If-else ve switch ifadeleri ornegi.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n    public static void main(String[] args) {\n        int score = 78;\n        String grade;\n\n        if (score >= 90) {\n            grade = \"AA\";\n        } else if (score >= 70) {\n            grade = \"BA\";\n        } else if (score >= 50) {\n            grade = \"CC\";\n        } else {\n            grade = \"FF\";\n        }\n\n        System.out.println(\"Not: \" + score + \" -> Harf notu: \" + grade);\n\n        // Switch ornegi\n        int day = 3;\n        String dayName;\n\n        switch (day) {\n            case 1:\n                dayName = \"Pazartesi\";\n                break;\n            case 2:\n                dayName = \"Sali\";\n                break;\n            case 3:\n                dayName = \"Carsamba\";\n                break;\n            default:\n                dayName = \"Bilinmeyen gun\";\n                break;\n        }\n\n        System.out.println(\"Gun: \" + dayName);\n\n        // Ternary operator\n        int number = 7;\n        String parity = (number % 2 == 0) ? \"Cift\" : \"Tek\";\n        System.out.println(number + \" sayisi \" + parity);\n    }\n}"
+}

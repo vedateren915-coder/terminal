@@ -1,0 +1,10 @@
+{
+  "type": "java-hello",
+  "title": "Java Merhaba Dunya",
+  "subtitle": "Basit Java konsol uygulamasi ornegi.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Merhaba, Playground!\");\n\n        String name = \"Dunya\";\n        System.out.println(\"Merhaba, \" + name + \"!\");\n\n        int[] numbers = {5, 12, 8, 1, 9, 3};\n        int max = numbers[0];\n        int sum = 0;\n\n        for (int n : numbers) {\n            if (n > max) {\n                max = n;\n            }\n            sum += n;\n        }\n\n        System.out.println(\"En buyuk sayi: \" + max);\n        System.out.println(\"Toplam: \" + sum);\n    }\n}"
+}

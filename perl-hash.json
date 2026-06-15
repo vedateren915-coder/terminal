@@ -1,0 +1,10 @@
+{
+  "type": "perl-hash",
+  "title": "Hash Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy %ages = (\n    Ali  => 25,\n    Veli => 30,\n    Ayse => 28,\n);\n\nprint \"Tum kayitlar:\\n\";\nforeach my $name (keys %ages) {\n    print \"$name -> $ages{$name} yasinda\\n\";\n}\n\n# Anahtar kontrolu\nif (exists $ages{Ali}) {\n    print \"\\nAli'nin yasi: $ages{Ali}\\n\";\n}\n\n# Guncelleme\n$ages{Ali} = 26;\nprint \"Ali'nin yeni yasi: $ages{Ali}\\n\";\n\n# Yeni eleman ekleme\n$ages{Can} = 22;\nprint \"\\nCan eklendi, kayit sayisi: \" . scalar(keys %ages) . \"\\n\";\n\n# Silme\ndelete $ages{Veli};\nprint \"\\nVeli silindikten sonra kayit sayisi: \" . scalar(keys %ages) . \"\\n\";\n\n# Olmayan anahtar kontrolu\nif (!exists $ages{Zeynep}) {\n    print \"\\nZeynep hash'te bulunamadi.\\n\";\n}\n\n# Anahtarlar ve degerler\nmy @keys = keys %ages;\nmy @values = values %ages;\nprint \"\\nAnahtarlar: @keys\\n\";\nprint \"Degerler: @values\\n\";\n"
+}

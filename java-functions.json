@@ -1,0 +1,10 @@
+{
+  "type": "java-functions",
+  "title": "Metodlar",
+  "subtitle": "Parametre, donus degeri ve overload ornekleri.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n\n    static int square(int x) {\n        return x * x;\n    }\n\n    static int add(int a, int b) {\n        return a + b;\n    }\n\n    static String greet(String name) {\n        return \"Merhaba, \" + name + \"!\";\n    }\n\n    static String greet(String name, String greeting) {\n        return greeting + \", \" + name + \"!\";\n    }\n\n    static double multiply(double a, double b) {\n        return a * b;\n    }\n\n    static int multiply(int a, int b) {\n        return a * b;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"Kare: \" + square(5));\n        System.out.println(\"Toplam: \" + add(3, 7));\n        System.out.println(greet(\"Ayse\"));\n        System.out.println(greet(\"Mehmet\", \"Selam\"));\n        System.out.println(\"Tam carpim: \" + multiply(4, 5));\n        System.out.println(\"Ondalik carpim: \" + multiply(2.5, 3.0));\n    }\n}"
+}

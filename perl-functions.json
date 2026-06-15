@@ -1,0 +1,10 @@
+{
+  "type": "perl-functions",
+  "title": "Alt Programlar (Subroutines)",
+  "subtitle": "Parametre, donus degeri ve referans kullanimi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub square {\n    my ($x) = @_;\n    return $x * $x;\n}\n\nsub add {\n    my ($a, $b) = @_;\n    return $a + $b;\n}\n\n# Varsayilan parametre (manuel kontrol ile)\nsub greet {\n    my ($name, $greeting) = @_;\n    $greeting //= \"Merhaba\";\n    return \"$greeting, $name!\";\n}\n\n# Degisken sayida parametre\nsub total {\n    my $sum = 0;\n    $sum += $_ for @_;\n    return $sum;\n}\n\nprint \"Kare: \" . square(5) . \"\\n\";\nprint \"Toplam: \" . add(3, 7) . \"\\n\";\nprint greet(\"Ayse\") . \"\\n\";\nprint greet(\"Mehmet\", \"Selam\") . \"\\n\";\nprint \"Coklu toplam: \" . total(1, 2, 3, 4, 5) . \"\\n\";\n\n# Anonim fonksiyon (referans)\nmy $multiply = sub {\n    my ($a, $b) = @_;\n    return $a * $b;\n};\n\nprint \"\\nAnonim fonksiyon carpim: \" . $multiply->(4, 5) . \"\\n\";\n"
+}

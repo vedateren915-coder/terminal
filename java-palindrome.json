@@ -1,0 +1,10 @@
+{
+  "type": "java-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n\n    static boolean isPalindrome(String text) {\n        String cleaned = text.toLowerCase().replace(\" \", \"\");\n        String reversed = new StringBuilder(cleaned).reverse().toString();\n        return cleaned.equals(reversed);\n    }\n\n    static boolean isNumberPalindrome(int number) {\n        String text = String.valueOf(number);\n        String reversed = new StringBuilder(text).reverse().toString();\n        return text.equals(reversed);\n    }\n\n    public static void main(String[] args) {\n        String[] words = {\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"};\n\n        System.out.println(\"Kelime testleri:\");\n        for (String word : words) {\n            System.out.println(\"'\" + word + \"' palindrome mu: \" + isPalindrome(word));\n        }\n\n        System.out.println(\"\\nSayi testleri:\");\n        int[] numbers = {12321, 12345, 1001, 5};\n        for (int num : numbers) {\n            System.out.println(num + \" palindrome mu: \" + isNumberPalindrome(num));\n        }\n    }\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "perl-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy $target = 67; # Sabit hedef sayi (demo amacli)\n\nprint \"Sayi tahmin oyunu basladi! (1-100 arasi)\\n\";\nprint \"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\\n\";\n\nmy @guesses = (50, 75, 62, 68, 65, 67);\nmy $found = 0;\n\nforeach my $guess (@guesses) {\n    print \"Tahmin: $guess\\n\";\n\n    if ($guess == $target) {\n        print \"Tebrikler! Dogru tahmin: $target\\n\";\n        $found = 1;\n        last;\n    } elsif ($guess < $target) {\n        print \"Daha buyuk bir sayi dene.\\n\\n\";\n    } else {\n        print \"Daha kucuk bir sayi dene.\\n\\n\";\n    }\n}\n\nunless ($found) {\n    print \"\\nTahmin edilemedi. Dogru sayi: $target\\n\";\n}\n\nprint \"\\nToplam deneme sayisi: \" . scalar(@guesses) . \"\\n\";\n"
+}

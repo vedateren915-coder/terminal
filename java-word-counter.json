@@ -1,0 +1,10 @@
+{
+  "type": "java-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class Main {\n    public static void main(String[] args) {\n        String text = \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\";\n\n        // Noktalama isaretlerini temizle\n        String cleanText = text.replace(\".\", \"\").replace(\",\", \"\").replace(\"!\", \"\");\n        String[] words = cleanText.toLowerCase().split(\"\\\\s+\");\n\n        System.out.println(\"Toplam kelime sayisi: \" + words.length);\n        System.out.println(\"Toplam karakter sayisi: \" + text.length());\n\n        // Kelime frekansi\n        HashMap<String, Integer> wordCount = new HashMap<>();\n        for (String word : words) {\n            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);\n        }\n\n        System.out.println(\"\\nKelime frekanslari:\");\n        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {\n            System.out.println(\"'\" + entry.getKey() + \"': \" + entry.getValue() + \" kez\");\n        }\n\n        // En uzun kelime\n        String longestWord = words[0];\n        for (String word : words) {\n            if (word.length() > longestWord.length()) {\n                longestWord = word;\n            }\n        }\n        System.out.println(\"\\nEn uzun kelime: '\" + longestWord + \"' (\" + longestWord.length() + \" karakter)\");\n\n        // Ortalama kelime uzunlugu\n        int totalLength = 0;\n        for (String word : words) totalLength += word.length();\n        double avgLength = (double) totalLength / words.length;\n        System.out.printf(\"Ortalama kelime uzunlugu: %.2f%n\", avgLength);\n    }\n}"
+}

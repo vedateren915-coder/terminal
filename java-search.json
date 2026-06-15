@@ -1,0 +1,10 @@
+{
+  "type": "java-search",
+  "title": "Arama Algoritmalari",
+  "subtitle": "Dogrusal ve binary arama ornekleri.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "import java.util.Arrays;\n\npublic class Main {\n\n    static int linearSearch(int[] arr, int target) {\n        for (int i = 0; i < arr.length; i++) {\n            if (arr[i] == target) {\n                return i;\n            }\n        }\n        return -1;\n    }\n\n    static int binarySearch(int[] arr, int target) {\n        int left = 0;\n        int right = arr.length - 1;\n\n        while (left <= right) {\n            int mid = (left + right) / 2;\n\n            if (arr[mid] == target) {\n                return mid;\n            } else if (arr[mid] < target) {\n                left = mid + 1;\n            } else {\n                right = mid - 1;\n            }\n        }\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        int[] numbers = {4, 12, 7, 23, 9, 1, 18};\n        int target = 23;\n\n        int linearResult = linearSearch(numbers, target);\n        System.out.println(\"Dogrusal arama: \" + target + \" indeks \" + linearResult + \"'de bulundu\");\n\n        // Binary arama icin dizi siralanmali\n        int[] sortedNumbers = numbers.clone();\n        Arrays.sort(sortedNumbers);\n\n        int binaryResult = binarySearch(sortedNumbers, target);\n        System.out.println(\"Binary arama: \" + target + \" indeks \" + binaryResult + \"'de bulundu\");\n\n        int notFound = linearSearch(numbers, 99);\n        System.out.println(\"\\n99 araniyor (bulunamayacak): \" + notFound);\n    }\n}"
+}

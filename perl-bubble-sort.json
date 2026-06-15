@@ -1,0 +1,10 @@
+{
+  "type": "perl-bubble-sort",
+  "title": "Bubble Sort",
+  "subtitle": "Kabarcik siralama algoritmasi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub bubble_sort {\n    my @arr = @_;\n    my $n = scalar(@arr);\n\n    for my $i (0 .. $n - 2) {\n        for my $j (0 .. $n - $i - 2) {\n            if ($arr[$j] > $arr[$j + 1]) {\n                ($arr[$j], $arr[$j + 1]) = ($arr[$j + 1], $arr[$j]);\n            }\n        }\n    }\n    return @arr;\n}\n\nmy @numbers = (64, 34, 25, 12, 22, 11, 90);\nprint \"Siralanmamis dizi: @numbers\\n\";\n\nmy @sorted_numbers = bubble_sort(@numbers);\nprint \"Siralanmis dizi: @sorted_numbers\\n\";\n\n# Adim adim siralama\nprint \"\\nAdim adim siralama:\\n\";\nmy @arr2 = (5, 2, 9, 1, 5);\nmy $n = scalar(@arr2);\n\nfor my $i (0 .. $n - 2) {\n    for my $j (0 .. $n - $i - 2) {\n        if ($arr2[$j] > $arr2[$j + 1]) {\n            ($arr2[$j], $arr2[$j + 1]) = ($arr2[$j + 1], $arr2[$j]);\n        }\n    }\n    print \"Adim \" . ($i + 1) . \": @arr2\\n\";\n}\n\n# Perl'in kendi sort fonksiyonu\nprint \"\\nPerl'in sort fonksiyonu:\\n\";\nmy @data = (3, 1, 4, 1, 5, 9, 2, 6);\nprint \"Orijinal: @data\\n\";\nmy @sorted_data = sort { $a <=> $b } @data;\nprint \"Siralanmis: @sorted_data\\n\";\n"
+}

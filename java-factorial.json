@@ -1,0 +1,10 @@
+{
+  "type": "java-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n\n    static long factorialRecursive(int n) {\n        if (n <= 1) return 1;\n        return n * factorialRecursive(n - 1);\n    }\n\n    static long factorialIterative(int n) {\n        long result = 1;\n        for (int i = 2; i <= n; i++) {\n            result *= i;\n        }\n        return result;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(\"Faktoriyel tablosu (0-10):\");\n        for (int i = 0; i <= 10; i++) {\n            System.out.println(i + \"! = \" + factorialIterative(i));\n        }\n\n        System.out.println(\"\\nRecursive 5! = \" + factorialRecursive(5));\n        System.out.println(\"Iteratif 5! = \" + factorialIterative(5));\n\n        // Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\n        int n = 5, r = 2;\n        long combination = factorialIterative(n) / (factorialIterative(r) * factorialIterative(n - r));\n        System.out.println(\"\\nC(\" + n + \",\" + r + \") = \" + combination);\n    }\n}"
+}

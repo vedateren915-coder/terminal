@@ -1,0 +1,10 @@
+{
+  "type": "perl-conditionals",
+  "title": "Kosullar (if/unless)",
+  "subtitle": "If-else, unless ve karsilastirma operatorleri.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy $score = 78;\nmy $grade;\n\nif ($score >= 90) {\n    $grade = \"AA\";\n} elsif ($score >= 70) {\n    $grade = \"BA\";\n} elsif ($score >= 50) {\n    $grade = \"CC\";\n} else {\n    $grade = \"FF\";\n}\n\nprint \"Not: $score -> Harf notu: $grade\\n\";\n\n# Perl'de switch yerine if-elsif zinciri veya hash kullanilir\nmy $day = 3;\nmy %day_names = (1 => \"Pazartesi\", 2 => \"Sali\", 3 => \"Carsamba\");\nmy $day_name = $day_names{$day} // \"Bilinmeyen gun\";\n\nprint \"Gun: $day_name\\n\";\n\n# Ternary operator\nmy $number = 7;\nmy $parity = ($number % 2 == 0) ? \"Cift\" : \"Tek\";\nprint \"\\n$number sayisi $parity\\n\";\n\n# unless kullanimi\nmy $age = 20;\nunless ($age < 18) {\n    print \"\\nReşit\\n\";\n}\n\n# Tek satirlik if (postfix)\nprint \"Pozitif sayi\\n\" if $number > 0;\n"
+}

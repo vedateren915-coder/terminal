@@ -1,0 +1,10 @@
+{
+  "type": "java-hashmap",
+  "title": "HashMap Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> ages = new HashMap<>();\n        ages.put(\"Ali\", 25);\n        ages.put(\"Veli\", 30);\n        ages.put(\"Ayse\", 28);\n\n        System.out.println(\"Tum kayitlar:\");\n        for (Map.Entry<String, Integer> entry : ages.entrySet()) {\n            System.out.println(entry.getKey() + \" -> \" + entry.getValue() + \" yasinda\");\n        }\n\n        // Anahtar kontrolu\n        if (ages.containsKey(\"Ali\")) {\n            System.out.println(\"\\nAli'nin yasi: \" + ages.get(\"Ali\"));\n        }\n\n        // Guncelleme\n        ages.put(\"Ali\", 26);\n        System.out.println(\"Ali'nin yeni yasi: \" + ages.get(\"Ali\"));\n\n        // Silme\n        ages.remove(\"Veli\");\n        System.out.println(\"\\nVeli silindikten sonra kayit sayisi: \" + ages.size());\n\n        // getOrDefault\n        int zeynepAge = ages.getOrDefault(\"Zeynep\", -1);\n        System.out.println(\"\\nZeynep'in yasi (yoksa -1): \" + zeynepAge);\n    }\n}"
+}

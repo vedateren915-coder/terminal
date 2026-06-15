@@ -1,0 +1,10 @@
+{
+  "type": "java-loops",
+  "title": "Donguler (for/while/foreach)",
+  "subtitle": "Farkli dongu turlerinin kullanimi.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n    public static void main(String[] args) {\n        // for dongusu\n        System.out.println(\"1'den 5'e kadar:\");\n        for (int i = 1; i <= 5; i++) {\n            System.out.println(\"Sayi: \" + i);\n        }\n\n        // while dongusu\n        System.out.println(\"\\nGeri sayim:\");\n        int counter = 5;\n        while (counter > 0) {\n            System.out.println(counter);\n            counter--;\n        }\n\n        // for-each dongusu\n        System.out.println(\"\\nMeyveler:\");\n        String[] fruits = {\"Elma\", \"Armut\", \"Muz\", \"Karpuz\"};\n        for (String fruit : fruits) {\n            System.out.println(\"- \" + fruit);\n        }\n\n        // do-while dongusu\n        System.out.println(\"\\nDo-while ornegi:\");\n        int n = 0;\n        do {\n            System.out.println(\"n = \" + n);\n            n++;\n        } while (n < 3);\n    }\n}"
+}

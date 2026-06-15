@@ -1,0 +1,10 @@
+{
+  "type": "java-class",
+  "title": "Sinif ve Nesne Ornegi",
+  "subtitle": "Basit sinif tanimi, constructor ve metodlar.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n\n    static class Car {\n        private String brand;\n        private String model;\n        private int year;\n\n        public Car(String brand, String model, int year) {\n            this.brand = brand;\n            this.model = model;\n            this.year = year;\n        }\n\n        public void displayInfo() {\n            System.out.println(year + \" \" + brand + \" \" + model);\n        }\n\n        public int getAge(int currentYear) {\n            return currentYear - year;\n        }\n    }\n\n    public static void main(String[] args) {\n        Car car1 = new Car(\"Toyota\", \"Corolla\", 2020);\n        Car car2 = new Car(\"Honda\", \"Civic\", 2018);\n\n        System.out.println(\"Araba bilgileri:\");\n        car1.displayInfo();\n        car2.displayInfo();\n\n        System.out.println(\"\\nArac yaslari (2026'ya gore):\");\n        System.out.println(\"Car1 yasi: \" + car1.getAge(2026) + \" yil\");\n        System.out.println(\"Car2 yasi: \" + car2.getAge(2026) + \" yil\");\n    }\n}"
+}

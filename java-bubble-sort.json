@@ -1,0 +1,10 @@
+{
+  "type": "java-bubble-sort",
+  "title": "Bubble Sort",
+  "subtitle": "Kabarcik siralama algoritmasi.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "import java.util.Arrays;\n\npublic class Main {\n\n    static void bubbleSort(int[] arr) {\n        int n = arr.length;\n        for (int i = 0; i < n - 1; i++) {\n            for (int j = 0; j < n - i - 1; j++) {\n                if (arr[j] > arr[j + 1]) {\n                    int temp = arr[j];\n                    arr[j] = arr[j + 1];\n                    arr[j + 1] = temp;\n                }\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        int[] numbers = {64, 34, 25, 12, 22, 11, 90};\n\n        System.out.println(\"Siralanmamis dizi: \" + Arrays.toString(numbers));\n\n        bubbleSort(numbers);\n\n        System.out.println(\"Siralanmis dizi: \" + Arrays.toString(numbers));\n\n        // Adim adim siralama\n        System.out.println(\"\\nAdim adim siralama:\");\n        int[] arr2 = {5, 2, 9, 1, 5};\n        int n = arr2.length;\n        for (int i = 0; i < n - 1; i++) {\n            for (int j = 0; j < n - i - 1; j++) {\n                if (arr2[j] > arr2[j + 1]) {\n                    int temp = arr2[j];\n                    arr2[j] = arr2[j + 1];\n                    arr2[j + 1] = temp;\n                }\n            }\n            System.out.println(\"Adim \" + (i + 1) + \": \" + Arrays.toString(arr2));\n        }\n    }\n}"
+}

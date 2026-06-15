@@ -1,0 +1,10 @@
+{
+  "type": "perl-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub calculate {\n    my ($a, $b, $op) = @_;\n\n    if ($op eq \"+\") { return $a + $b; }\n    elsif ($op eq \"-\") { return $a - $b; }\n    elsif ($op eq \"*\") { return $a * $b; }\n    elsif ($op eq \"/\") {\n        if ($b == 0) {\n            print \"Hata: Sifira bolme!\\n\";\n            return undef;\n        }\n        return $a / $b;\n    }\n    else {\n        print \"Gecersiz islem: $op\\n\";\n        return undef;\n    }\n}\n\nmy ($x, $y) = (15, 4);\n\nprint \"x = $x, y = $y\\n\";\nprint \"x + y = \" . calculate($x, $y, \"+\") . \"\\n\";\nprint \"x - y = \" . calculate($x, $y, \"-\") . \"\\n\";\nprint \"x * y = \" . calculate($x, $y, \"*\") . \"\\n\";\nprint \"x / y = \" . calculate($x, $y, \"/\") . \"\\n\";\n\nprint \"\\nSifira bolme testi:\\n\";\ncalculate(10, 0, \"/\");\n\n# Yuzde hesaplama\nmy ($total, $discount) = (250, 15);\nmy $final_price = $total - ($total * $discount / 100);\nprint \"\\n$total TL'nin %$discount indirimli hali: $final_price TL\\n\";\n"
+}

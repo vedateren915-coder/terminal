@@ -1,0 +1,10 @@
+{
+  "type": "perl-arrays",
+  "title": "Array Islemleri",
+  "subtitle": "Dizi olusturma, siralama, ekleme/silme.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy @numbers = (10, 25, 3, 47, 8);\nprint \"Dizi uzunlugu: \" . scalar(@numbers) . \"\\n\";\n\nmy @sorted_numbers = sort { $a <=> $b } @numbers;\nprint \"Siralanmis dizi: @sorted_numbers\\n\";\n\n# Eleman ekleme (push)\npush @numbers, 100;\nprint \"\\n100 eklendi: @numbers\\n\";\n\n# Eleman silme (pop, shift)\nmy $last = pop @numbers;\nprint \"\\nSon eleman silindi ($last): @numbers\\n\";\n\n# Dilimleme (slicing)\nprint \"\\nDilimleme:\\n\";\nprint \"Ilk 3 eleman: @numbers[0..2]\\n\";\n\nmy @reversed = reverse @numbers;\nprint \"Ters cevrilmis: @reversed\\n\";\n\n# Toplam ve ortalama\nmy $sum = 0;\n$sum += $_ for @numbers;\nmy $avg = $sum / scalar(@numbers);\n\nprint \"\\nToplam: $sum\\n\";\nprintf \"Ortalama: %.2f\\n\", $avg;\n\n# grep ile filtreleme\nmy @evens = grep { $_ % 2 == 0 } @numbers;\nprint \"\\nCift sayilar: @evens\\n\";\n\n# map ile donusum\nmy @doubled = map { $_ * 2 } @numbers;\nprint \"2 ile carpilmis: @doubled\\n\";\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "perl-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub factorial_recursive {\n    my ($n) = @_;\n    return 1 if $n <= 1;\n    return $n * factorial_recursive($n - 1);\n}\n\nsub factorial_iterative {\n    my ($n) = @_;\n    my $result = 1;\n    $result *= $_ for 2 .. $n;\n    return $result;\n}\n\nprint \"Faktoriyel tablosu (0-10):\\n\";\nfor my $i (0 .. 10) {\n    print \"$i! = \" . factorial_iterative($i) . \"\\n\";\n}\n\nprint \"\\nRecursive 5! = \" . factorial_recursive(5) . \"\\n\";\nprint \"Iteratif 5! = \" . factorial_iterative(5) . \"\\n\";\n\n# Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\nmy ($n, $r) = (5, 2);\nmy $combination = factorial_iterative($n) / (factorial_iterative($r) * factorial_iterative($n - $r));\nprint \"\\nC($n,$r) = $combination\\n\";\n"
+}

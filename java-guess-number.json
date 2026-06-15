@@ -1,0 +1,10 @@
+{
+  "type": "java-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n    public static void main(String[] args) {\n        int target = 67; // Sabit hedef sayi (demo amacli)\n\n        System.out.println(\"Sayi tahmin oyunu basladi! (1-100 arasi)\");\n        System.out.println(\"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\");\n\n        int[] guesses = {50, 75, 62, 68, 65, 67};\n        boolean found = false;\n\n        for (int guess : guesses) {\n            System.out.println(\"Tahmin: \" + guess);\n\n            if (guess == target) {\n                System.out.println(\"Tebrikler! Dogru tahmin: \" + target);\n                found = true;\n                break;\n            } else if (guess < target) {\n                System.out.println(\"Daha buyuk bir sayi dene.\\n\");\n            } else {\n                System.out.println(\"Daha kucuk bir sayi dene.\\n\");\n            }\n        }\n\n        if (!found) {\n            System.out.println(\"\\nTahmin edilemedi. Dogru sayi: \" + target);\n        }\n\n        System.out.println(\"\\nToplam deneme sayisi: \" + guesses.length);\n    }\n}"
+}

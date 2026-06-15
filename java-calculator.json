@@ -1,0 +1,10 @@
+{
+  "type": "java-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "Java",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "java",
+  "code": "public class Main {\n\n    static double calculate(double a, double b, String op) {\n        switch (op) {\n            case \"+\": return a + b;\n            case \"-\": return a - b;\n            case \"*\": return a * b;\n            case \"/\":\n                if (b == 0) {\n                    System.out.println(\"Hata: Sifira bolme!\");\n                    return Double.NaN;\n                }\n                return a / b;\n            default:\n                System.out.println(\"Gecersiz islem: \" + op);\n                return Double.NaN;\n        }\n    }\n\n    public static void main(String[] args) {\n        double x = 15, y = 4;\n\n        System.out.println(\"x = \" + x + \", y = \" + y);\n        System.out.println(\"x + y = \" + calculate(x, y, \"+\"));\n        System.out.println(\"x - y = \" + calculate(x, y, \"-\"));\n        System.out.println(\"x * y = \" + calculate(x, y, \"*\"));\n        System.out.println(\"x / y = \" + calculate(x, y, \"/\"));\n\n        System.out.println(\"\\nSifira bolme testi:\");\n        calculate(10, 0, \"/\");\n\n        // Yuzde hesaplama\n        double total = 250, discount = 15;\n        double finalPrice = total - (total * discount / 100);\n        System.out.println(\"\\n\" + total + \" TL'nin %\" + discount + \" indirimli hali: \" + finalPrice + \" TL\");\n    }\n}"
+}

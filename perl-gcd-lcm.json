@@ -1,0 +1,10 @@
+{
+  "type": "perl-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub gcd {\n    my ($a, $b) = @_;\n    while ($b != 0) {\n        ($a, $b) = ($b, $a % $b);\n    }\n    return $a;\n}\n\nsub lcm {\n    my ($a, $b) = @_;\n    return ($a * $b) / gcd($a, $b);\n}\n\nmy ($num1, $num2) = (48, 18);\n\nprint \"Sayilar: $num1 ve $num2\\n\";\nprint \"EBOB (GCD): \" . gcd($num1, $num2) . \"\\n\";\nprint \"EKOK (LCM): \" . lcm($num1, $num2) . \"\\n\";\n\n# Birden fazla cift icin tablo\nprint \"\\nFarkli sayi ciftleri:\\n\";\nmy @pairs = ([12, 18], [7, 13], [100, 75], [24, 36]);\n\nforeach my $pair (@pairs) {\n    my ($a, $b) = @$pair;\n    print \"GCD($a,$b) = \" . gcd($a, $b) . \", LCM($a,$b) = \" . lcm($a, $b) . \"\\n\";\n}\n"
+}
