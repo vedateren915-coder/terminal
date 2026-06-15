@@ -1,0 +1,10 @@
+{
+  "type": "php-strings",
+  "title": "String Islemleri",
+  "subtitle": "Metin manipulasyonu ve formatlama.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n$text = \"  Merhaba Playground!  \";\n\necho \"Orijinal: '\" . $text . \"'\\n\";\necho \"Trim: '\" . trim($text) . \"'\\n\";\necho \"Buyuk harf: \" . strtoupper($text) . \"\\n\";\necho \"Kucuk harf: \" . strtolower($text) . \"\\n\";\necho \"Uzunluk: \" . strlen($text) . \"\\n\";\n\n$clean = trim($text);\necho \"\\nIceriyor mu 'Play': \" . (str_contains($clean, \"Play\") ? \"evet\" : \"hayir\") . \"\\n\";\n\n// Bölme\n$sentence = \"elma,armut,muz,karpuz\";\n$fruits = explode(\",\", $sentence);\necho \"\\nMeyveler:\\n\";\nforeach ($fruits as $fruit) {\n    echo \"- \" . $fruit . \"\\n\";\n}\n\n// Birleştirme\n$joined = implode(\" | \", $fruits);\necho \"\\nBirlestirilmis: \" . $joined . \"\\n\";\n\n// Değiştirme\n$replaced = str_replace(\"Playground\", \"Dunya\", $clean);\necho \"\\nDegistirilmis: \" . $replaced . \"\\n\";\n\n// printf ile formatlama\n$name = \"Zeynep\";\n$score = 95;\nprintf(\"\\n%s sinavdan %d puan aldi.\\n\", $name, $score);\n\n// Substring\n$sub = substr($clean, 0, 7);\necho \"\\nIlk 7 karakter: \" . $sub . \"\\n\";\n\n?>"
+}

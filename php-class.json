@@ -1,0 +1,10 @@
+{
+  "type": "php-class",
+  "title": "Sinif ve Nesne Ornegi",
+  "subtitle": "Basit sinif tanimi, constructor ve metodlar.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nclass Car {\n    private string $brand;\n    private string $model;\n    private int $year;\n\n    public function __construct(string $brand, string $model, int $year) {\n        $this->brand = $brand;\n        $this->model = $model;\n        $this->year = $year;\n    }\n\n    public function displayInfo(): void {\n        echo $this->year . \" \" . $this->brand . \" \" . $this->model . \"\\n\";\n    }\n\n    public function getAge(int $currentYear): int {\n        return $currentYear - $this->year;\n    }\n}\n\n$car1 = new Car(\"Toyota\", \"Corolla\", 2020);\n$car2 = new Car(\"Honda\", \"Civic\", 2018);\n\necho \"Araba bilgileri:\\n\";\n$car1->displayInfo();\n$car2->displayInfo();\n\necho \"\\nArac yaslari (2026'ya gore):\\n\";\necho \"Car1 yasi: \" . $car1->getAge(2026) . \" yil\\n\";\necho \"Car2 yasi: \" . $car2->getAge(2026) . \" yil\\n\";\n\n// Diziler icinde nesneler\n$cars = [$car1, $car2, new Car(\"Ford\", \"Focus\", 2022)];\necho \"\\nTum arabalar:\\n\";\nforeach ($cars as $car) {\n    $car->displayInfo();\n}\n\n?>"
+}

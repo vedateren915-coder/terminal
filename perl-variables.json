@@ -1,0 +1,10 @@
+{
+  "type": "perl-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Skaler, array ve hash degiskenler.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\n# Skaler degiskenler ($)\nmy $age = 25;\nmy $price = 19.99;\nmy $name = \"Ahmet\";\nmy $is_active = 1;  # Perl'de boolean yok, 1/0 kullanilir\n\nprint \"Isim: $name\\n\";\nprint \"Yas: $age\\n\";\nprint \"Fiyat: $price\\n\";\nprint \"Aktif mi: \" . ($is_active ? \"evet\" : \"hayir\") . \"\\n\";\n\n# Tip donusumu (Perl otomatik donusturur)\nmy $age_text = \"$age\";\nmy $parsed_age = \"30\" + 0;\nmy $parsed_price = \"9.5\" + 0.0;\n\nprint \"\\nYas metni: $age_text\\n\";\nprint \"Donusturulen yas: $parsed_age\\n\";\nprint \"Donusturulen fiyat: $parsed_price\\n\";\n\n# Sabit (constant)\nuse constant PI => 3.14159;\nprint \"\\nPi sayisi: \" . PI . \"\\n\";\n\n# Array (@)\nmy @colors = (\"kirmizi\", \"mavi\", \"yesil\");\nprint \"\\nRenkler: @colors\\n\";\n\n# Hash (%)\nmy %person = (name => \"Zeynep\", age => 28);\nprint \"\\nKisi adi: $person{name}\\n\";\n"
+}

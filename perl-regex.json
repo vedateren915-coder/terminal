@@ -1,0 +1,10 @@
+{
+  "type": "perl-regex",
+  "title": "Duzenli Ifadeler (Regex)",
+  "subtitle": "Pattern matching ve string degistirme.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy $text = \"Merhaba, benim adim Ahmet ve 25 yasindayim.\";\n\n# Eslesme kontrolu\nif ($text =~ /Ahmet/) {\n    print \"'Ahmet' metinde bulundu.\\n\";\n}\n\n# Sayi cikarma\nif ($text =~ /(\\d+)/) {\n    print \"Bulunan sayi: $1\\n\";\n}\n\n# Degistirme (substitution)\nmy $replaced = $text;\n$replaced =~ s/Ahmet/Mehmet/;\nprint \"\\nDegistirilmis: $replaced\\n\";\n\n# Global degistirme\nmy $sentence = \"kedi kopek kedi kus kedi\";\n(my $count = $sentence) =~ s/kedi/hayvan/g;\nprint \"\\nGlobal degisim: $count\\n\";\n\n# Bolme (split)\nmy $csv = \"elma,armut,muz,karpuz\";\nmy @fruits = split /,/, $csv;\nprint \"\\nMeyveler:\\n\";\nprint \"- $_\\n\" for @fruits;\n\n# E-posta formati kontrolu\nmy @emails = (\"test\\@example.com\", \"gecersiz-eposta\", \"user\\@domain.org\");\nprint \"\\nE-posta kontrolleri:\\n\";\nforeach my $email (@emails) {\n    if ($email =~ /^[\\w.]+\\@[\\w.]+\\.\\w+$/) {\n        print \"$email -> Gecerli\\n\";\n    } else {\n        print \"$email -> Gecersiz\\n\";\n    }\n}\n"
+}

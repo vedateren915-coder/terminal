@@ -1,0 +1,10 @@
+{
+  "type": "php-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction factorialRecursive(int $n): int {\n    if ($n <= 1) return 1;\n    return $n * factorialRecursive($n - 1);\n}\n\nfunction factorialIterative(int $n): int {\n    $result = 1;\n    for ($i = 2; $i <= $n; $i++) {\n        $result *= $i;\n    }\n    return $result;\n}\n\necho \"Faktoriyel tablosu (0-10):\\n\";\nfor ($i = 0; $i <= 10; $i++) {\n    echo $i . \"! = \" . factorialIterative($i) . \"\\n\";\n}\n\necho \"\\nRecursive 5! = \" . factorialRecursive(5) . \"\\n\";\necho \"Iteratif 5! = \" . factorialIterative(5) . \"\\n\";\n\n// Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\n$n = 5;\n$r = 2;\n$combination = factorialIterative($n) / (factorialIterative($r) * factorialIterative($n - $r));\necho \"\\nC(\" . $n . \",\" . $r . \") = \" . $combination . \"\\n\";\n\n?>"
+}

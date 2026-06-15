@@ -1,0 +1,10 @@
+{
+  "type": "php-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, varsayilan deger, degisken sayida parametre.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction square($x) {\n    return $x * $x;\n}\n\nfunction add($a, $b) {\n    return $a + $b;\n}\n\n// Varsayilan parametre\nfunction greet($name, $greeting = \"Merhaba\") {\n    return $greeting . \", \" . $name . \"!\";\n}\n\n// Degisken sayida parametre\nfunction total(...$numbers) {\n    return array_sum($numbers);\n}\n\n// Arrow function (PHP 7.4+)\n$multiply = fn($a, $b) => $a * $b;\n\necho \"Kare: \" . square(5) . \"\\n\";\necho \"Toplam: \" . add(3, 7) . \"\\n\";\necho greet(\"Ayse\") . \"\\n\";\necho greet(\"Mehmet\", \"Selam\") . \"\\n\";\necho \"Coklu toplam: \" . total(1, 2, 3, 4, 5) . \"\\n\";\n\necho \"\\nArrow function carpim: \" . $multiply(4, 5) . \"\\n\";\n\n// Tip belirteçli fonksiyon (PHP 7+)\nfunction divide(int $a, int $b): float {\n    return $a / $b;\n}\n\necho \"\\nBolme: \" . divide(10, 3) . \"\\n\";\n\n?>"
+}

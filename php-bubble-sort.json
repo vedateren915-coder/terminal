@@ -1,0 +1,10 @@
+{
+  "type": "php-bubble-sort",
+  "title": "Bubble Sort",
+  "subtitle": "Kabarcik siralama algoritmasi.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction bubbleSort(array $arr): array {\n    $n = count($arr);\n    for ($i = 0; $i < $n - 1; $i++) {\n        for ($j = 0; $j < $n - $i - 1; $j++) {\n            if ($arr[$j] > $arr[$j + 1]) {\n                $temp = $arr[$j];\n                $arr[$j] = $arr[$j + 1];\n                $arr[$j + 1] = $temp;\n            }\n        }\n    }\n    return $arr;\n}\n\n$numbers = [64, 34, 25, 12, 22, 11, 90];\necho \"Siralanmamis dizi: \" . implode(\", \", $numbers) . \"\\n\";\n\n$sortedNumbers = bubbleSort($numbers);\necho \"Siralanmis dizi: \" . implode(\", \", $sortedNumbers) . \"\\n\";\n\n// Adim adim siralama\necho \"\\nAdim adim siralama:\\n\";\n$arr2 = [5, 2, 9, 1, 5];\n$n = count($arr2);\nfor ($i = 0; $i < $n - 1; $i++) {\n    for ($j = 0; $j < $n - $i - 1; $j++) {\n        if ($arr2[$j] > $arr2[$j + 1]) {\n            $temp = $arr2[$j];\n            $arr2[$j] = $arr2[$j + 1];\n            $arr2[$j + 1] = $temp;\n        }\n    }\n    echo \"Adim \" . ($i + 1) . \": \" . implode(\", \", $arr2) . \"\\n\";\n}\n\n// PHP'nin kendi sort fonksiyonu\necho \"\\nPHP'nin sort() fonksiyonu:\\n\";\n$data = [3, 1, 4, 1, 5, 9, 2, 6];\necho \"Orijinal: \" . implode(\", \", $data) . \"\\n\";\nsort($data);\necho \"Siralanmis: \" . implode(\", \", $data) . \"\\n\";\n\n?>"
+}

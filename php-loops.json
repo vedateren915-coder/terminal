@@ -1,0 +1,10 @@
+{
+  "type": "php-loops",
+  "title": "Donguler (for/while/foreach)",
+  "subtitle": "Farkli dongu turlerinin kullanimi.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n// for dongusu\necho \"1'den 5'e kadar:\\n\";\nfor ($i = 1; $i <= 5; $i++) {\n    echo \"Sayi: \" . $i . \"\\n\";\n}\n\n// while dongusu\necho \"\\nGeri sayim:\\n\";\n$counter = 5;\nwhile ($counter > 0) {\n    echo $counter . \"\\n\";\n    $counter--;\n}\n\n// foreach dongusu\necho \"\\nMeyveler:\\n\";\n$fruits = [\"Elma\", \"Armut\", \"Muz\", \"Karpuz\"];\nforeach ($fruits as $fruit) {\n    echo \"- \" . $fruit . \"\\n\";\n}\n\n// foreach ile indeks\necho \"\\nIndeksli liste:\\n\";\nforeach ($fruits as $index => $fruit) {\n    echo $index . \": \" . $fruit . \"\\n\";\n}\n\n// do-while dongusu\necho \"\\nDo-while ornegi:\\n\";\n$n = 0;\ndo {\n    echo \"n = \" . $n . \"\\n\";\n    $n++;\n} while ($n < 3);\n\n?>"
+}

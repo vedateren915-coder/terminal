@@ -1,0 +1,10 @@
+{
+  "type": "php-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction gcd(int $a, int $b): int {\n    while ($b != 0) {\n        $temp = $b;\n        $b = $a % $b;\n        $a = $temp;\n    }\n    return $a;\n}\n\nfunction lcm(int $a, int $b): int {\n    return intdiv($a * $b, gcd($a, $b));\n}\n\n$num1 = 48;\n$num2 = 18;\n\necho \"Sayilar: \" . $num1 . \" ve \" . $num2 . \"\\n\";\necho \"EBOB (GCD): \" . gcd($num1, $num2) . \"\\n\";\necho \"EKOK (LCM): \" . lcm($num1, $num2) . \"\\n\";\n\n// Birden fazla cift icin tablo\necho \"\\nFarkli sayi ciftleri:\\n\";\n$pairs = [[12, 18], [7, 13], [100, 75], [24, 36]];\n\nforeach ($pairs as $pair) {\n    [$a, $b] = $pair;\n    echo \"GCD(\" . $a . \",\" . $b . \") = \" . gcd($a, $b) . \", LCM(\" . $a . \",\" . $b . \") = \" . lcm($a, $b) . \"\\n\";\n}\n\n?>"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "perl-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy $text = \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\";\n\n# Noktalama isaretlerini temizle\n(my $clean_text = $text) =~ s/[.,!]//g;\nmy @words = split /\\s+/, lc($clean_text);\n\nprint \"Toplam kelime sayisi: \" . scalar(@words) . \"\\n\";\nprint \"Toplam karakter sayisi: \" . length($text) . \"\\n\";\n\n# Kelime frekansi\nmy %word_count;\n$word_count{$_}++ for @words;\n\nprint \"\\nKelime frekanslari:\\n\";\nforeach my $word (sort { $word_count{$b} <=> $word_count{$a} } keys %word_count) {\n    print \"'$word': $word_count{$word} kez\\n\";\n}\n\n# En uzun kelime\nmy $longest_word = \"\";\nforeach my $word (@words) {\n    $longest_word = $word if length($word) > length($longest_word);\n}\nprint \"\\nEn uzun kelime: '$longest_word' (\" . length($longest_word) . \" karakter)\\n\";\n\n# Ortalama kelime uzunlugu\nmy $total_length = 0;\n$total_length += length($_) for @words;\nmy $avg_length = $total_length / scalar(@words);\nprintf \"Ortalama kelime uzunlugu: %.2f\\n\", $avg_length;\n"
+}

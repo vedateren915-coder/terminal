@@ -1,0 +1,10 @@
+{
+  "type": "php-conditionals",
+  "title": "Kosullar (if/switch)",
+  "subtitle": "Kosullu ifadeler ve karsilastirma operatorleri.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n$score = 78;\n\nif ($score >= 90) {\n    $grade = \"AA\";\n} elseif ($score >= 70) {\n    $grade = \"BA\";\n} elseif ($score >= 50) {\n    $grade = \"CC\";\n} else {\n    $grade = \"FF\";\n}\n\necho \"Not: \" . $score . \" -> Harf notu: \" . $grade . \"\\n\";\n\n// Switch ornegi\n$day = 3;\n\nswitch ($day) {\n    case 1:\n        $dayName = \"Pazartesi\";\n        break;\n    case 2:\n        $dayName = \"Sali\";\n        break;\n    case 3:\n        $dayName = \"Carsamba\";\n        break;\n    default:\n        $dayName = \"Bilinmeyen gun\";\n        break;\n}\n\necho \"Gun: \" . $dayName . \"\\n\";\n\n// Ternary operator\n$number = 7;\n$parity = ($number % 2 == 0) ? \"Cift\" : \"Tek\";\necho \"\\n\" . $number . \" sayisi \" . $parity . \"\\n\";\n\n// match ifadesi (PHP 8+)\n$grade2 = match (true) {\n    $score >= 90 => \"AA\",\n    $score >= 70 => \"BA\",\n    $score >= 50 => \"CC\",\n    default => \"FF\",\n};\necho \"\\nmatch ile not: \" . $grade2 . \"\\n\";\n\n?>"
+}

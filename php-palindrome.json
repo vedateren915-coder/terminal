@@ -1,0 +1,10 @@
+{
+  "type": "php-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction isPalindrome(string $text): bool {\n    $cleaned = str_replace(\" \", \"\", strtolower($text));\n    $reversed = strrev($cleaned);\n    return $cleaned === $reversed;\n}\n\nfunction isNumberPalindrome(int $number): bool {\n    $text = (string)$number;\n    return $text === strrev($text);\n}\n\n$words = [\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"];\n\necho \"Kelime testleri:\\n\";\nforeach ($words as $word) {\n    echo \"'\" . $word . \"' palindrome mu: \" . (isPalindrome($word) ? \"evet\" : \"hayir\") . \"\\n\";\n}\n\necho \"\\nSayi testleri:\\n\";\n$numbers = [12321, 12345, 1001, 5];\nforeach ($numbers as $num) {\n    echo $num . \" palindrome mu: \" . (isNumberPalindrome($num) ? \"evet\" : \"hayir\") . \"\\n\";\n}\n\n?>"
+}

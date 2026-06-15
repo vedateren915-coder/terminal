@@ -1,0 +1,10 @@
+{
+  "type": "php-arrays",
+  "title": "Diziler",
+  "subtitle": "Indexed ve associative array islemleri.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n$numbers = [10, 25, 3, 47, 8];\necho \"Dizi uzunlugu: \" . count($numbers) . \"\\n\";\n\nsort($numbers);\necho \"Siralanmis dizi: \" . implode(\", \", $numbers) . \"\\n\";\n\n// Eleman ekleme\n$numbers[] = 100;\necho \"\\n100 eklendi: \" . implode(\", \", $numbers) . \"\\n\";\n\n// Eleman silme\n$key = array_search(3, $numbers);\nif ($key !== false) {\n    unset($numbers[$key]);\n}\necho \"\\n3 silindikten sonra: \" . implode(\", \", $numbers) . \"\\n\";\n\n// Associative array (dictionary benzeri)\n$ages = [\n    \"Ali\" => 25,\n    \"Veli\" => 30,\n    \"Ayse\" => 28,\n];\n\necho \"\\nYas kayitlari:\\n\";\nforeach ($ages as $name => $age) {\n    echo $name . \" -> \" . $age . \" yasinda\\n\";\n}\n\n// Anahtar kontrolu\nif (array_key_exists(\"Ali\", $ages)) {\n    echo \"\\nAli'nin yasi: \" . $ages[\"Ali\"] . \"\\n\";\n}\n\n// Toplam\n$total = array_sum($numbers);\necho \"\\nToplam: \" . $total . \"\\n\";\n\n?>"
+}

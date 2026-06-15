@@ -1,0 +1,10 @@
+{
+  "type": "php-hello",
+  "title": "PHP Merhaba Dunya",
+  "subtitle": "Basit PHP konsol programi ornegi.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\necho \"Merhaba, Playground!\\n\";\n\n$name = \"Dunya\";\necho \"Merhaba, \" . $name . \"!\\n\";\n\n$numbers = [5, 12, 8, 1, 9, 3];\n\n$max = $numbers[0];\n$sum = 0;\n\nforeach ($numbers as $n) {\n    if ($n > $max) {\n        $max = $n;\n    }\n    $sum += $n;\n}\n\necho \"En buyuk sayi: \" . $max . \"\\n\";\necho \"Toplam: \" . $sum . \"\\n\";\n\n?>"
+}

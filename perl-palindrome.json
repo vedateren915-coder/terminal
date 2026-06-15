@@ -1,0 +1,10 @@
+{
+  "type": "perl-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub is_palindrome {\n    my ($text) = @_;\n    my $cleaned = lc($text);\n    $cleaned =~ s/\\s+//g;\n    my $reversed = reverse $cleaned;\n    return $cleaned eq $reversed;\n}\n\nsub is_number_palindrome {\n    my ($number) = @_;\n    my $text = \"$number\";\n    my $reversed = reverse $text;\n    return $text eq $reversed;\n}\n\nmy @words = (\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\");\n\nprint \"Kelime testleri:\\n\";\nforeach my $word (@words) {\n    print \"'$word' palindrome mu: \" . (is_palindrome($word) ? \"evet\" : \"hayir\") . \"\\n\";\n}\n\nprint \"\\nSayi testleri:\\n\";\nmy @numbers = (12321, 12345, 1001, 5);\nforeach my $num (@numbers) {\n    print \"$num palindrome mu: \" . (is_number_palindrome($num) ? \"evet\" : \"hayir\") . \"\\n\";\n}\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "php-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif ve recursive fibonacci hesaplama.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction fibonacciIterative(int $n): int {\n    if ($n <= 1) return $n;\n\n    $a = 0;\n    $b = 1;\n    for ($i = 2; $i <= $n; $i++) {\n        $temp = $a + $b;\n        $a = $b;\n        $b = $temp;\n    }\n    return $b;\n}\n\nfunction fibonacciRecursive(int $n): int {\n    if ($n <= 1) return $n;\n    return fibonacciRecursive($n - 1) + fibonacciRecursive($n - 2);\n}\n\necho \"Iteratif Fibonacci (0-10):\\n\";\nfor ($i = 0; $i <= 10; $i++) {\n    echo fibonacciIterative($i) . \" \";\n}\necho \"\\n\";\n\necho \"\\nRecursive Fibonacci (0-10):\\n\";\nfor ($i = 0; $i <= 10; $i++) {\n    echo fibonacciRecursive($i) . \" \";\n}\necho \"\\n\";\n\necho \"\\n20. Fibonacci sayisi: \" . fibonacciIterative(20) . \"\\n\";\n\n?>"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "php-search",
+  "title": "Arama Algoritmalari",
+  "subtitle": "Dogrusal ve binary arama ornekleri.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction linearSearch(array $arr, int $target): int {\n    foreach ($arr as $index => $value) {\n        if ($value == $target) {\n            return $index;\n        }\n    }\n    return -1;\n}\n\nfunction binarySearch(array $arr, int $target): int {\n    $left = 0;\n    $right = count($arr) - 1;\n\n    while ($left <= $right) {\n        $mid = intdiv($left + $right, 2);\n\n        if ($arr[$mid] == $target) {\n            return $mid;\n        } elseif ($arr[$mid] < $target) {\n            $left = $mid + 1;\n        } else {\n            $right = $mid - 1;\n        }\n    }\n    return -1;\n}\n\n$numbers = [4, 12, 7, 23, 9, 1, 18];\n$target = 23;\n\n$linearResult = linearSearch($numbers, $target);\necho \"Dogrusal arama: \" . $target . \" indeks \" . $linearResult . \"'de bulundu\\n\";\n\n// Binary arama icin dizi siralanmali\n$sortedNumbers = $numbers;\nsort($sortedNumbers);\n\n$binaryResult = binarySearch($sortedNumbers, $target);\necho \"Binary arama: \" . $target . \" indeks \" . $binaryResult . \"'de bulundu\\n\";\n\n$notFound = linearSearch($numbers, 99);\necho \"\\n99 araniyor (bulunamayacak): \" . $notFound . \"\\n\";\n\n// PHP'nin in_array ve array_search fonksiyonlari\necho \"\\nin_array ile kontrol: \" . (in_array($target, $numbers) ? \"evet\" : \"hayir\") . \"\\n\";\necho \"array_search ile konum: \" . array_search($target, $numbers) . \"\\n\";\n\n?>"
+}

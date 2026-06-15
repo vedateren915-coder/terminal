@@ -1,0 +1,10 @@
+{
+  "type": "perl-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nsub is_prime {\n    my ($number) = @_;\n    return 0 if $number < 2;\n\n    for my $i (2 .. int(sqrt($number))) {\n        return 0 if $number % $i == 0;\n    }\n    return 1;\n}\n\nprint \"1-50 arasindaki asal sayilar:\\n\";\nmy @primes = grep { is_prime($_) } 1 .. 50;\nprint join(\", \", @primes) . \"\\n\";\n\nprint \"\\nToplam asal sayi adedi: \" . scalar(@primes) . \"\\n\";\n\n# Tekil kontrol\nmy $test_number = 97;\nprint \"\\n$test_number asal mi: \" . (is_prime($test_number) ? \"evet\" : \"hayir\") . \"\\n\";\n\n$test_number = 100;\nprint \"$test_number asal mi: \" . (is_prime($test_number) ? \"evet\" : \"hayir\") . \"\\n\";\n"
+}

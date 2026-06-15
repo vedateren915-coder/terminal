@@ -1,0 +1,10 @@
+{
+  "type": "perl-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Hash dizisi ile not yonetimi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nmy @students = (\n    { name => \"Ahmet\", grade => 85 },\n    { name => \"Ayse\", grade => 92 },\n    { name => \"Mehmet\", grade => 67 },\n    { name => \"Zeynep\", grade => 78 },\n    { name => \"Can\", grade => 55 },\n);\n\nprint \"Tum ogrenciler:\\n\";\nforeach my $s (@students) {\n    print \"$s->{name}: $s->{grade}\\n\";\n}\n\n# Yeni ogrenci ekleme\npush @students, { name => \"Elif\", grade => 88 };\nprint \"\\nElif eklendi. Toplam ogrenci: \" . scalar(@students) . \"\\n\";\n\n# Not güncelleme\nforeach my $s (@students) {\n    if ($s->{name} eq \"Mehmet\") {\n        $s->{grade} = 70;\n        print \"\\nMehmet'in notu guncellendi: $s->{grade}\\n\";\n    }\n}\n\n# Geçenler / kalanlar\nmy @passing = grep { $_->{grade} >= 60 } @students;\nmy @failing = grep { $_->{grade} < 60 } @students;\n\nprint \"\\nGecen ogrenci sayisi: \" . scalar(@passing) . \"\\n\";\nprint \"Kalan ogrenci sayisi: \" . scalar(@failing) . \"\\n\";\n\n# Sıralama (en yüksekten en düşüğe)\nmy @sorted_students = sort { $b->{grade} <=> $a->{grade} } @students;\n\nprint \"\\nNot siralamasi (yuksekten alcaga):\\n\";\nforeach my $s (@sorted_students) {\n    print \"$s->{name}: $s->{grade}\\n\";\n}\n\n# Ortalama\nmy $total = 0;\n$total += $_->{grade} for @students;\nprintf \"\\nSinif ortalamasi: %.2f\\n\", $total / scalar(@students);\n"
+}

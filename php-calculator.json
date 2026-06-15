@@ -1,0 +1,10 @@
+{
+  "type": "php-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction calculate(float $a, float $b, string $op) {\n    switch ($op) {\n        case \"+\": return $a + $b;\n        case \"-\": return $a - $b;\n        case \"*\": return $a * $b;\n        case \"/\":\n            if ($b == 0) {\n                echo \"Hata: Sifira bolme!\\n\";\n                return null;\n            }\n            return $a / $b;\n        default:\n            echo \"Gecersiz islem: \" . $op . \"\\n\";\n            return null;\n    }\n}\n\n$x = 15;\n$y = 4;\n\necho \"x = \" . $x . \", y = \" . $y . \"\\n\";\necho \"x + y = \" . calculate($x, $y, \"+\") . \"\\n\";\necho \"x - y = \" . calculate($x, $y, \"-\") . \"\\n\";\necho \"x * y = \" . calculate($x, $y, \"*\") . \"\\n\";\necho \"x / y = \" . calculate($x, $y, \"/\") . \"\\n\";\n\necho \"\\nSifira bolme testi:\\n\";\ncalculate(10, 0, \"/\");\n\n// Yuzde hesaplama\n$total = 250;\n$discount = 15;\n$finalPrice = $total - ($total * $discount / 100);\necho \"\\n\" . $total . \" TL'nin %\" . $discount . \" indirimli hali: \" . $finalPrice . \" TL\\n\";\n\n?>"
+}

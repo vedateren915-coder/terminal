@@ -1,0 +1,10 @@
+{
+  "type": "perl-loops",
+  "title": "Donguler (for/while/foreach)",
+  "subtitle": "Farkli dongu turlerinin kullanimi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\n# for dongusu\nprint \"1'den 5'e kadar:\\n\";\nfor (my $i = 1; $i <= 5; $i++) {\n    print \"Sayi: $i\\n\";\n}\n\n# while dongusu\nprint \"\\nGeri sayim:\\n\";\nmy $counter = 5;\nwhile ($counter > 0) {\n    print \"$counter\\n\";\n    $counter--;\n}\n\n# foreach dongusu\nprint \"\\nMeyveler:\\n\";\nmy @fruits = (\"Elma\", \"Armut\", \"Muz\", \"Karpuz\");\nforeach my $fruit (@fruits) {\n    print \"- $fruit\\n\";\n}\n\n# foreach ile indeks\nprint \"\\nIndeksli liste:\\n\";\nfor my $i (0 .. $#fruits) {\n    print \"$i: $fruits[$i]\\n\";\n}\n\n# do-while benzeri\nprint \"\\nDo-while ornegi:\\n\";\nmy $n = 0;\ndo {\n    print \"n = $n\\n\";\n    $n++;\n} while ($n < 3);\n"
+}

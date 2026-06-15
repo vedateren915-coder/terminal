@@ -1,0 +1,10 @@
+{
+  "type": "php-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\nfunction isPrime(int $number): bool {\n    if ($number < 2) return false;\n\n    for ($i = 2; $i * $i <= $number; $i++) {\n        if ($number % $i == 0) return false;\n    }\n    return true;\n}\n\necho \"1-50 arasindaki asal sayilar:\\n\";\n$primes = [];\n\nfor ($i = 1; $i <= 50; $i++) {\n    if (isPrime($i)) {\n        $primes[] = $i;\n    }\n}\n\necho implode(\", \", $primes) . \"\\n\";\necho \"\\nToplam asal sayi adedi: \" . count($primes) . \"\\n\";\n\n// Tekil kontrol\n$testNumber = 97;\necho \"\\n\" . $testNumber . \" asal mi: \" . (isPrime($testNumber) ? \"evet\" : \"hayir\") . \"\\n\";\n\n$testNumber = 100;\necho $testNumber . \" asal mi: \" . (isPrime($testNumber) ? \"evet\" : \"hayir\") . \"\\n\";\n\n?>"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "php-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Fonksiyonlar ile menu tabanli akis ornegi.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n$todoList = [];\n\nfunction showMenu(): void {\n    echo \"\\n=== YAPILACAKLAR LISTESI ===\\n\";\n    echo \"1. Gorev Ekle\\n\";\n    echo \"2. Gorevleri Listele\\n\";\n    echo \"3. Gorev Sil\\n\";\n    echo \"4. Cikis\\n\";\n}\n\nfunction addTask(array &$list, string $task): void {\n    $list[] = $task;\n    echo \"Eklendi: '\" . $task . \"'\\n\";\n}\n\nfunction listTasks(array $list): void {\n    if (empty($list)) {\n        echo \"Liste bos.\\n\";\n        return;\n    }\n\n    foreach ($list as $index => $task) {\n        echo ($index + 1) . \". \" . $task . \"\\n\";\n    }\n}\n\nfunction removeTask(array &$list, int $index): void {\n    if ($index >= 0 && $index < count($list)) {\n        echo \"Silindi: '\" . $list[$index] . \"'\\n\";\n        array_splice($list, $index, 1);\n    } else {\n        echo \"Gecersiz numara.\\n\";\n    }\n}\n\nshowMenu();\n\necho \"\\n> Secim: 1\\n\";\naddTask($todoList, \"Markete git\");\n\necho \"\\n> Secim: 1\\n\";\naddTask($todoList, \"Kod yaz\");\n\necho \"\\n> Secim: 1\\n\";\naddTask($todoList, \"Spor yap\");\n\necho \"\\n> Secim: 2\\n\";\nlistTasks($todoList);\n\necho \"\\n> Secim: 3 (1. gorevi sil)\\n\";\nremoveTask($todoList, 0);\n\necho \"\\n> Secim: 2\\n\";\nlistTasks($todoList);\n\necho \"\\n> Secim: 4\\n\";\necho \"Programdan cikiliyor...\\n\";\n\n?>"
+}

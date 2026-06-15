@@ -1,0 +1,10 @@
+{
+  "type": "perl-hello",
+  "title": "Perl Merhaba Dunya",
+  "subtitle": "Basit Perl konsol programi ornegi.",
+  "category": "Perl",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "perl",
+  "code": "use strict;\nuse warnings;\n\nprint \"Merhaba, Playground!\\n\";\n\nmy $name = \"Dunya\";\nprint \"Merhaba, $name!\\n\";\n\nmy @numbers = (5, 12, 8, 1, 9, 3);\n\nmy $max = $numbers[0];\nmy $sum = 0;\n\nforeach my $n (@numbers) {\n    $max = $n if $n > $max;\n    $sum += $n;\n}\n\nprint \"En buyuk sayi: $max\\n\";\nprint \"Toplam: $sum\\n\";\n"
+}

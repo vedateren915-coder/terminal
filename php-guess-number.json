@@ -1,0 +1,10 @@
+{
+  "type": "php-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "PHP",
+  "color": "indigo",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "php",
+  "code": "<?php\n\n$target = 67; // Sabit hedef sayi (demo amacli)\n\necho \"Sayi tahmin oyunu basladi! (1-100 arasi)\\n\";\necho \"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\\n\";\n\n$guesses = [50, 75, 62, 68, 65, 67];\n$found = false;\n\nforeach ($guesses as $guess) {\n    echo \"Tahmin: \" . $guess . \"\\n\";\n\n    if ($guess == $target) {\n        echo \"Tebrikler! Dogru tahmin: \" . $target . \"\\n\";\n        $found = true;\n        break;\n    } elseif ($guess < $target) {\n        echo \"Daha buyuk bir sayi dene.\\n\\n\";\n    } else {\n        echo \"Daha kucuk bir sayi dene.\\n\\n\";\n    }\n}\n\nif (!$found) {\n    echo \"\\nTahmin edilemedi. Dogru sayi: \" . $target . \"\\n\";\n}\n\necho \"\\nToplam deneme sayisi: \" . count($guesses) . \"\\n\";\n\n?>"
+}
