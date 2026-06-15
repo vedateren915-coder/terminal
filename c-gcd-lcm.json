@@ -1,0 +1,10 @@
+{
+  "type": "c-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nint lcm(int a, int b) {\n    return (a * b) / gcd(a, b);\n}\n\nint main() {\n    int num1 = 48, num2 = 18;\n\n    printf(\"Sayilar: %d ve %d\\n\", num1, num2);\n    printf(\"EBOB (GCD): %d\\n\", gcd(num1, num2));\n    printf(\"EKOK (LCM): %d\\n\", lcm(num1, num2));\n\n    // Birden fazla cift icin tablo\n    printf(\"\\nFarkli sayi ciftleri:\\n\");\n    int pairs[4][2] = {{12, 18}, {7, 13}, {100, 75}, {24, 36}};\n\n    for (int i = 0; i < 4; i++) {\n        int a = pairs[i][0];\n        int b = pairs[i][1];\n        printf(\"GCD(%d,%d) = %d, LCM(%d,%d) = %d\\n\", a, b, gcd(a, b), a, b, lcm(a, b));\n    }\n\n    return 0;\n}"
+}

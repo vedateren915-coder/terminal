@@ -1,0 +1,10 @@
+{
+  "type": "cpp-hello",
+  "title": "C++ Merhaba Dunya",
+  "subtitle": "Basit C++ konsol uygulamasi ornegi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main()\n{\n    cout << \"Merhaba, Playground!\" << endl;\n\n    string name = \"Dunya\";\n    cout << \"Merhaba, \" << name << \"!\" << endl;\n\n    int numbers[] = {5, 12, 8, 1, 9, 3};\n    int size = sizeof(numbers) / sizeof(numbers[0]);\n\n    int maxNum = numbers[0];\n    int sum = 0;\n\n    for (int i = 0; i < size; i++)\n    {\n        if (numbers[i] > maxNum)\n        {\n            maxNum = numbers[i];\n        }\n        sum += numbers[i];\n    }\n\n    cout << \"En buyuk sayi: \" << maxNum << endl;\n    cout << \"Toplam: \" << sum << endl;\n\n    return 0;\n}"
+}

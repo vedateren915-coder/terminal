@@ -1,0 +1,10 @@
+{
+  "type": "c-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Dizi ile menu tabanli akis ornegi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n\nchar todoList[10][50];\nint taskCount = 0;\n\nvoid showMenu() {\n    printf(\"\\n=== YAPILACAKLAR LISTESI ===\\n\");\n    printf(\"1. Gorev Ekle\\n\");\n    printf(\"2. Gorevleri Listele\\n\");\n    printf(\"3. Gorev Sil\\n\");\n    printf(\"4. Cikis\\n\");\n}\n\nvoid addTask(char* task) {\n    strcpy(todoList[taskCount], task);\n    taskCount++;\n    printf(\"Eklendi: '%s'\\n\", task);\n}\n\nvoid listTasks() {\n    if (taskCount == 0) {\n        printf(\"Liste bos.\\n\");\n        return;\n    }\n\n    for (int i = 0; i < taskCount; i++) {\n        printf(\"%d. %s\\n\", i + 1, todoList[i]);\n    }\n}\n\nvoid removeTask(int index) {\n    if (index >= 0 && index < taskCount) {\n        printf(\"Silindi: '%s'\\n\", todoList[index]);\n        for (int i = index; i < taskCount - 1; i++) {\n            strcpy(todoList[i], todoList[i + 1]);\n        }\n        taskCount--;\n    } else {\n        printf(\"Gecersiz numara.\\n\");\n    }\n}\n\nint main() {\n    showMenu();\n\n    printf(\"\\n> Secim: 1\\n\");\n    addTask(\"Markete git\");\n\n    printf(\"\\n> Secim: 1\\n\");\n    addTask(\"Kod yaz\");\n\n    printf(\"\\n> Secim: 1\\n\");\n    addTask(\"Spor yap\");\n\n    printf(\"\\n> Secim: 2\\n\");\n    listTasks();\n\n    printf(\"\\n> Secim: 3 (1. gorevi sil)\\n\");\n    removeTask(0);\n\n    printf(\"\\n> Secim: 2\\n\");\n    listTasks();\n\n    printf(\"\\n> Secim: 4\\n\");\n    printf(\"Programdan cikiliyor...\\n\");\n\n    return 0;\n}"
+}

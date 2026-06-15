@@ -1,0 +1,10 @@
+{
+  "type": "c-loops",
+  "title": "Donguler (for/while)",
+  "subtitle": "Farkli dongu turlerinin kullanimi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint main() {\n    // for dongusu\n    printf(\"1'den 5'e kadar:\\n\");\n    for (int i = 1; i <= 5; i++) {\n        printf(\"Sayi: %d\\n\", i);\n    }\n\n    // while dongusu\n    printf(\"\\nGeri sayim:\\n\");\n    int counter = 5;\n    while (counter > 0) {\n        printf(\"%d\\n\", counter);\n        counter--;\n    }\n\n    // Dizi uzerinde dongu\n    printf(\"\\nMeyveler:\\n\");\n    char* fruits[] = {\"Elma\", \"Armut\", \"Muz\", \"Karpuz\"};\n    int size = sizeof(fruits) / sizeof(fruits[0]);\n\n    for (int i = 0; i < size; i++) {\n        printf(\"- %s\\n\", fruits[i]);\n    }\n\n    // do-while dongusu\n    printf(\"\\nDo-while ornegi:\\n\");\n    int n = 0;\n    do {\n        printf(\"n = %d\\n\", n);\n        n++;\n    } while (n < 3);\n\n    return 0;\n}"
+}

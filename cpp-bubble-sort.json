@@ -1,0 +1,10 @@
+{
+  "type": "cpp-bubble-sort",
+  "title": "Bubble Sort",
+  "subtitle": "Kabarcik siralama algoritmasi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid bubbleSort(vector<int>& arr)\n{\n    int n = arr.size();\n    for (int i = 0; i < n - 1; i++)\n    {\n        for (int j = 0; j < n - i - 1; j++)\n        {\n            if (arr[j] > arr[j + 1])\n            {\n                swap(arr[j], arr[j + 1]);\n            }\n        }\n    }\n}\n\nint main()\n{\n    vector<int> numbers = {64, 34, 25, 12, 22, 11, 90};\n\n    cout << \"Siralanmamis dizi: \";\n    for (int n : numbers) cout << n << \" \";\n    cout << endl;\n\n    bubbleSort(numbers);\n\n    cout << \"Siralanmis dizi: \";\n    for (int n : numbers) cout << n << \" \";\n    cout << endl;\n\n    // Adim adim siralama\n    cout << \"\\nAdim adim siralama:\" << endl;\n    vector<int> arr2 = {5, 2, 9, 1, 5};\n    int n = arr2.size();\n    for (int i = 0; i < n - 1; i++)\n    {\n        for (int j = 0; j < n - i - 1; j++)\n        {\n            if (arr2[j] > arr2[j + 1])\n            {\n                swap(arr2[j], arr2[j + 1]);\n            }\n        }\n        cout << \"Adim \" << (i + 1) << \": \";\n        for (int v : arr2) cout << v << \" \";\n        cout << endl;\n    }\n\n    return 0;\n}"
+}

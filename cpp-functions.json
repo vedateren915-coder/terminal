@@ -1,0 +1,10 @@
+{
+  "type": "cpp-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, donus degeri ve overload ornekleri.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\n// Basit fonksiyon\nint square(int x)\n{\n    return x * x;\n}\n\n// Birden fazla parametre\nint add(int a, int b)\n{\n    return a + b;\n}\n\n// Varsayilan parametre\nstring greet(string name, string greeting = \"Merhaba\")\n{\n    return greeting + \", \" + name + \"!\";\n}\n\n// Fonksiyon overload\ndouble multiply(double a, double b)\n{\n    return a * b;\n}\n\nint multiply(int a, int b)\n{\n    return a * b;\n}\n\nint main()\n{\n    cout << \"Kare: \" << square(5) << endl;\n    cout << \"Toplam: \" << add(3, 7) << endl;\n    cout << greet(\"Ayse\") << endl;\n    cout << greet(\"Mehmet\", \"Selam\") << endl;\n    cout << \"Tam carpim: \" << multiply(4, 5) << endl;\n    cout << \"Ondalik carpim: \" << multiply(2.5, 3.0) << endl;\n\n    return 0;\n}"
+}

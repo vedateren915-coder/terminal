@@ -1,0 +1,10 @@
+{
+  "type": "c-hello",
+  "title": "C Merhaba Dunya",
+  "subtitle": "Basit C konsol uygulamasi ornegi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint main() {\n    printf(\"Merhaba, Playground!\\n\");\n\n    char name[] = \"Dunya\";\n    printf(\"Merhaba, %s!\\n\", name);\n\n    int numbers[] = {5, 12, 8, 1, 9, 3};\n    int size = sizeof(numbers) / sizeof(numbers[0]);\n\n    int max = numbers[0];\n    int sum = 0;\n\n    for (int i = 0; i < size; i++) {\n        if (numbers[i] > max) {\n            max = numbers[i];\n        }\n        sum += numbers[i];\n    }\n\n    printf(\"En buyuk sayi: %d\\n\", max);\n    printf(\"Toplam: %d\\n\", sum);\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "c-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char text[] = \"Merhaba dunya bu bir test metni Bu metin kelime sayma icin kullanilacak Merhaba tekrar\";\n\n    int charCount = strlen(text);\n    int wordCount = 0;\n    int inWord = 0;\n\n    for (int i = 0; i < charCount; i++) {\n        if (text[i] != ' ') {\n            if (!inWord) {\n                wordCount++;\n                inWord = 1;\n            }\n        } else {\n            inWord = 0;\n        }\n    }\n\n    printf(\"Toplam kelime sayisi: %d\\n\", wordCount);\n    printf(\"Toplam karakter sayisi: %d\\n\", charCount);\n\n    // En uzun kelime\n    char copy[200];\n    strcpy(copy, text);\n\n    char* token = strtok(copy, \" \");\n    char longestWord[50] = \"\";\n\n    while (token != NULL) {\n        if (strlen(token) > strlen(longestWord)) {\n            strcpy(longestWord, token);\n        }\n        token = strtok(NULL, \" \");\n    }\n\n    printf(\"\\nEn uzun kelime: '%s' (%lu karakter)\\n\", longestWord, strlen(longestWord));\n\n    // Ortalama kelime uzunlugu (boslukları cikararak)\n    int letterCount = 0;\n    for (int i = 0; i < charCount; i++) {\n        if (text[i] != ' ') letterCount++;\n    }\n    double avgLength = (double)letterCount / wordCount;\n    printf(\"Ortalama kelime uzunlugu: %.2f\\n\", avgLength);\n\n    return 0;\n}"
+}

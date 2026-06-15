@@ -1,0 +1,10 @@
+{
+  "type": "c-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, donus degeri ve pointer ornekleri.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint square(int x) {\n    return x * x;\n}\n\nint add(int a, int b) {\n    return a + b;\n}\n\n// Pointer ile parametre degistirme (referansla gecirme)\nvoid increment(int* value) {\n    (*value)++;\n}\n\n// Birden fazla deger dondurme: pointer ile\nvoid minMax(int arr[], int size, int* min, int* max) {\n    *min = arr[0];\n    *max = arr[0];\n\n    for (int i = 0; i < size; i++) {\n        if (arr[i] < *min) *min = arr[i];\n        if (arr[i] > *max) *max = arr[i];\n    }\n}\n\nint main() {\n    printf(\"Kare: %d\\n\", square(5));\n    printf(\"Toplam: %d\\n\", add(3, 7));\n\n    int x = 10;\n    printf(\"\\nOnce: %d\\n\", x);\n    increment(&x);\n    printf(\"Sonra: %d\\n\", x);\n\n    int numbers[] = {4, 12, 7, 23, 9, 1};\n    int min, max;\n    minMax(numbers, 6, &min, &max);\n    printf(\"\\nMin: %d, Max: %d\\n\", min, max);\n\n    return 0;\n}"
+}

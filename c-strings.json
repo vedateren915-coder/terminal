@@ -1,0 +1,10 @@
+{
+  "type": "c-strings",
+  "title": "String Islemleri",
+  "subtitle": "Karakter dizileri ve string.h fonksiyonlari.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nint main() {\n    char text[] = \"Merhaba Playground\";\n\n    printf(\"Metin: %s\\n\", text);\n    printf(\"Uzunluk: %lu\\n\", strlen(text));\n\n    // Buyuk/kucuk harf\n    char upper[20];\n    strcpy(upper, text);\n    for (int i = 0; upper[i]; i++) {\n        upper[i] = toupper(upper[i]);\n    }\n    printf(\"\\nBuyuk harf: %s\\n\", upper);\n\n    // Karsilastirma\n    char a[] = \"elma\";\n    char b[] = \"armut\";\n    int cmp = strcmp(a, b);\n    printf(\"\\n'%s' ile '%s' karsilastirma: %d\\n\", a, b, cmp);\n\n    // Birlestirme\n    char greeting[30] = \"Merhaba, \";\n    strcat(greeting, \"Dunya!\");\n    printf(\"\\nBirlestirilmis: %s\\n\", greeting);\n\n    // Arama\n    char* found = strstr(text, \"Play\");\n    if (found != NULL) {\n        printf(\"\\n'Play' bulundu: %s\\n\", found);\n    }\n\n    // Kopyalama\n    char copy[20];\n    strcpy(copy, text);\n    printf(\"\\nKopya: %s\\n\", copy);\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "c-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\n\nint isPalindrome(char* text) {\n    int len = strlen(text);\n    int left = 0, right = len - 1;\n\n    while (left < right) {\n        // Bosluklari atla\n        while (left < right && text[left] == ' ') left++;\n        while (left < right && text[right] == ' ') right--;\n\n        if (tolower(text[left]) != tolower(text[right])) {\n            return 0;\n        }\n        left++;\n        right--;\n    }\n    return 1;\n}\n\nint isNumberPalindrome(int number) {\n    char text[20];\n    sprintf(text, \"%d\", number);\n    return isPalindrome(text);\n}\n\nint main() {\n    char* words[] = {\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"};\n    int wordCount = 5;\n\n    printf(\"Kelime testleri:\\n\");\n    for (int i = 0; i < wordCount; i++) {\n        printf(\"'%s' palindrome mu: %s\\n\", words[i], isPalindrome(words[i]) ? \"Evet\" : \"Hayir\");\n    }\n\n    printf(\"\\nSayi testleri:\\n\");\n    int numbers[] = {12321, 12345, 1001, 5};\n    for (int i = 0; i < 4; i++) {\n        printf(\"%d palindrome mu: %s\\n\", numbers[i], isNumberPalindrome(numbers[i]) ? \"Evet\" : \"Hayir\");\n    }\n\n    return 0;\n}"
+}

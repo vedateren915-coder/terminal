@@ -1,0 +1,10 @@
+{
+  "type": "c-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Struct dizisi ile not yonetimi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n\ntypedef struct {\n    char name[20];\n    int grade;\n} Student;\n\nint main() {\n    Student students[6] = {\n        {\"Ahmet\", 85},\n        {\"Ayse\", 92},\n        {\"Mehmet\", 67},\n        {\"Zeynep\", 78},\n        {\"Can\", 55},\n        {\"Elif\", 88}\n    };\n    int count = 6;\n\n    printf(\"Tum ogrenciler:\\n\");\n    for (int i = 0; i < count; i++) {\n        printf(\"%s: %d\\n\", students[i].name, students[i].grade);\n    }\n\n    // Not güncelleme\n    for (int i = 0; i < count; i++) {\n        if (strcmp(students[i].name, \"Mehmet\") == 0) {\n            students[i].grade = 70;\n            printf(\"\\nMehmet'in notu guncellendi: %d\\n\", students[i].grade);\n        }\n    }\n\n    // Geçenler / kalanlar sayısı\n    int passing = 0, failing = 0;\n    for (int i = 0; i < count; i++) {\n        if (students[i].grade >= 60) passing++;\n        else failing++;\n    }\n\n    printf(\"\\nGecen ogrenci sayisi: %d\\n\", passing);\n    printf(\"Kalan ogrenci sayisi: %d\\n\", failing);\n\n    // Sıralama (basit bubble sort - en yüksekten en düşüğe)\n    for (int i = 0; i < count - 1; i++) {\n        for (int j = 0; j < count - i - 1; j++) {\n            if (students[j].grade < students[j + 1].grade) {\n                Student temp = students[j];\n                students[j] = students[j + 1];\n                students[j + 1] = temp;\n            }\n        }\n    }\n\n    printf(\"\\nNot siralamasi (yuksekten alcaga):\\n\");\n    for (int i = 0; i < count; i++) {\n        printf(\"%s: %d\\n\", students[i].name, students[i].grade);\n    }\n\n    // Ortalama\n    int total = 0;\n    for (int i = 0; i < count; i++) total += students[i].grade;\n    printf(\"\\nSinif ortalamasi: %.2f\\n\", (double)total / count);\n\n    return 0;\n}"
+}

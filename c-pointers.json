@@ -1,0 +1,10 @@
+{
+  "type": "c-pointers",
+  "title": "Pointer Kullanimi",
+  "subtitle": "Adres, dereference ve pointer aritmetigi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint main() {\n    int number = 42;\n    int* ptr = &number;\n\n    printf(\"number degeri: %d\\n\", number);\n    printf(\"number adresi: %p\\n\", (void*)&number);\n    printf(\"ptr'nin tuttugu adres: %p\\n\", (void*)ptr);\n    printf(\"ptr'nin dereference degeri: %d\\n\", *ptr);\n\n    // Pointer ile degisiklik\n    *ptr = 100;\n    printf(\"\\nptr araciligiyla degistirildi, number: %d\\n\", number);\n\n    // Dizi ve pointer iliskisi\n    int arr[] = {10, 20, 30, 40, 50};\n    int* arrPtr = arr;\n\n    printf(\"\\nDizi elemanlari (pointer ile):\\n\");\n    for (int i = 0; i < 5; i++) {\n        printf(\"arr[%d] = %d (adres: %p)\\n\", i, *(arrPtr + i), (void*)(arrPtr + i));\n    }\n\n    // Pointer aritmetigi\n    printf(\"\\nIlk eleman: %d\\n\", *arrPtr);\n    arrPtr++;\n    printf(\"Bir sonraki eleman: %d\\n\", *arrPtr);\n\n    return 0;\n}"
+}

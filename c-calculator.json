@@ -1,0 +1,10 @@
+{
+  "type": "c-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\ndouble calculate(double a, double b, char op) {\n    switch (op) {\n        case '+': return a + b;\n        case '-': return a - b;\n        case '*': return a * b;\n        case '/':\n            if (b == 0) {\n                printf(\"Hata: Sifira bolme!\\n\");\n                return 0;\n            }\n            return a / b;\n        default:\n            printf(\"Gecersiz islem: %c\\n\", op);\n            return 0;\n    }\n}\n\nint main() {\n    double x = 15, y = 4;\n\n    printf(\"x = %.0f, y = %.0f\\n\", x, y);\n    printf(\"x + y = %.2f\\n\", calculate(x, y, '+'));\n    printf(\"x - y = %.2f\\n\", calculate(x, y, '-'));\n    printf(\"x * y = %.2f\\n\", calculate(x, y, '*'));\n    printf(\"x / y = %.2f\\n\", calculate(x, y, '/'));\n\n    printf(\"\\nSifira bolme testi:\\n\");\n    calculate(10, 0, '/');\n\n    // Yuzde hesaplama\n    double total = 250, discount = 15;\n    double finalPrice = total - (total * discount / 100);\n    printf(\"\\n%.0f TL'nin %%%.0f indirimli hali: %.1f TL\\n\", total, discount, finalPrice);\n\n    return 0;\n}"
+}

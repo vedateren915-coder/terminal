@@ -1,0 +1,10 @@
+{
+  "type": "cpp-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\nusing namespace std;\n\nlong factorialRecursive(int n)\n{\n    if (n <= 1) return 1;\n    return n * factorialRecursive(n - 1);\n}\n\nlong factorialIterative(int n)\n{\n    long result = 1;\n    for (int i = 2; i <= n; i++)\n    {\n        result *= i;\n    }\n    return result;\n}\n\nint main()\n{\n    cout << \"Faktoriyel tablosu (0-10):\" << endl;\n    for (int i = 0; i <= 10; i++)\n    {\n        cout << i << \"! = \" << factorialIterative(i) << endl;\n    }\n\n    cout << \"\\nRecursive 5! = \" << factorialRecursive(5) << endl;\n    cout << \"Iteratif 5! = \" << factorialIterative(5) << endl;\n\n    // Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\n    int n = 5, r = 2;\n    long combination = factorialIterative(n) / (factorialIterative(r) * factorialIterative(n - r));\n    cout << \"\\nC(\" << n << \",\" << r << \") = \" << combination << endl;\n\n    return 0;\n}"
+}

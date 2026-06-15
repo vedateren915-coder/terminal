@@ -1,0 +1,10 @@
+{
+  "type": "c-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nint main() {\n    int target = 67; // Sabit hedef sayi (demo amacli)\n\n    printf(\"Sayi tahmin oyunu basladi! (1-100 arasi)\\n\");\n    printf(\"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\\n\");\n\n    int guesses[] = {50, 75, 62, 68, 65, 67};\n    int guessCount = 6;\n    int found = 0;\n\n    for (int i = 0; i < guessCount; i++) {\n        int guess = guesses[i];\n        printf(\"Tahmin: %d\\n\", guess);\n\n        if (guess == target) {\n            printf(\"Tebrikler! Dogru tahmin: %d\\n\", target);\n            found = 1;\n            break;\n        } else if (guess < target) {\n            printf(\"Daha buyuk bir sayi dene.\\n\\n\");\n        } else {\n            printf(\"Daha kucuk bir sayi dene.\\n\\n\");\n        }\n    }\n\n    if (!found) {\n        printf(\"\\nTahmin edilemedi. Dogru sayi: %d\\n\", target);\n    }\n\n    printf(\"\\nToplam deneme sayisi: %d\\n\", guessCount);\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "c-conditionals",
+  "title": "Kosullar (if/switch)",
+  "subtitle": "If-else ve switch ifadeleri ornegi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    int score = 78;\n    char grade[3];\n\n    if (score >= 90) {\n        strcpy(grade, \"AA\");\n    } else if (score >= 70) {\n        strcpy(grade, \"BA\");\n    } else if (score >= 50) {\n        strcpy(grade, \"CC\");\n    } else {\n        strcpy(grade, \"FF\");\n    }\n\n    printf(\"Not: %d -> Harf notu: %s\\n\", score, grade);\n\n    // Switch ornegi\n    int day = 3;\n    char dayName[12];\n\n    switch (day) {\n        case 1:\n            strcpy(dayName, \"Pazartesi\");\n            break;\n        case 2:\n            strcpy(dayName, \"Sali\");\n            break;\n        case 3:\n            strcpy(dayName, \"Carsamba\");\n            break;\n        default:\n            strcpy(dayName, \"Bilinmeyen\");\n            break;\n    }\n\n    printf(\"Gun: %s\\n\", dayName);\n\n    // Ternary operator\n    int number = 7;\n    printf(\"%d sayisi %s\\n\", number, (number % 2 == 0) ? \"Cift\" : \"Tek\");\n\n    return 0;\n}"
+}

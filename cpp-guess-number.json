@@ -1,0 +1,10 @@
+{
+  "type": "cpp-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main()\n{\n    int target = 67; // Sabit hedef sayi (demo amacli)\n\n    cout << \"Sayi tahmin oyunu basladi! (1-100 arasi)\" << endl;\n    cout << \"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\" << endl;\n\n    vector<int> guesses = {50, 75, 62, 68, 65, 67};\n    bool found = false;\n\n    for (int guess : guesses)\n    {\n        cout << \"Tahmin: \" << guess << endl;\n\n        if (guess == target)\n        {\n            cout << \"Tebrikler! Dogru tahmin: \" << target << endl;\n            found = true;\n            break;\n        }\n        else if (guess < target)\n        {\n            cout << \"Daha buyuk bir sayi dene.\\n\" << endl;\n        }\n        else\n        {\n            cout << \"Daha kucuk bir sayi dene.\\n\" << endl;\n        }\n    }\n\n    if (!found)\n    {\n        cout << \"\\nTahmin edilemedi. Dogru sayi: \" << target << endl;\n    }\n\n    cout << \"\\nToplam deneme sayisi: \" << guesses.size() << endl;\n\n    return 0;\n}"
+}

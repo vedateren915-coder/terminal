@@ -1,0 +1,10 @@
+{
+  "type": "cpp-conditionals",
+  "title": "Kosullar (if/switch)",
+  "subtitle": "If-else ve switch ifadeleri ornegi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main()\n{\n    int score = 78;\n    string grade;\n\n    if (score >= 90)\n    {\n        grade = \"AA\";\n    }\n    else if (score >= 70)\n    {\n        grade = \"BA\";\n    }\n    else if (score >= 50)\n    {\n        grade = \"CC\";\n    }\n    else\n    {\n        grade = \"FF\";\n    }\n\n    cout << \"Not: \" << score << \" -> Harf notu: \" << grade << endl;\n\n    // Switch ornegi\n    int day = 3;\n    string dayName;\n\n    switch (day)\n    {\n        case 1:\n            dayName = \"Pazartesi\";\n            break;\n        case 2:\n            dayName = \"Sali\";\n            break;\n        case 3:\n            dayName = \"Carsamba\";\n            break;\n        default:\n            dayName = \"Bilinmeyen gun\";\n            break;\n    }\n\n    cout << \"Gun: \" << dayName << endl;\n\n    // Ternary operator\n    int number = 7;\n    string parity = (number % 2 == 0) ? \"Cift\" : \"Tek\";\n    cout << number << \" sayisi \" << parity << endl;\n\n    return 0;\n}"
+}

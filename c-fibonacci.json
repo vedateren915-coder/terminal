@@ -1,0 +1,10 @@
+{
+  "type": "c-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif ve recursive fibonacci hesaplama.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nlong fibonacciIterative(int n) {\n    if (n <= 1) return n;\n\n    long a = 0, b = 1;\n    for (int i = 2; i <= n; i++) {\n        long temp = a + b;\n        a = b;\n        b = temp;\n    }\n    return b;\n}\n\nlong fibonacciRecursive(int n) {\n    if (n <= 1) return n;\n    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);\n}\n\nint main() {\n    printf(\"Iteratif Fibonacci (0-10):\\n\");\n    for (int i = 0; i <= 10; i++) {\n        printf(\"%ld \", fibonacciIterative(i));\n    }\n    printf(\"\\n\");\n\n    printf(\"\\nRecursive Fibonacci (0-10):\\n\");\n    for (int i = 0; i <= 10; i++) {\n        printf(\"%ld \", fibonacciRecursive(i));\n    }\n    printf(\"\\n\");\n\n    printf(\"\\n20. Fibonacci sayisi: %ld\\n\", fibonacciIterative(20));\n\n    return 0;\n}"
+}

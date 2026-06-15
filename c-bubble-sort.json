@@ -1,0 +1,10 @@
+{
+  "type": "c-bubble-sort",
+  "title": "Bubble Sort",
+  "subtitle": "Kabarcik siralama algoritmasi.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nvoid bubbleSort(int arr[], int n) {\n    for (int i = 0; i < n - 1; i++) {\n        for (int j = 0; j < n - i - 1; j++) {\n            if (arr[j] > arr[j + 1]) {\n                int temp = arr[j];\n                arr[j] = arr[j + 1];\n                arr[j + 1] = temp;\n            }\n        }\n    }\n}\n\nvoid printArray(int arr[], int n) {\n    for (int i = 0; i < n; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    int numbers[] = {64, 34, 25, 12, 22, 11, 90};\n    int n = sizeof(numbers) / sizeof(numbers[0]);\n\n    printf(\"Siralanmamis dizi: \");\n    printArray(numbers, n);\n\n    bubbleSort(numbers, n);\n\n    printf(\"Siralanmis dizi: \");\n    printArray(numbers, n);\n\n    // Adim adim siralama\n    printf(\"\\nAdim adim siralama:\\n\");\n    int arr2[] = {5, 2, 9, 1, 5};\n    int n2 = 5;\n\n    for (int i = 0; i < n2 - 1; i++) {\n        for (int j = 0; j < n2 - i - 1; j++) {\n            if (arr2[j] > arr2[j + 1]) {\n                int temp = arr2[j];\n                arr2[j] = arr2[j + 1];\n                arr2[j + 1] = temp;\n            }\n        }\n        printf(\"Adim %d: \", i + 1);\n        printArray(arr2, n2);\n    }\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "cpp-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\n#include <limits>\nusing namespace std;\n\ndouble calculate(double a, double b, string op)\n{\n    if (op == \"+\") return a + b;\n    if (op == \"-\") return a - b;\n    if (op == \"*\") return a * b;\n    if (op == \"/\")\n    {\n        if (b == 0)\n        {\n            cout << \"Hata: Sifira bolme!\" << endl;\n            return numeric_limits<double>::quiet_NaN();\n        }\n        return a / b;\n    }\n    cout << \"Gecersiz islem: \" << op << endl;\n    return numeric_limits<double>::quiet_NaN();\n}\n\nint main()\n{\n    double x = 15, y = 4;\n\n    cout << \"x = \" << x << \", y = \" << y << endl;\n    cout << \"x + y = \" << calculate(x, y, \"+\") << endl;\n    cout << \"x - y = \" << calculate(x, y, \"-\") << endl;\n    cout << \"x * y = \" << calculate(x, y, \"*\") << endl;\n    cout << \"x / y = \" << calculate(x, y, \"/\") << endl;\n\n    cout << \"\\nSifira bolme testi:\" << endl;\n    calculate(10, 0, \"/\");\n\n    // Yuzde hesaplama\n    double total = 250, discount = 15;\n    double finalPrice = total - (total * discount / 100);\n    cout << \"\\n\" << total << \" TL'nin %\" << discount << \" indirimli hali: \" << finalPrice << \" TL\" << endl;\n\n    return 0;\n}"
+}

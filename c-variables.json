@@ -1,0 +1,10 @@
+{
+  "type": "c-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve degisken tanimlama.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int age = 25;\n    double price = 19.99;\n    char name[] = \"Ahmet\";\n    char grade = 'A';\n\n    printf(\"Isim: %s\\n\", name);\n    printf(\"Yas: %d\\n\", age);\n    printf(\"Fiyat: %.2f\\n\", price);\n    printf(\"Not: %c\\n\", grade);\n\n    // Tip donusumu\n    int parsedAge = atoi(\"30\");\n    double parsedPrice = atof(\"9.5\");\n\n    printf(\"\\nDonusturulen yas: %d\\n\", parsedAge);\n    printf(\"Donusturulen fiyat: %.2f\\n\", parsedPrice);\n\n    // const kullanimi\n    const double PI = 3.14159;\n    printf(\"\\nPi sayisi: %.5f\\n\", PI);\n\n    // long ve unsigned\n    long bigNumber = 10000000000L;\n    unsigned int positiveOnly = 42;\n    printf(\"\\nBuyuk sayi: %ld\\n\", bigNumber);\n    printf(\"Pozitif sayi: %u\\n\", positiveOnly);\n\n    return 0;\n}"
+}

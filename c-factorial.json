@@ -1,0 +1,10 @@
+{
+  "type": "c-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "C",
+  "color": "gray",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "c",
+  "code": "#include <stdio.h>\n\nlong factorialRecursive(int n) {\n    if (n <= 1) return 1;\n    return n * factorialRecursive(n - 1);\n}\n\nlong factorialIterative(int n) {\n    long result = 1;\n    for (int i = 2; i <= n; i++) {\n        result *= i;\n    }\n    return result;\n}\n\nint main() {\n    printf(\"Faktoriyel tablosu (0-10):\\n\");\n    for (int i = 0; i <= 10; i++) {\n        printf(\"%d! = %ld\\n\", i, factorialIterative(i));\n    }\n\n    printf(\"\\nRecursive 5! = %ld\\n\", factorialRecursive(5));\n    printf(\"Iteratif 5! = %ld\\n\", factorialIterative(5));\n\n    // Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\n    int n = 5, r = 2;\n    long combination = factorialIterative(n) / (factorialIterative(r) * factorialIterative(n - r));\n    printf(\"\\nC(%d,%d) = %ld\\n\", n, r, combination);\n\n    return 0;\n}"
+}
