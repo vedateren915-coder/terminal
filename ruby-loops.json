@@ -1,0 +1,10 @@
+{
+  "type": "ruby-loops",
+  "title": "Donguler (for/while/each)",
+  "subtitle": "Farkli dongu turleri ve iterator metodlar.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "# for dongusu (1'den 5'e)\nputs \"1'den 5'e kadar:\"\nfor i in 1..5\n  puts \"Sayi: #{i}\"\nend\n\n# while dongusu\nputs \"\\nGeri sayim:\"\ncounter = 5\nwhile counter > 0\n  puts counter\n  counter -= 1\nend\n\n# each ile dizi uzerinde dongu (idiomatic Ruby)\nputs \"\\nMeyveler:\"\nfruits = [\"Elma\", \"Armut\", \"Muz\", \"Karpuz\"]\nfruits.each do |fruit|\n  puts \"- #{fruit}\"\nend\n\n# each_with_index\nputs \"\\nIndeksli liste:\"\nfruits.each_with_index do |fruit, index|\n  puts \"#{index}: #{fruit}\"\nend\n\n# times metodu\nputs \"\\ntimes ornegi:\"\n3.times do |n|\n  puts \"n = #{n}\"\nend\n\n# Range ve map\nsquares = (1..5).map { |x| x * x }\nputs \"\\nKareler: #{squares}\"\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "sql-create-table",
+  "title": "Tablo Olusturma",
+  "subtitle": "CREATE TABLE ile temel tablo tanimi.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Ogrenciler tablosu olusturma\nCREATE TABLE students (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(50) NOT NULL,\n    age INT,\n    grade DECIMAL(5,2),\n    email VARCHAR(100) UNIQUE,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\n-- Kurslar tablosu olusturma\nCREATE TABLE courses (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    title VARCHAR(100) NOT NULL,\n    credit INT DEFAULT 3\n);\n\n-- Tabloyu silme (eger varsa)\nDROP TABLE IF EXISTS old_students;\n\n-- Mevcut tabloya kolon ekleme\nALTER TABLE students ADD phone VARCHAR(15);\n\n-- Kolon turunu degistirme\nALTER TABLE students MODIFY grade DECIMAL(6,2);\n"
+}

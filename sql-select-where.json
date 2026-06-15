@@ -1,0 +1,10 @@
+{
+  "type": "sql-select-where",
+  "title": "SELECT ve WHERE",
+  "subtitle": "Veri sorgulama ve filtreleme.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Tum kayitlari getir\nSELECT * FROM students;\n\n-- Belirli kolonlari getir\nSELECT name, grade FROM students;\n\n-- WHERE ile filtreleme\nSELECT * FROM students\nWHERE grade >= 70;\n\n-- Birden fazla kosul (AND)\nSELECT name, age, grade FROM students\nWHERE age >= 20 AND grade >= 70;\n\n-- OR kosulu\nSELECT name, grade FROM students\nWHERE grade < 60 OR grade > 90;\n\n-- IN ile liste kontrolu\nSELECT name FROM students\nWHERE age IN (20, 21);\n\n-- BETWEEN ile aralik\nSELECT name, grade FROM students\nWHERE grade BETWEEN 60 AND 90;\n\n-- LIKE ile metin arama\nSELECT name FROM students\nWHERE name LIKE 'A%';\n\n-- NULL kontrolu\nSELECT name FROM students\nWHERE phone IS NULL;\n"
+}

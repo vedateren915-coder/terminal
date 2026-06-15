@@ -1,0 +1,10 @@
+{
+  "type": "sql-transactions",
+  "title": "Transaction Yonetimi",
+  "subtitle": "BEGIN, COMMIT, ROLLBACK ile veri butunlugu.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Banka hesabi transferi ornegi\nCREATE TABLE accounts (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    owner VARCHAR(50),\n    balance DECIMAL(10,2)\n);\n\nINSERT INTO accounts (owner, balance) VALUES\n    ('Ahmet', 1000.00),\n    ('Ayse', 500.00);\n\n-- Transaction baslat\nSTART TRANSACTION;\n\n-- Ahmet'ten 200 TL cikar\nUPDATE accounts SET balance = balance - 200 WHERE owner = 'Ahmet';\n\n-- Ayse'ye 200 TL ekle\nUPDATE accounts SET balance = balance + 200 WHERE owner = 'Ayse';\n\n-- Her sey basariliysa kaydet\nCOMMIT;\n\n-- Eger bir hata olursa geri al\n-- ROLLBACK;\n\n-- Sonucu kontrol et\nSELECT * FROM accounts;\n\n-- SAVEPOINT kullanimi (kismi geri alma)\nSTART TRANSACTION;\nUPDATE accounts SET balance = balance - 100 WHERE owner = 'Ahmet';\nSAVEPOINT before_second_update;\nUPDATE accounts SET balance = balance + 100 WHERE owner = 'Ayse';\n-- ROLLBACK TO before_second_update;\nCOMMIT;\n"
+}

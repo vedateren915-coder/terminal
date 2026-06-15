@@ -1,0 +1,10 @@
+{
+  "type": "ruby-hello",
+  "title": "Ruby Merhaba Dunya",
+  "subtitle": "Basit Ruby konsol programi ornegi.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "puts \"Merhaba, Playground!\"\n\nname = \"Dunya\"\nputs \"Merhaba, #{name}!\"\n\nnumbers = [5, 12, 8, 1, 9, 3]\n\nmax = numbers.max\nsum = numbers.sum\n\nputs \"En buyuk sayi: #{max}\"\nputs \"Toplam: #{sum}\"\n"
+}

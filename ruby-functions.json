@@ -1,0 +1,10 @@
+{
+  "type": "ruby-functions",
+  "title": "Metodlar",
+  "subtitle": "Parametre, varsayilan deger, blok kullanimi.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def square(x)\n  x * x\nend\n\ndef add(a, b)\n  a + b\nend\n\n# Varsayilan parametre\ndef greet(name, greeting = \"Merhaba\")\n  \"#{greeting}, #{name}!\"\nend\n\n# Degisken sayida parametre (splat operator)\ndef total(*numbers)\n  numbers.sum\nend\n\n# Lambda / proc\nmultiply = ->(a, b) { a * b }\n\nputs \"Kare: #{square(5)}\"\nputs \"Toplam: #{add(3, 7)}\"\nputs greet(\"Ayse\")\nputs greet(\"Mehmet\", \"Selam\")\nputs \"Coklu toplam: #{total(1, 2, 3, 4, 5)}\"\n\nputs \"\\nLambda carpim: #{multiply.call(4, 5)}\"\n\n# Blok alan metod\ndef repeat(times)\n  times.times { |i| yield i }\nend\n\nputs \"\\nBlok ornegi:\"\nrepeat(3) { |i| puts \"Tekrar #{i}\" }\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "sql-window-functions",
+  "title": "Window Functions",
+  "subtitle": "ROW_NUMBER, RANK ve siralama fonksiyonlari.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- ROW_NUMBER: her satira sira numarasi ver\nSELECT\n    name,\n    grade,\n    ROW_NUMBER() OVER (ORDER BY grade DESC) AS row_num\nFROM students;\n\n-- RANK: ayni degerler ayni sirayi alir (atlama olur)\nSELECT\n    name,\n    grade,\n    RANK() OVER (ORDER BY grade DESC) AS rank_position\nFROM students;\n\n-- DENSE_RANK: ayni degerler ayni sirayi alir (atlama olmaz)\nSELECT\n    name,\n    grade,\n    DENSE_RANK() OVER (ORDER BY grade DESC) AS dense_rank_position\nFROM students;\n\n-- PARTITION BY ile gruplandirilmis siralama\n-- (her departmanda kendi sirasi)\nSELECT\n    name,\n    department_id,\n    salary,\n    RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS dept_rank\nFROM employees;\n\n-- LAG / LEAD: onceki/sonraki satira erisim\nSELECT\n    name,\n    grade,\n    LAG(grade) OVER (ORDER BY grade DESC) AS previous_grade,\n    LEAD(grade) OVER (ORDER BY grade DESC) AS next_grade\nFROM students;\n\n-- Kumulatif toplam\nSELECT\n    name,\n    salary,\n    SUM(salary) OVER (ORDER BY id) AS running_total\nFROM employees;\n"
+}

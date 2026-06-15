@@ -1,0 +1,10 @@
+{
+  "type": "sql-aggregate-functions",
+  "title": "Agregasyon Fonksiyonlari",
+  "subtitle": "COUNT, SUM, AVG, MAX, MIN kullanimi.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Toplam ogrenci sayisi\nSELECT COUNT(*) AS total_students FROM students;\n\n-- NULL olmayan email sayisi\nSELECT COUNT(email) AS students_with_email FROM students;\n\n-- Notlarin toplami\nSELECT SUM(grade) AS total_grade FROM students;\n\n-- Ortalama not\nSELECT AVG(grade) AS average_grade FROM students;\n\n-- En yuksek ve en dusuk not\nSELECT MAX(grade) AS highest_grade, MIN(grade) AS lowest_grade FROM students;\n\n-- Birden fazla agregasyon birlikte\nSELECT\n    COUNT(*) AS total,\n    AVG(grade) AS avg_grade,\n    MAX(grade) AS max_grade,\n    MIN(grade) AS min_grade,\n    SUM(grade) AS sum_grade\nFROM students;\n\n-- ROUND ile yuvarlama\nSELECT ROUND(AVG(grade), 2) AS avg_grade_rounded FROM students;\n\n-- Kosullu agregasyon (CASE WHEN ile)\nSELECT\n    COUNT(CASE WHEN grade >= 60 THEN 1 END) AS passing,\n    COUNT(CASE WHEN grade < 60 THEN 1 END) AS failing\nFROM students;\n"
+}

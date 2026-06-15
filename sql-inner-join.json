@@ -1,0 +1,10 @@
+{
+  "type": "sql-inner-join",
+  "title": "INNER JOIN",
+  "subtitle": "Iki tabloyu eslestirme.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Iliskili tablolar olusturma\nCREATE TABLE departments (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(50)\n);\n\nCREATE TABLE employees (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(50),\n    department_id INT,\n    salary DECIMAL(10,2),\n    FOREIGN KEY (department_id) REFERENCES departments(id)\n);\n\n-- Ornek veri\nINSERT INTO departments (name) VALUES\n    ('Yazilim'), ('Pazarlama'), ('Insan Kaynaklari');\n\nINSERT INTO employees (name, department_id, salary) VALUES\n    ('Ahmet', 1, 25000),\n    ('Ayse', 1, 28000),\n    ('Mehmet', 2, 22000),\n    ('Zeynep', 3, 20000),\n    ('Can', NULL, 18000);\n\n-- INNER JOIN: sadece eslesen kayitlari getirir\nSELECT employees.name, departments.name AS department\nFROM employees\nINNER JOIN departments ON employees.department_id = departments.id;\n\n-- Kisaltma (alias) kullanarak\nSELECT e.name, d.name AS department, e.salary\nFROM employees e\nINNER JOIN departments d ON e.department_id = d.id\nORDER BY e.salary DESC;\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "sql-blog-schema",
+  "title": "Blog Veritabani Semasi",
+  "subtitle": "Gercek dunya senaryosu: kullanici, yazi, yorum.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Kullanicilar\nCREATE TABLE users (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    username VARCHAR(30) UNIQUE NOT NULL,\n    email VARCHAR(100) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\n-- Blog yazilari\nCREATE TABLE posts (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    user_id INT NOT NULL,\n    title VARCHAR(200) NOT NULL,\n    content TEXT,\n    published_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (user_id) REFERENCES users(id)\n);\n\n-- Yorumlar\nCREATE TABLE comments (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    post_id INT NOT NULL,\n    user_id INT NOT NULL,\n    content TEXT NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    FOREIGN KEY (post_id) REFERENCES posts(id),\n    FOREIGN KEY (user_id) REFERENCES users(id)\n);\n\n-- Ornek veri\nINSERT INTO users (username, email) VALUES\n    ('ahmet_y', 'ahmet@example.com'),\n    ('ayse_k', 'ayse@example.com');\n\nINSERT INTO posts (user_id, title, content) VALUES\n    (1, 'Ilk Yazim', 'Bu benim ilk blog yazim!'),\n    (2, 'SQL Ipuclari', 'SQL ogrenirken faydali ipuclari...');\n\nINSERT INTO comments (post_id, user_id, content) VALUES\n    (1, 2, 'Harika bir baslangic!'),\n    (2, 1, 'Cok faydali, tesekkurler.');\n\n-- Her yazinin yazari ve yorum sayisi\nSELECT\n    p.title,\n    u.username AS author,\n    COUNT(c.id) AS comment_count\nFROM posts p\nJOIN users u ON p.user_id = u.id\nLEFT JOIN comments c ON p.id = c.post_id\nGROUP BY p.id, p.title, u.username;\n"
+}

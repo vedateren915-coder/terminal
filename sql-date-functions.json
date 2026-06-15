@@ -1,0 +1,10 @@
+{
+  "type": "sql-date-functions",
+  "title": "Tarih Fonksiyonlari",
+  "subtitle": "Tarih ve zaman islemleri.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Mevcut tarih ve zaman\nSELECT NOW() AS current_datetime;\nSELECT CURDATE() AS today;\nSELECT CURTIME() AS current_time;\n\n-- Tarihten yil, ay, gun cikarma\nSELECT\n    created_at,\n    YEAR(created_at) AS year,\n    MONTH(created_at) AS month,\n    DAY(created_at) AS day\nFROM students;\n\n-- Tarih farki hesaplama\nSELECT\n    name,\n    created_at,\n    DATEDIFF(NOW(), created_at) AS days_since_registration\nFROM students;\n\n-- Tarihe gun/ay/yil ekleme\nSELECT DATE_ADD(CURDATE(), INTERVAL 30 DAY) AS thirty_days_later;\nSELECT DATE_ADD(CURDATE(), INTERVAL 1 YEAR) AS one_year_later;\n\n-- Tarih formatlama\nSELECT DATE_FORMAT(NOW(), '%d-%m-%Y') AS formatted_date;\nSELECT DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') AS full_datetime;\n\n-- Son 7 gunde kayit olanlar\nSELECT name, created_at\nFROM students\nWHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY);\n"
+}

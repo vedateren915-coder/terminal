@@ -1,0 +1,10 @@
+{
+  "type": "ruby-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Hash dizisi ile not yonetimi.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "students = [\n  { name: \"Ahmet\", grade: 85 },\n  { name: \"Ayse\", grade: 92 },\n  { name: \"Mehmet\", grade: 67 },\n  { name: \"Zeynep\", grade: 78 },\n  { name: \"Can\", grade: 55 },\n]\n\nputs \"Tum ogrenciler:\"\nstudents.each { |s| puts \"#{s[:name]}: #{s[:grade]}\" }\n\n# Yeni ogrenci ekleme\nstudents << { name: \"Elif\", grade: 88 }\nputs \"\\nElif eklendi. Toplam ogrenci: #{students.length}\"\n\n# Not güncelleme\nstudents.each do |s|\n  if s[:name] == \"Mehmet\"\n    s[:grade] = 70\n    puts \"\\nMehmet'in notu guncellendi: #{s[:grade]}\"\n  end\nend\n\n# Geçenler / kalanlar\npassing = students.select { |s| s[:grade] >= 60 }\nfailing = students.select { |s| s[:grade] < 60 }\n\nputs \"\\nGecen ogrenci sayisi: #{passing.length}\"\nputs \"Kalan ogrenci sayisi: #{failing.length}\"\n\n# Sıralama (en yüksekten en düşüğe)\nsorted_students = students.sort_by { |s| -s[:grade] }\n\nputs \"\\nNot siralamasi (yuksekten alcaga):\"\nsorted_students.each { |s| puts \"#{s[:name]}: #{s[:grade]}\" }\n\n# Ortalama\navg = students.sum { |s| s[:grade] }.to_f / students.length\nputs \"\\nSinif ortalamasi: #{avg.round(2)}\"\n"
+}

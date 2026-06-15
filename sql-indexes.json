@@ -1,0 +1,10 @@
+{
+  "type": "sql-indexes",
+  "title": "Index Kullanimi",
+  "subtitle": "Sorgu performansini artiran indeksler.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Tek kolona index ekleme\nCREATE INDEX idx_students_grade ON students(grade);\n\n-- Birden fazla kolona index (composite index)\nCREATE INDEX idx_students_age_grade ON students(age, grade);\n\n-- Unique index (benzersizlik garantisi)\nCREATE UNIQUE INDEX idx_students_email ON students(email);\n\n-- Index'leri listeleme (MySQL)\nSHOW INDEX FROM students;\n\n-- Sorgu plani inceleme (EXPLAIN ile)\nEXPLAIN SELECT * FROM students WHERE grade > 70;\n\n-- Index kullanan sorgu (grade kolonunda index var)\nSELECT name, grade FROM students\nWHERE grade > 70\nORDER BY grade DESC;\n\n-- Index'i silme\nDROP INDEX idx_students_grade ON students;\n\n-- Index'lerin onemi: buyuk tablolarda WHERE, JOIN ve\n-- ORDER BY kullanilan kolonlara index eklemek\n-- sorgu hizini onemli olcude artirir.\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "sql-group-by",
+  "title": "GROUP BY ve HAVING",
+  "subtitle": "Gruplama ve grup bazli filtreleme.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Departman bazinda calisan sayisi\nSELECT department_id, COUNT(*) AS total_employees\nFROM employees\nGROUP BY department_id;\n\n-- Departman bazinda ortalama maas\nSELECT department_id, AVG(salary) AS avg_salary\nFROM employees\nGROUP BY department_id;\n\n-- Departman bazinda toplam ve max maas\nSELECT department_id,\n       SUM(salary) AS total_salary,\n       MAX(salary) AS max_salary,\n       MIN(salary) AS min_salary\nFROM employees\nGROUP BY department_id;\n\n-- HAVING: gruplama sonrasi filtreleme\n-- (WHERE gruplamadan once, HAVING gruplamadan sonra calisir)\nSELECT department_id, AVG(salary) AS avg_salary\nFROM employees\nGROUP BY department_id\nHAVING AVG(salary) > 20000;\n\n-- Birden fazla kolona gore gruplama\nSELECT department_id, COUNT(*) AS count\nFROM employees\nWHERE salary > 18000\nGROUP BY department_id\nHAVING COUNT(*) >= 1\nORDER BY count DESC;\n"
+}

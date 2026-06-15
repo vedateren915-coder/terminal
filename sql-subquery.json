@@ -1,0 +1,10 @@
+{
+  "type": "sql-subquery",
+  "title": "Alt Sorgular (Subquery)",
+  "subtitle": "Ic ice sorgular ile karmasik filtreleme.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Ortalama maastan fazla kazanan calisanlar\nSELECT name, salary\nFROM employees\nWHERE salary > (SELECT AVG(salary) FROM employees);\n\n-- IN ile alt sorgu: belirli departmandaki calisanlar\nSELECT name\nFROM employees\nWHERE department_id IN (\n    SELECT id FROM departments WHERE name = 'Yazilim'\n);\n\n-- EXISTS ile alt sorgu\nSELECT name\nFROM departments d\nWHERE EXISTS (\n    SELECT 1 FROM employees e WHERE e.department_id = d.id\n);\n\n-- Alt sorguyu FROM icinde kullanma (derived table)\nSELECT department_id, avg_salary\nFROM (\n    SELECT department_id, AVG(salary) AS avg_salary\n    FROM employees\n    GROUP BY department_id\n) AS dept_avg\nWHERE avg_salary > 20000;\n\n-- Korelasyonlu alt sorgu: her departmandaki en yuksek maasli kisi\nSELECT name, salary, department_id\nFROM employees e1\nWHERE salary = (\n    SELECT MAX(salary) FROM employees e2\n    WHERE e2.department_id = e1.department_id\n);\n"
+}

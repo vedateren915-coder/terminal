@@ -1,0 +1,10 @@
+{
+  "type": "ruby-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def prime?(number)\n  return false if number < 2\n\n  (2..Integer.sqrt(number)).each do |i|\n    return false if number % i == 0\n  end\n  true\nend\n\nputs \"1-50 arasindaki asal sayilar:\"\nprimes = (1..50).select { |n| prime?(n) }\nputs primes.join(\", \")\n\nputs \"\\nToplam asal sayi adedi: #{primes.length}\"\n\n# Tekil kontrol\ntest_number = 97\nputs \"\\n#{test_number} asal mi: #{prime?(test_number)}\"\n\ntest_number = 100\nputs \"#{test_number} asal mi: #{prime?(test_number)}\"\n\n# Ruby'nin require 'prime' kutuphanesi ile alternatif (yorum olarak)\n# require 'prime'\n# Prime.prime?(97) => true\n"
+}

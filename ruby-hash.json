@@ -1,0 +1,10 @@
+{
+  "type": "ruby-hash",
+  "title": "Hash Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "ages = { \"Ali\" => 25, \"Veli\" => 30, \"Ayse\" => 28 }\n\nputs \"Tum kayitlar:\"\nages.each do |name, age|\n  puts \"#{name} -> #{age} yasinda\"\nend\n\n# Anahtar kontrolu\nif ages.key?(\"Ali\")\n  puts \"\\nAli'nin yasi: #{ages[\"Ali\"]}\"\nend\n\n# Guncelleme\nages[\"Ali\"] = 26\nputs \"Ali'nin yeni yasi: #{ages[\"Ali\"]}\"\n\n# Yeni eleman ekleme\nages[\"Can\"] = 22\nputs \"\\nCan eklendi: #{ages}\"\n\n# Silme\nages.delete(\"Veli\")\nputs \"\\nVeli silindikten sonra: #{ages}\"\n\n# fetch ile guvenli erisim\nzeynep_age = ages.fetch(\"Zeynep\", \"Bulunamadi\")\nputs \"\\nZeynep'in yasi: #{zeynep_age}\"\n\n# Anahtarlar ve degerler\nputs \"\\nAnahtarlar: #{ages.keys}\"\nputs \"Degerler: #{ages.values}\"\n\n# Symbol kullanan hash (Ruby'de yaygin)\nperson = { name: \"Mehmet\", age: 35, city: \"Ankara\" }\nputs \"\\nSymbol hash: #{person}\"\nputs \"Isim: #{person[:name]}\"\n"
+}

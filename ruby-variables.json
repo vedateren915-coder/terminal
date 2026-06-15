@@ -1,0 +1,10 @@
+{
+  "type": "ruby-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve tip donusumu.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "age = 25\nprice = 19.99\nname = \"Ahmet\"\nis_active = true\n\nputs \"Isim: #{name}\"\nputs \"Yas: #{age}\"\nputs \"Fiyat: #{price}\"\nputs \"Aktif mi: #{is_active}\"\n\n# Tip kontrolu\nputs \"\\nTip kontrolleri:\"\nputs age.class\nputs price.class\nputs name.class\nputs is_active.class\n\n# Tip donusumu\nage_text = age.to_s\nparsed_age = \"30\".to_i\nparsed_price = \"9.5\".to_f\n\nputs \"\\nYas metni: #{age_text} - tip: #{age_text.class}\"\nputs \"Donusturulen yas: #{parsed_age}\"\nputs \"Donusturulen fiyat: #{parsed_price}\"\n\n# Sabit (constant) - buyuk harfle baslar\nPI = 3.14159\nputs \"\\nPi sayisi: #{PI}\"\n\n# Coklu atama\nx, y, z = 1, 2, 3\nputs \"\\nCoklu atama: #{x} #{y} #{z}\"\n"
+}

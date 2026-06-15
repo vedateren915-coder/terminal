@@ -1,0 +1,10 @@
+{
+  "type": "ruby-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "text = \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\"\n\n# Noktalama isaretlerini temizle\nclean_text = text.gsub(/[.,!]/, \"\")\nwords = clean_text.downcase.split\n\nputs \"Toplam kelime sayisi: #{words.length}\"\nputs \"Toplam karakter sayisi: #{text.length}\"\n\n# Kelime frekansi (tally metodu)\nword_count = words.tally\n\nputs \"\\nKelime frekanslari:\"\nword_count.sort_by { |_, count| -count }.each do |word, count|\n  puts \"'#{word}': #{count} kez\"\nend\n\n# En uzun kelime\nlongest_word = words.max_by(&:length)\nputs \"\\nEn uzun kelime: '#{longest_word}' (#{longest_word.length} karakter)\"\n\n# Ortalama kelime uzunlugu\navg_length = words.sum(&:length).to_f / words.length\nputs \"Ortalama kelime uzunlugu: #{avg_length.round(2)}\"\n"
+}

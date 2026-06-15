@@ -1,0 +1,10 @@
+{
+  "type": "ruby-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def gcd_custom(a, b)\n  while b != 0\n    a, b = b, a % b\n  end\n  a\nend\n\ndef lcm_custom(a, b)\n  (a * b) / gcd_custom(a, b)\nend\n\nnum1, num2 = 48, 18\n\nputs \"Sayilar: #{num1} ve #{num2}\"\nputs \"EBOB (kendi fonksiyonumuz): #{gcd_custom(num1, num2)}\"\nputs \"EKOK (kendi fonksiyonumuz): #{lcm_custom(num1, num2)}\"\n\n# Ruby'nin yerlesik gcd ve lcm metodlari\nputs \"\\nRuby'nin gcd metodu: #{num1.gcd(num2)}\"\nputs \"Ruby'nin lcm metodu: #{num1.lcm(num2)}\"\n\n# Birden fazla cift icin tablo\nputs \"\\nFarkli sayi ciftleri:\"\npairs = [[12, 18], [7, 13], [100, 75], [24, 36]]\n\npairs.each do |a, b|\n  puts \"GCD(#{a},#{b}) = #{a.gcd(b)}, LCM(#{a},#{b}) = #{a.lcm(b)}\"\nend\n"
+}

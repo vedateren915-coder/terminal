@@ -1,0 +1,10 @@
+{
+  "type": "ruby-arrays",
+  "title": "Array Islemleri",
+  "subtitle": "Dizi olusturma, siralama, dilimleme.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "numbers = [10, 25, 3, 47, 8]\nputs \"Dizi uzunlugu: #{numbers.length}\"\n\nsorted_numbers = numbers.sort\nputs \"Siralanmis dizi: #{sorted_numbers}\"\n\n# Eleman ekleme\nnumbers << 100\nputs \"\\n100 eklendi: #{numbers}\"\n\n# Eleman silme\nnumbers.delete(3)\nputs \"\\n3 silindi: #{numbers}\"\n\n# Dilimleme (slicing)\nputs \"\\nDilimleme:\"\nputs \"Ilk 3 eleman: #{numbers[0, 3]}\"\nputs \"Son 2 eleman: #{numbers[-2, 2]}\"\nputs \"Ters cevrilmis: #{numbers.reverse}\"\n\n# select / map / reduce\nevens = numbers.select { |n| n.even? }\ndoubled = numbers.map { |n| n * 2 }\ntotal = numbers.reduce(0) { |sum, n| sum + n }\n\nputs \"\\nCift sayilar: #{evens}\"\nputs \"2 ile carpilmis: #{doubled}\"\nputs \"Toplam: #{total}\"\n\n# Coklu boyutlu array\nmatrix = [[1, 2], [3, 4], [5, 6]]\nputs \"\\nMatris:\"\nmatrix.each { |row| puts row.inspect }\n"
+}

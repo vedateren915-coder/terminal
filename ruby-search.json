@@ -1,0 +1,10 @@
+{
+  "type": "ruby-search",
+  "title": "Arama Algoritmalari",
+  "subtitle": "Dogrusal ve binary arama ornekleri.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def linear_search(arr, target)\n  arr.each_with_index do |value, index|\n    return index if value == target\n  end\n  -1\nend\n\ndef binary_search(arr, target)\n  left, right = 0, arr.length - 1\n\n  while left <= right\n    mid = (left + right) / 2\n\n    if arr[mid] == target\n      return mid\n    elsif arr[mid] < target\n      left = mid + 1\n    else\n      right = mid - 1\n    end\n  end\n  -1\nend\n\nnumbers = [4, 12, 7, 23, 9, 1, 18]\ntarget = 23\n\nlinear_result = linear_search(numbers, target)\nputs \"Dogrusal arama: #{target} indeks #{linear_result}'de bulundu\"\n\n# Binary arama icin dizi siralanmali\nsorted_numbers = numbers.sort\n\nbinary_result = binary_search(sorted_numbers, target)\nputs \"Binary arama: #{target} indeks #{binary_result}'de bulundu\"\n\nnot_found = linear_search(numbers, 99)\nputs \"\\n99 araniyor (bulunamayacak): #{not_found}\"\n\n# Ruby'nin kendi include? ve index metodu\nputs \"\\ninclude? ile kontrol: #{numbers.include?(target)}\"\nputs \"index ile konum: #{numbers.index(target)}\"\n"
+}

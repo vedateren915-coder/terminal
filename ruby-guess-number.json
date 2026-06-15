@@ -1,0 +1,10 @@
+{
+  "type": "ruby-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "target = 67 # Sabit hedef sayi (demo amacli)\n\nputs \"Sayi tahmin oyunu basladi! (1-100 arasi)\"\nputs \"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\"\n\nguesses = [50, 75, 62, 68, 65, 67]\nfound = false\n\nguesses.each do |guess|\n  puts \"Tahmin: #{guess}\"\n\n  if guess == target\n    puts \"Tebrikler! Dogru tahmin: #{target}\"\n    found = true\n    break\n  elsif guess < target\n    puts \"Daha buyuk bir sayi dene.\\n\"\n  else\n    puts \"Daha kucuk bir sayi dene.\\n\"\n  end\nend\n\nunless found\n  puts \"\\nTahmin edilemedi. Dogru sayi: #{target}\"\nend\n\nputs \"\\nToplam deneme sayisi: #{guesses.length}\"\n"
+}

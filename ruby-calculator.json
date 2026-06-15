@@ -1,0 +1,10 @@
+{
+  "type": "ruby-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def calculate(a, b, op)\n  case op\n  when \"+\" then a + b\n  when \"-\" then a - b\n  when \"*\" then a * b\n  when \"/\"\n    if b == 0\n      puts \"Hata: Sifira bolme!\"\n      nil\n    else\n      a / b\n    end\n  else\n    puts \"Gecersiz islem: #{op}\"\n    nil\n  end\nend\n\nx, y = 15.0, 4.0\n\nputs \"x = #{x}, y = #{y}\"\nputs \"x + y = #{calculate(x, y, \"+\")}\"\nputs \"x - y = #{calculate(x, y, \"-\")}\"\nputs \"x * y = #{calculate(x, y, \"*\")}\"\nputs \"x / y = #{calculate(x, y, \"/\")}\"\n\nputs \"\\nSifira bolme testi:\"\ncalculate(10, 0, \"/\")\n\n# Yuzde hesaplama\ntotal = 250\ndiscount = 15\nfinal_price = total - (total * discount / 100.0)\nputs \"\\n#{total} TL'nin %#{discount} indirimli hali: #{final_price} TL\"\n"
+}

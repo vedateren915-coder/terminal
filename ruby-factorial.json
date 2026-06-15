@@ -1,0 +1,10 @@
+{
+  "type": "ruby-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def factorial_recursive(n)\n  return 1 if n <= 1\n  n * factorial_recursive(n - 1)\nend\n\ndef factorial_iterative(n)\n  result = 1\n  (2..n).each { |i| result *= i }\n  result\nend\n\nputs \"Faktoriyel tablosu (0-10):\"\n(0..10).each do |i|\n  puts \"#{i}! = #{factorial_iterative(i)}\"\nend\n\nputs \"\\nRecursive 5! = #{factorial_recursive(5)}\"\nputs \"Iteratif 5! = #{factorial_iterative(5)}\"\n\n# Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\nn, r = 5, 2\ncombination = factorial_iterative(n) / (factorial_iterative(r) * factorial_iterative(n - r))\nputs \"\\nC(#{n},#{r}) = #{combination}\"\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "ruby-class",
+  "title": "Sinif ve Nesne Ornegi",
+  "subtitle": "Basit sinif tanimi, initialize ve metodlar.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "class Car\n  attr_accessor :brand, :model, :year\n\n  def initialize(brand, model, year)\n    @brand = brand\n    @model = model\n    @year = year\n  end\n\n  def display_info\n    puts \"#{@year} #{@brand} #{@model}\"\n  end\n\n  def age(current_year)\n    current_year - @year\n  end\nend\n\ncar1 = Car.new(\"Toyota\", \"Corolla\", 2020)\ncar2 = Car.new(\"Honda\", \"Civic\", 2018)\n\nputs \"Araba bilgileri:\"\ncar1.display_info\ncar2.display_info\n\nputs \"\\nArac yaslari (2026'ya gore):\"\nputs \"Car1 yasi: #{car1.age(2026)} yil\"\nputs \"Car2 yasi: #{car2.age(2026)} yil\"\n\n# attr_accessor sayesinde direkt erisim\nputs \"\\nCar1 markasi: #{car1.brand}\"\ncar1.brand = \"Toyota (Guncellendi)\"\nputs \"Guncellenmis marka: #{car1.brand}\"\n\n# Diziler icinde nesneler\ncars = [car1, car2, Car.new(\"Ford\", \"Focus\", 2022)]\nputs \"\\nTum arabalar:\"\ncars.each(&:display_info)\n"
+}

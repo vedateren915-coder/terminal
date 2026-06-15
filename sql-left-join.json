@@ -1,0 +1,10 @@
+{
+  "type": "sql-left-join",
+  "title": "LEFT JOIN",
+  "subtitle": "Sol tablodaki tum kayitlari getirme.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- LEFT JOIN: sol tablodaki TUM kayitlari getirir,\n-- eslesme yoksa sag taraf NULL olur\nSELECT e.name, d.name AS department\nFROM employees e\nLEFT JOIN departments d ON e.department_id = d.id;\n\n-- Departmani olmayan calisanlari bulma\nSELECT e.name\nFROM employees e\nLEFT JOIN departments d ON e.department_id = d.id\nWHERE d.id IS NULL;\n\n-- Her departmandaki calisan sayisi (departmani olmayanlar dahil)\nSELECT d.name AS department, COUNT(e.id) AS employee_count\nFROM departments d\nLEFT JOIN employees e ON d.id = e.department_id\nGROUP BY d.name;\n\n-- RIGHT JOIN ornegi (LEFT JOIN'in tersi mantik)\n-- Hicbir calisani olmayan departmanlari da gosterir\nSELECT d.name AS department, e.name AS employee\nFROM employees e\nRIGHT JOIN departments d ON e.department_id = d.id;\n"
+}

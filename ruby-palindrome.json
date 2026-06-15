@@ -1,0 +1,10 @@
+{
+  "type": "ruby-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def palindrome?(text)\n  cleaned = text.downcase.gsub(\" \", \"\")\n  cleaned == cleaned.reverse\nend\n\ndef number_palindrome?(number)\n  text = number.to_s\n  text == text.reverse\nend\n\nwords = [\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"]\n\nputs \"Kelime testleri:\"\nwords.each do |word|\n  puts \"'#{word}' palindrome mu: #{palindrome?(word)}\"\nend\n\nputs \"\\nSayi testleri:\"\nnumbers = [12321, 12345, 1001, 5]\nnumbers.each do |num|\n  puts \"#{num} palindrome mu: #{number_palindrome?(num)}\"\nend\n\n# Bir cumledeki palindrome kelimeleri bulma\nsentence = \"anna ve oto kelimeleri palindrome ama ruby degil\"\nputs \"\\nCumledeki palindrome kelimeler:\"\nsentence.split.each do |word|\n  puts \"- #{word}\" if palindrome?(word) && word.length > 1\nend\n"
+}

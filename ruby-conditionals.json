@@ -1,0 +1,10 @@
+{
+  "type": "ruby-conditionals",
+  "title": "Kosullar (if/unless/case)",
+  "subtitle": "Kosullu ifadeler ve case-when.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "score = 78\n\nif score >= 90\n  grade = \"AA\"\nelsif score >= 70\n  grade = \"BA\"\nelsif score >= 50\n  grade = \"CC\"\nelse\n  grade = \"FF\"\nend\n\nputs \"Not: #{score} -> Harf notu: #{grade}\"\n\n# case/when (switch benzeri)\nday = 3\n\nday_name = case day\n           when 1 then \"Pazartesi\"\n           when 2 then \"Sali\"\n           when 3 then \"Carsamba\"\n           else \"Bilinmeyen gun\"\n           end\n\nputs \"Gun: #{day_name}\"\n\n# Ternary benzeri (if ifade olarak)\nnumber = 7\nparity = number.even? ? \"Cift\" : \"Tek\"\nputs \"\\n#{number} sayisi #{parity}\"\n\n# unless kullanimi\nage = 20\nunless age < 18\n  puts \"\\nReşit\"\nend\n\n# Tek satirlik if (modifier)\nputs \"Pozitif sayi\" if number > 0\n"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "ruby-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Array ile menu tabanli akis ornegi.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "todo_list = []\n\ndef show_menu\n  puts \"\\n=== YAPILACAKLAR LISTESI ===\"\n  puts \"1. Gorev Ekle\"\n  puts \"2. Gorevleri Listele\"\n  puts \"3. Gorev Sil\"\n  puts \"4. Cikis\"\nend\n\ndef add_task(list, task)\n  list << task\n  puts \"Eklendi: '#{task}'\"\nend\n\ndef list_tasks(list)\n  if list.empty?\n    puts \"Liste bos.\"\n    return\n  end\n\n  list.each_with_index { |task, i| puts \"#{i + 1}. #{task}\" }\nend\n\ndef remove_task(list, index)\n  if index >= 0 && index < list.length\n    removed = list.delete_at(index)\n    puts \"Silindi: '#{removed}'\"\n  else\n    puts \"Gecersiz numara.\"\n  end\nend\n\nshow_menu\n\nputs \"\\n> Secim: 1\"\nadd_task(todo_list, \"Markete git\")\n\nputs \"\\n> Secim: 1\"\nadd_task(todo_list, \"Kod yaz\")\n\nputs \"\\n> Secim: 1\"\nadd_task(todo_list, \"Spor yap\")\n\nputs \"\\n> Secim: 2\"\nlist_tasks(todo_list)\n\nputs \"\\n> Secim: 3 (1. gorevi sil)\"\nremove_task(todo_list, 0)\n\nputs \"\\n> Secim: 2\"\nlist_tasks(todo_list)\n\nputs \"\\n> Secim: 4\"\nputs \"Programdan cikiliyor...\"\n"
+}

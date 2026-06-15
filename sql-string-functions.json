@@ -1,0 +1,10 @@
+{
+  "type": "sql-string-functions",
+  "title": "String Fonksiyonlari",
+  "subtitle": "Metin islemleri: CONCAT, UPPER, SUBSTRING.",
+  "category": "SQL",
+  "color": "mint",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "sql",
+  "code": "-- Birlestirme (CONCAT)\nSELECT CONCAT(name, ' - ', email) AS student_info\nFROM students;\n\n-- Buyuk/kucuk harf\nSELECT UPPER(name) AS upper_name, LOWER(name) AS lower_name\nFROM students;\n\n-- Uzunluk\nSELECT name, LENGTH(name) AS name_length\nFROM students;\n\n-- Alt metin alma (SUBSTRING)\nSELECT name, SUBSTRING(name, 1, 3) AS short_name\nFROM students;\n\n-- TRIM ile bosluk temizleme\nSELECT TRIM('  Merhaba  ') AS trimmed;\n\n-- REPLACE ile degistirme\nSELECT REPLACE(email, '@example.com', '@school.edu') AS new_email\nFROM students;\n\n-- CONCAT_WS ile ayraçli birlestirme\nSELECT CONCAT_WS(' | ', name, email, age) AS combined\nFROM students;\n\n-- Isim soyisim ayirma (LOCATE ve SUBSTRING ile)\nSELECT\n    name,\n    SUBSTRING(name, 1, LOCATE(' ', name) - 1) AS first_name,\n    SUBSTRING(name, LOCATE(' ', name) + 1) AS last_name\nFROM students;\n"
+}

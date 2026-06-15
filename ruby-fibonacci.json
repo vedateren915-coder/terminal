@@ -1,0 +1,10 @@
+{
+  "type": "ruby-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif ve recursive fibonacci hesaplama.",
+  "category": "Ruby",
+  "color": "red",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "ruby",
+  "code": "def fibonacci_iterative(n)\n  return n if n <= 1\n\n  a, b = 0, 1\n  (2..n).each do\n    a, b = b, a + b\n  end\n  b\nend\n\ndef fibonacci_recursive(n)\n  return n if n <= 1\n  fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)\nend\n\nputs \"Iteratif Fibonacci (0-10):\"\nputs (0..10).map { |i| fibonacci_iterative(i) }.join(\" \")\n\nputs \"\\nRecursive Fibonacci (0-10):\"\nputs (0..10).map { |i| fibonacci_recursive(i) }.join(\" \")\n\nputs \"\\n20. Fibonacci sayisi: #{fibonacci_iterative(20)}\"\n"
+}
