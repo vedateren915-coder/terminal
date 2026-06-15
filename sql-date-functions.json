@@ -1,10 +1,10 @@
 {
   "type": "sql-date-functions",
   "title": "Tarih Fonksiyonlari",
-  "subtitle": "Tarih ve zaman islemleri.",
+  "subtitle": "Tarih ve zaman islemleri (SQLite date/time).",
   "category": "SQL",
   "color": "mint",
   "icon": "chevron.left.forwardslash.chevron.right",
   "language": "sql",
-  "code": "-- Mevcut tarih ve zaman\nSELECT NOW() AS current_datetime;\nSELECT CURDATE() AS today;\nSELECT CURTIME() AS current_time;\n\n-- Tarihten yil, ay, gun cikarma\nSELECT\n    created_at,\n    YEAR(created_at) AS year,\n    MONTH(created_at) AS month,\n    DAY(created_at) AS day\nFROM students;\n\n-- Tarih farki hesaplama\nSELECT\n    name,\n    created_at,\n    DATEDIFF(NOW(), created_at) AS days_since_registration\nFROM students;\n\n-- Tarihe gun/ay/yil ekleme\nSELECT DATE_ADD(CURDATE(), INTERVAL 30 DAY) AS thirty_days_later;\nSELECT DATE_ADD(CURDATE(), INTERVAL 1 YEAR) AS one_year_later;\n\n-- Tarih formatlama\nSELECT DATE_FORMAT(NOW(), '%d-%m-%Y') AS formatted_date;\nSELECT DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') AS full_datetime;\n\n-- Son 7 gunde kayit olanlar\nSELECT name, created_at\nFROM students\nWHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY);\n"
+  "code": "CREATE TABLE students (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    name TEXT NOT NULL,\n    created_at TEXT DEFAULT (datetime('now'))\n);\n\nINSERT INTO students (name, created_at) VALUES\n    ('Ahmet Yilmaz', '2026-01-15 10:30:00'),\n    ('Ayse Kaya', '2026-03-22 14:45:00'),\n    ('Mehmet Demir', '2026-06-01 09:00:00');\n\n-- Mevcut tarih ve zaman\nSELECT datetime('now') AS current_datetime;\nSELECT date('now') AS today;\nSELECT time('now') AS current_time;\n\n-- Tarihten yil, ay, gun cikarma (strftime ile)\nSELECT\n    created_at,\n    strftime('%Y', created_at) AS year,\n    strftime('%m', created_at) AS month,\n    strftime('%d', created_at) AS day\nFROM students;\n\n-- Tarih farki hesaplama (gun cinsinden, julianday ile)\nSELECT\n    name,\n    created_at,\n    CAST(julianday('now') - julianday(created_at) AS INTEGER) AS days_since_registration\nFROM students;\n\n-- Tarihe gun/ay/yil ekleme\nSELECT date('now', '+30 days') AS thirty_days_later;\nSELECT date('now', '+1 year') AS one_year_later;\n\n-- Tarih formatlama\nSELECT strftime('%d-%m-%Y', created_at) AS formatted_date FROM students;\nSELECT strftime('%Y-%m-%d %H:%M:%S', created_at) AS full_datetime FROM students;\n\n-- Belirli bir tarihten sonra kayit olanlar\nSELECT name, created_at\nFROM students\nWHERE created_at >= '2026-03-01';\n"
 }
