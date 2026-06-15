@@ -1,0 +1,10 @@
+{
+  "type": "go-conditionals",
+  "title": "Kosullar (if/switch)",
+  "subtitle": "If-else ve switch ifadeleri ornegi.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tscore := 78\n\tvar grade string\n\n\tif score >= 90 {\n\t\tgrade = \"AA\"\n\t} else if score >= 70 {\n\t\tgrade = \"BA\"\n\t} else if score >= 50 {\n\t\tgrade = \"CC\"\n\t} else {\n\t\tgrade = \"FF\"\n\t}\n\n\tfmt.Println(\"Not:\", score, \"-> Harf notu:\", grade)\n\n\t// Switch ornegi\n\tday := 3\n\tvar dayName string\n\n\tswitch day {\n\tcase 1:\n\t\tdayName = \"Pazartesi\"\n\tcase 2:\n\t\tdayName = \"Sali\"\n\tcase 3:\n\t\tdayName = \"Carsamba\"\n\tdefault:\n\t\tdayName = \"Bilinmeyen gun\"\n\t}\n\n\tfmt.Println(\"Gun:\", dayName)\n\n\t// Go'da ternary operator yok, if-else kullanilir\n\tnumber := 7\n\tparity := \"Tek\"\n\tif number%2 == 0 {\n\t\tparity = \"Cift\"\n\t}\n\tfmt.Println(number, \"sayisi\", parity)\n\n\t// if ile kisa degisken tanimlama\n\tif val := score * 2; val > 100 {\n\t\tfmt.Println(\"\\nval 100'den buyuk:\", val)\n\t}\n}"
+}

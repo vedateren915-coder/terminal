@@ -1,0 +1,10 @@
+{
+  "type": "cpp-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Vector ile menu tabanli akis ornegi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nvector<string> todoList;\n\nvoid showMenu()\n{\n    cout << \"\\n=== YAPILACAKLAR LISTESI ===\" << endl;\n    cout << \"1. Gorev Ekle\" << endl;\n    cout << \"2. Gorevleri Listele\" << endl;\n    cout << \"3. Gorev Sil\" << endl;\n    cout << \"4. Cikis\" << endl;\n}\n\nvoid addTask(string task)\n{\n    todoList.push_back(task);\n    cout << \"Eklendi: '\" << task << \"'\" << endl;\n}\n\nvoid listTasks()\n{\n    if (todoList.empty())\n    {\n        cout << \"Liste bos.\" << endl;\n        return;\n    }\n\n    for (int i = 0; i < todoList.size(); i++)\n    {\n        cout << (i + 1) << \". \" << todoList[i] << endl;\n    }\n}\n\nvoid removeTask(int index)\n{\n    if (index >= 0 && index < todoList.size())\n    {\n        cout << \"Silindi: '\" << todoList[index] << \"'\" << endl;\n        todoList.erase(todoList.begin() + index);\n    }\n    else\n    {\n        cout << \"Gecersiz numara.\" << endl;\n    }\n}\n\nint main()\n{\n    showMenu();\n\n    cout << \"\\n> Secim: 1\" << endl;\n    addTask(\"Markete git\");\n\n    cout << \"\\n> Secim: 1\" << endl;\n    addTask(\"Kod yaz\");\n\n    cout << \"\\n> Secim: 1\" << endl;\n    addTask(\"Spor yap\");\n\n    cout << \"\\n> Secim: 2\" << endl;\n    listTasks();\n\n    cout << \"\\n> Secim: 3 (1. gorevi sil)\" << endl;\n    removeTask(0);\n\n    cout << \"\\n> Secim: 2\" << endl;\n    listTasks();\n\n    cout << \"\\n> Secim: 4\" << endl;\n    cout << \"Programdan cikiliyor...\" << endl;\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "go-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc main() {\n\ttext := \"Merhaba dunya bu bir test metni. Bu metin kelime sayma icin kullanilacak. Merhaba tekrar!\"\n\n\t// Noktalama isaretlerini temizle\n\tcleanText := strings.NewReplacer(\".\", \"\", \",\", \"\", \"!\", \"\").Replace(text)\n\twords := strings.Fields(strings.ToLower(cleanText))\n\n\tfmt.Println(\"Toplam kelime sayisi:\", len(words))\n\tfmt.Println(\"Toplam karakter sayisi:\", len(text))\n\n\t// Kelime frekansi\n\twordCount := make(map[string]int)\n\tfor _, word := range words {\n\t\twordCount[word]++\n\t}\n\n\tfmt.Println(\"\\nKelime frekanslari:\")\n\tfor word, count := range wordCount {\n\t\tfmt.Printf(\"'%s': %d kez\\n\", word, count)\n\t}\n\n\t// En uzun kelime\n\tlongestWord := words[0]\n\tfor _, word := range words {\n\t\tif len(word) > len(longestWord) {\n\t\t\tlongestWord = word\n\t\t}\n\t}\n\tfmt.Printf(\"\\nEn uzun kelime: '%s' (%d karakter)\\n\", longestWord, len(longestWord))\n\n\t// Ortalama kelime uzunlugu\n\ttotalLength := 0\n\tfor _, word := range words {\n\t\ttotalLength += len(word)\n\t}\n\tavgLength := float64(totalLength) / float64(len(words))\n\tfmt.Printf(\"Ortalama kelime uzunlugu: %.2f\\n\", avgLength)\n}"
+}

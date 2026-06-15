@@ -1,0 +1,10 @@
+{
+  "type": "go-menu-system",
+  "title": "Basit Menu Sistemi",
+  "subtitle": "Slice ile menu tabanli akis ornegi.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nvar todoList []string\n\nfunc showMenu() {\n\tfmt.Println(\"\\n=== YAPILACAKLAR LISTESI ===\")\n\tfmt.Println(\"1. Gorev Ekle\")\n\tfmt.Println(\"2. Gorevleri Listele\")\n\tfmt.Println(\"3. Gorev Sil\")\n\tfmt.Println(\"4. Cikis\")\n}\n\nfunc addTask(task string) {\n\ttodoList = append(todoList, task)\n\tfmt.Printf(\"Eklendi: '%s'\\n\", task)\n}\n\nfunc listTasks() {\n\tif len(todoList) == 0 {\n\t\tfmt.Println(\"Liste bos.\")\n\t\treturn\n\t}\n\n\tfor i, task := range todoList {\n\t\tfmt.Printf(\"%d. %s\\n\", i+1, task)\n\t}\n}\n\nfunc removeTask(index int) {\n\tif index >= 0 && index < len(todoList) {\n\t\tfmt.Printf(\"Silindi: '%s'\\n\", todoList[index])\n\t\ttodoList = append(todoList[:index], todoList[index+1:]...)\n\t} else {\n\t\tfmt.Println(\"Gecersiz numara.\")\n\t}\n}\n\nfunc main() {\n\tshowMenu()\n\n\tfmt.Println(\"\\n> Secim: 1\")\n\taddTask(\"Markete git\")\n\n\tfmt.Println(\"\\n> Secim: 1\")\n\taddTask(\"Kod yaz\")\n\n\tfmt.Println(\"\\n> Secim: 1\")\n\taddTask(\"Spor yap\")\n\n\tfmt.Println(\"\\n> Secim: 2\")\n\tlistTasks()\n\n\tfmt.Println(\"\\n> Secim: 3 (1. gorevi sil)\")\n\tremoveTask(0)\n\n\tfmt.Println(\"\\n> Secim: 2\")\n\tlistTasks()\n\n\tfmt.Println(\"\\n> Secim: 4\")\n\tfmt.Println(\"Programdan cikiliyor...\")\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "go-calculator",
+  "title": "Basit Hesap Makinesi",
+  "subtitle": "Toplama, cikarma, carpma, bolme islemleri.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc calculate(a float64, b float64, op string) float64 {\n\tswitch op {\n\tcase \"+\":\n\t\treturn a + b\n\tcase \"-\":\n\t\treturn a - b\n\tcase \"*\":\n\t\treturn a * b\n\tcase \"/\":\n\t\tif b == 0 {\n\t\t\tfmt.Println(\"Hata: Sifira bolme!\")\n\t\t\treturn math.NaN()\n\t\t}\n\t\treturn a / b\n\tdefault:\n\t\tfmt.Println(\"Gecersiz islem:\", op)\n\t\treturn math.NaN()\n\t}\n}\n\nfunc main() {\n\tx, y := 15.0, 4.0\n\n\tfmt.Println(\"x =\", x, \", y =\", y)\n\tfmt.Println(\"x + y =\", calculate(x, y, \"+\"))\n\tfmt.Println(\"x - y =\", calculate(x, y, \"-\"))\n\tfmt.Println(\"x * y =\", calculate(x, y, \"*\"))\n\tfmt.Println(\"x / y =\", calculate(x, y, \"/\"))\n\n\tfmt.Println(\"\\nSifira bolme testi:\")\n\tcalculate(10, 0, \"/\")\n\n\t// Yuzde hesaplama\n\ttotal, discount := 250.0, 15.0\n\tfinalPrice := total - (total * discount / 100)\n\tfmt.Printf(\"\\n%.0f TL'nin %%%.0f indirimli hali: %.1f TL\\n\", total, discount, finalPrice)\n}"
+}

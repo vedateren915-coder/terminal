@@ -1,0 +1,10 @@
+{
+  "type": "go-guess-number",
+  "title": "Sayi Tahmin Oyunu",
+  "subtitle": "Rastgele sayi tahmin etme simulasyonu.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\ttarget := 67 // Sabit hedef sayi (demo amacli)\n\n\tfmt.Println(\"Sayi tahmin oyunu basladi! (1-100 arasi)\")\n\tfmt.Println(\"(Bu demo, onceden belirlenmis tahminlerle calisir)\\n\")\n\n\tguesses := []int{50, 75, 62, 68, 65, 67}\n\tfound := false\n\n\tfor _, guess := range guesses {\n\t\tfmt.Println(\"Tahmin:\", guess)\n\n\t\tif guess == target {\n\t\t\tfmt.Println(\"Tebrikler! Dogru tahmin:\", target)\n\t\t\tfound = true\n\t\t\tbreak\n\t\t} else if guess < target {\n\t\t\tfmt.Println(\"Daha buyuk bir sayi dene.\\n\")\n\t\t} else {\n\t\t\tfmt.Println(\"Daha kucuk bir sayi dene.\\n\")\n\t\t}\n\t}\n\n\tif !found {\n\t\tfmt.Println(\"\\nTahmin edilemedi. Dogru sayi:\", target)\n\t}\n\n\tfmt.Println(\"\\nToplam deneme sayisi:\", len(guesses))\n}"
+}

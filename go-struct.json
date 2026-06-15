@@ -1,0 +1,10 @@
+{
+  "type": "go-struct",
+  "title": "Struct ve Method",
+  "subtitle": "Struct tanimi ve method ekleme.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\ntype Car struct {\n\tBrand string\n\tModel string\n\tYear  int\n}\n\n// Car struct'ina method ekleme\nfunc (c Car) DisplayInfo() {\n\tfmt.Println(c.Year, c.Brand, c.Model)\n}\n\nfunc (c Car) GetAge(currentYear int) int {\n\treturn currentYear - c.Year\n}\n\nfunc main() {\n\tcar1 := Car{Brand: \"Toyota\", Model: \"Corolla\", Year: 2020}\n\tcar2 := Car{Brand: \"Honda\", Model: \"Civic\", Year: 2018}\n\n\tfmt.Println(\"Araba bilgileri:\")\n\tcar1.DisplayInfo()\n\tcar2.DisplayInfo()\n\n\tfmt.Println(\"\\nArac yaslari (2026'ya gore):\")\n\tfmt.Println(\"Car1 yasi:\", car1.GetAge(2026), \"yil\")\n\tfmt.Println(\"Car2 yasi:\", car2.GetAge(2026), \"yil\")\n\n\t// Struct slice\n\tcars := []Car{car1, car2, {Brand: \"Ford\", Model: \"Focus\", Year: 2022}}\n\tfmt.Println(\"\\nTum arabalar:\")\n\tfor _, c := range cars {\n\t\tc.DisplayInfo()\n\t}\n}"
+}

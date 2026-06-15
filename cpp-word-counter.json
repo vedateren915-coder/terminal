@@ -1,0 +1,10 @@
+{
+  "type": "cpp-word-counter",
+  "title": "Kelime Sayaci",
+  "subtitle": "Metin analizi: kelime ve karakter sayma.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\n#include <sstream>\n#include <map>\n#include <algorithm>\nusing namespace std;\n\nint main()\n{\n    string text = \"Merhaba dunya bu bir test metni Bu metin kelime sayma icin kullanilacak Merhaba tekrar\";\n\n    stringstream ss(text);\n    string word;\n    map<string, int> wordCount;\n    vector<string> words;\n\n    while (ss >> word)\n    {\n        for (auto& c : word) c = tolower(c);\n        words.push_back(word);\n        wordCount[word]++;\n    }\n\n    cout << \"Toplam kelime sayisi: \" << words.size() << endl;\n    cout << \"Toplam karakter sayisi: \" << text.length() << endl;\n\n    cout << \"\\nKelime frekanslari:\" << endl;\n    for (const auto& entry : wordCount)\n    {\n        cout << \"'\" << entry.first << \"': \" << entry.second << \" kez\" << endl;\n    }\n\n    // En uzun kelime\n    string longestWord = words[0];\n    for (const string& w : words)\n    {\n        if (w.length() > longestWord.length())\n        {\n            longestWord = w;\n        }\n    }\n    cout << \"\\nEn uzun kelime: '\" << longestWord << \"' (\" << longestWord.length() << \" karakter)\" << endl;\n\n    // Ortalama kelime uzunlugu\n    int totalLength = 0;\n    for (const string& w : words) totalLength += w.length();\n    double avgLength = (double)totalLength / words.size();\n    cout << \"Ortalama kelime uzunlugu: \" << avgLength << endl;\n\n    return 0;\n}"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "go-hello",
+  "title": "Go Merhaba Dunya",
+  "subtitle": "Basit Go konsol uygulamasi ornegi.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Merhaba, Playground!\")\n\n\tname := \"Dunya\"\n\tfmt.Println(\"Merhaba, \" + name + \"!\")\n\n\tnumbers := []int{5, 12, 8, 1, 9, 3}\n\tmax := numbers[0]\n\tsum := 0\n\n\tfor _, n := range numbers {\n\t\tif n > max {\n\t\t\tmax = n\n\t\t}\n\t\tsum += n\n\t}\n\n\tfmt.Println(\"En buyuk sayi:\", max)\n\tfmt.Println(\"Toplam:\", sum)\n}"
+}

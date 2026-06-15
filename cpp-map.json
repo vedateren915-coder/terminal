@@ -1,0 +1,10 @@
+{
+  "type": "cpp-map",
+  "title": "Map Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main()\n{\n    map<string, int> ages;\n    ages[\"Ali\"] = 25;\n    ages[\"Veli\"] = 30;\n    ages[\"Ayse\"] = 28;\n\n    cout << \"Tum kayitlar:\" << endl;\n    for (const auto& entry : ages)\n    {\n        cout << entry.first << \" -> \" << entry.second << \" yasinda\" << endl;\n    }\n\n    // Anahtar kontrolu\n    if (ages.find(\"Ali\") != ages.end())\n    {\n        cout << \"\\nAli'nin yasi: \" << ages[\"Ali\"] << endl;\n    }\n\n    // Guncelleme\n    ages[\"Ali\"] = 26;\n    cout << \"Ali'nin yeni yasi: \" << ages[\"Ali\"] << endl;\n\n    // Silme\n    ages.erase(\"Veli\");\n    cout << \"\\nVeli silindikten sonra kayit sayisi: \" << ages.size() << endl;\n\n    // count ile kontrol\n    cout << \"\\nAyse var mi: \" << (ages.count(\"Ayse\") > 0) << endl;\n    cout << \"Zeynep var mi: \" << (ages.count(\"Zeynep\") > 0) << endl;\n\n    return 0;\n}"
+}

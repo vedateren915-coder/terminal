@@ -1,0 +1,10 @@
+{
+  "type": "go-fibonacci",
+  "title": "Fibonacci Dizisi",
+  "subtitle": "Iteratif ve recursive fibonacci hesaplama.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc fibonacciIterative(n int) int {\n\tif n <= 1 {\n\t\treturn n\n\t}\n\n\ta, b := 0, 1\n\tfor i := 2; i <= n; i++ {\n\t\ta, b = b, a+b\n\t}\n\treturn b\n}\n\nfunc fibonacciRecursive(n int) int {\n\tif n <= 1 {\n\t\treturn n\n\t}\n\treturn fibonacciRecursive(n-1) + fibonacciRecursive(n-2)\n}\n\nfunc main() {\n\tfmt.Println(\"Iteratif Fibonacci (0-10):\")\n\tfor i := 0; i <= 10; i++ {\n\t\tfmt.Print(fibonacciIterative(i), \" \")\n\t}\n\tfmt.Println()\n\n\tfmt.Println(\"\\nRecursive Fibonacci (0-10):\")\n\tfor i := 0; i <= 10; i++ {\n\t\tfmt.Print(fibonacciRecursive(i), \" \")\n\t}\n\tfmt.Println()\n\n\tfmt.Println(\"\\n20. Fibonacci sayisi:\", fibonacciIterative(20))\n}"
+}

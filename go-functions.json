@@ -1,0 +1,10 @@
+{
+  "type": "go-functions",
+  "title": "Fonksiyonlar",
+  "subtitle": "Parametre, donus degeri, multiple return.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc square(x int) int {\n\treturn x * x\n}\n\nfunc add(a int, b int) int {\n\treturn a + b\n}\n\n// Birden fazla deger dondurme\nfunc divide(a int, b int) (int, int) {\n\tquotient := a / b\n\tremainder := a % b\n\treturn quotient, remainder\n}\n\n// Named return values\nfunc minMax(numbers []int) (min int, max int) {\n\tmin = numbers[0]\n\tmax = numbers[0]\n\n\tfor _, n := range numbers {\n\t\tif n < min {\n\t\t\tmin = n\n\t\t}\n\t\tif n > max {\n\t\t\tmax = n\n\t\t}\n\t}\n\treturn\n}\n\n// Variadic fonksiyon\nfunc sum(numbers ...int) int {\n\ttotal := 0\n\tfor _, n := range numbers {\n\t\ttotal += n\n\t}\n\treturn total\n}\n\nfunc main() {\n\tfmt.Println(\"Kare:\", square(5))\n\tfmt.Println(\"Toplam:\", add(3, 7))\n\n\tq, r := divide(17, 5)\n\tfmt.Println(\"\\n17 / 5 -> bolum:\", q, \", kalan:\", r)\n\n\tmin, max := minMax([]int{4, 12, 7, 23, 9, 1})\n\tfmt.Println(\"\\nMin:\", min, \", Max:\", max)\n\n\tfmt.Println(\"\\nVariadic toplam:\", sum(1, 2, 3, 4, 5))\n}"
+}

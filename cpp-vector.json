@@ -1,0 +1,10 @@
+{
+  "type": "cpp-vector",
+  "title": "Vector Kullanimi",
+  "subtitle": "Dinamik diziler ve vector islemleri.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main()\n{\n    vector<int> numbers = {10, 25, 3, 47, 8};\n\n    cout << \"Vector uzunlugu: \" << numbers.size() << endl;\n\n    sort(numbers.begin(), numbers.end());\n\n    cout << \"Siralanmis vector: \";\n    for (int n : numbers)\n    {\n        cout << n << \" \";\n    }\n    cout << endl;\n\n    // Eleman ekleme\n    numbers.push_back(100);\n    cout << \"\\n100 eklendi, yeni boyut: \" << numbers.size() << endl;\n\n    // Eleman silme\n    numbers.erase(numbers.begin());\n    cout << \"Ilk eleman silindi, yeni boyut: \" << numbers.size() << endl;\n\n    // Toplam hesaplama\n    int total = 0;\n    for (int n : numbers)\n    {\n        total += n;\n    }\n    cout << \"\\nToplam: \" << total << endl;\n\n    // find ile arama\n    auto it = find(numbers.begin(), numbers.end(), 47);\n    if (it != numbers.end())\n    {\n        cout << \"\\n47 vektorde bulundu.\" << endl;\n    }\n\n    return 0;\n}"
+}

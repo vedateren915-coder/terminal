@@ -1,0 +1,10 @@
+{
+  "type": "cpp-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nbool isPalindrome(string text)\n{\n    string cleaned;\n    for (char c : text)\n    {\n        if (c != ' ')\n        {\n            cleaned += tolower(c);\n        }\n    }\n\n    string reversed = cleaned;\n    reverse(reversed.begin(), reversed.end());\n\n    return cleaned == reversed;\n}\n\nbool isNumberPalindrome(int number)\n{\n    string text = to_string(number);\n    string reversed = text;\n    reverse(reversed.begin(), reversed.end());\n    return text == reversed;\n}\n\nint main()\n{\n    string words[] = {\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"};\n\n    cout << \"Kelime testleri:\" << endl;\n    for (const string& word : words)\n    {\n        cout << \"'\" << word << \"' palindrome mu: \" << isPalindrome(word) << endl;\n    }\n\n    cout << \"\\nSayi testleri:\" << endl;\n    int numbers[] = {12321, 12345, 1001, 5};\n    for (int num : numbers)\n    {\n        cout << num << \" palindrome mu: \" << isNumberPalindrome(num) << endl;\n    }\n\n    return 0;\n}"
+}

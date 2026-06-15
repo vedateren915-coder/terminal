@@ -1,0 +1,10 @@
+{
+  "type": "cpp-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Struct ve vector ile not yonetimi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nstruct Student\n{\n    string name;\n    int grade;\n};\n\nint main()\n{\n    vector<Student> students = {\n        {\"Ahmet\", 85},\n        {\"Ayse\", 92},\n        {\"Mehmet\", 67},\n        {\"Zeynep\", 78},\n        {\"Can\", 55}\n    };\n\n    cout << \"Tum ogrenciler:\" << endl;\n    for (const auto& s : students)\n    {\n        cout << s.name << \": \" << s.grade << endl;\n    }\n\n    // Yeni ogrenci ekleme\n    students.push_back({\"Elif\", 88});\n    cout << \"\\nElif eklendi. Toplam ogrenci: \" << students.size() << endl;\n\n    // Not güncelleme\n    for (auto& s : students)\n    {\n        if (s.name == \"Mehmet\")\n        {\n            s.grade = 70;\n            cout << \"\\nMehmet'in notu guncellendi: \" << s.grade << endl;\n        }\n    }\n\n    // Geçenler / kalanlar sayısı\n    int passing = 0, failing = 0;\n    for (const auto& s : students)\n    {\n        if (s.grade >= 60) passing++;\n        else failing++;\n    }\n\n    cout << \"\\nGecen ogrenci sayisi: \" << passing << endl;\n    cout << \"Kalan ogrenci sayisi: \" << failing << endl;\n\n    // Sıralama (en yüksekten en düşüğe)\n    sort(students.begin(), students.end(), [](const Student& a, const Student& b) {\n        return a.grade > b.grade;\n    });\n\n    cout << \"\\nNot siralamasi (yuksekten alcaga):\" << endl;\n    for (const auto& s : students)\n    {\n        cout << s.name << \": \" << s.grade << endl;\n    }\n\n    // Ortalama\n    double total = 0;\n    for (const auto& s : students) total += s.grade;\n    cout << \"\\nSinif ortalamasi: \" << (total / students.size()) << endl;\n\n    return 0;\n}"
+}

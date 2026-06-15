@@ -1,0 +1,10 @@
+{
+  "type": "go-palindrome",
+  "title": "Palindrome Kontrolu",
+  "subtitle": "Kelime ve sayilarin palindrome testi.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc isPalindrome(text string) bool {\n\tcleaned := strings.ToLower(strings.ReplaceAll(text, \" \", \"\"))\n\n\trunes := []rune(cleaned)\n\tleft, right := 0, len(runes)-1\n\n\tfor left < right {\n\t\tif runes[left] != runes[right] {\n\t\t\treturn false\n\t\t}\n\t\tleft++\n\t\tright--\n\t}\n\treturn true\n}\n\nfunc isNumberPalindrome(number int) bool {\n\ttext := strconv.Itoa(number)\n\treturn isPalindrome(text)\n}\n\nfunc main() {\n\twords := []string{\"kayak\", \"araba\", \"anna\", \"elma\", \"a man a plan a canal panama\"}\n\n\tfmt.Println(\"Kelime testleri:\")\n\tfor _, word := range words {\n\t\tfmt.Printf(\"'%s' palindrome mu: %v\\n\", word, isPalindrome(word))\n\t}\n\n\tfmt.Println(\"\\nSayi testleri:\")\n\tnumbers := []int{12321, 12345, 1001, 5}\n\tfor _, num := range numbers {\n\t\tfmt.Println(num, \"palindrome mu:\", isNumberPalindrome(num))\n\t}\n}"
+}

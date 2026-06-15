@@ -1,0 +1,10 @@
+{
+  "type": "go-student-records",
+  "title": "Ogrenci Not Sistemi",
+  "subtitle": "Struct ve slice ile not yonetimi.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\ntype Student struct {\n\tName  string\n\tGrade int\n}\n\nfunc main() {\n\tstudents := []Student{\n\t\t{\"Ahmet\", 85},\n\t\t{\"Ayse\", 92},\n\t\t{\"Mehmet\", 67},\n\t\t{\"Zeynep\", 78},\n\t\t{\"Can\", 55},\n\t}\n\n\tfmt.Println(\"Tum ogrenciler:\")\n\tfor _, s := range students {\n\t\tfmt.Println(s.Name, \":\", s.Grade)\n\t}\n\n\t// Yeni ogrenci ekleme\n\tstudents = append(students, Student{\"Elif\", 88})\n\tfmt.Println(\"\\nElif eklendi. Toplam ogrenci:\", len(students))\n\n\t// Not güncelleme\n\tfor i := range students {\n\t\tif students[i].Name == \"Mehmet\" {\n\t\t\tstudents[i].Grade = 70\n\t\t\tfmt.Println(\"\\nMehmet'in notu guncellendi:\", students[i].Grade)\n\t\t}\n\t}\n\n\t// Geçenler / kalanlar sayısı\n\tpassing, failing := 0, 0\n\tfor _, s := range students {\n\t\tif s.Grade >= 60 {\n\t\t\tpassing++\n\t\t} else {\n\t\t\tfailing++\n\t\t}\n\t}\n\n\tfmt.Println(\"\\nGecen ogrenci sayisi:\", passing)\n\tfmt.Println(\"Kalan ogrenci sayisi:\", failing)\n\n\t// Sıralama (en yüksekten en düşüğe)\n\tsort.Slice(students, func(i, j int) bool {\n\t\treturn students[i].Grade > students[j].Grade\n\t})\n\n\tfmt.Println(\"\\nNot siralamasi (yuksekten alcaga):\")\n\tfor _, s := range students {\n\t\tfmt.Println(s.Name, \":\", s.Grade)\n\t}\n\n\t// Ortalama\n\ttotal := 0\n\tfor _, s := range students {\n\t\ttotal += s.Grade\n\t}\n\tavg := float64(total) / float64(len(students))\n\tfmt.Printf(\"\\nSinif ortalamasi: %.2f\\n\", avg)\n}"
+}

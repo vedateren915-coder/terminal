@@ -1,0 +1,10 @@
+{
+  "type": "go-gcd-lcm",
+  "title": "EBOB ve EKOK",
+  "subtitle": "En buyuk ortak bolen ve en kucuk ortak kat.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc gcd(a int, b int) int {\n\tfor b != 0 {\n\t\ta, b = b, a%b\n\t}\n\treturn a\n}\n\nfunc lcm(a int, b int) int {\n\treturn (a * b) / gcd(a, b)\n}\n\nfunc main() {\n\tnum1, num2 := 48, 18\n\n\tfmt.Println(\"Sayilar:\", num1, \"ve\", num2)\n\tfmt.Println(\"EBOB (GCD):\", gcd(num1, num2))\n\tfmt.Println(\"EKOK (LCM):\", lcm(num1, num2))\n\n\t// Birden fazla cift icin tablo\n\tfmt.Println(\"\\nFarkli sayi ciftleri:\")\n\tpairs := [][2]int{{12, 18}, {7, 13}, {100, 75}, {24, 36}}\n\n\tfor _, pair := range pairs {\n\t\ta, b := pair[0], pair[1]\n\t\tfmt.Printf(\"GCD(%d,%d) = %d, LCM(%d,%d) = %d\\n\", a, b, gcd(a, b), a, b, lcm(a, b))\n\t}\n}"
+}

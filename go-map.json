@@ -1,0 +1,10 @@
+{
+  "type": "go-map",
+  "title": "Map Kullanimi",
+  "subtitle": "Anahtar-deger ciftleri ile calisma.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tages := map[string]int{\n\t\t\"Ali\":  25,\n\t\t\"Veli\": 30,\n\t\t\"Ayse\": 28,\n\t}\n\n\tfmt.Println(\"Tum kayitlar:\")\n\tfor name, age := range ages {\n\t\tfmt.Println(name, \"->\", age, \"yasinda\")\n\t}\n\n\t// Anahtar kontrolu\n\tif age, ok := ages[\"Ali\"]; ok {\n\t\tfmt.Println(\"\\nAli'nin yasi:\", age)\n\t}\n\n\t// Guncelleme\n\tages[\"Ali\"] = 26\n\tfmt.Println(\"Ali'nin yeni yasi:\", ages[\"Ali\"])\n\n\t// Yeni eleman ekleme\n\tages[\"Can\"] = 22\n\tfmt.Println(\"\\nCan eklendi, kayit sayisi:\", len(ages))\n\n\t// Silme\n\tdelete(ages, \"Veli\")\n\tfmt.Println(\"\\nVeli silindikten sonra kayit sayisi:\", len(ages))\n\n\t// Olmayan anahtar kontrolu\n\tif _, ok := ages[\"Zeynep\"]; !ok {\n\t\tfmt.Println(\"\\nZeynep map'te bulunamadi.\")\n\t}\n}"
+}

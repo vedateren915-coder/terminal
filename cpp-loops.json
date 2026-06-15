@@ -1,0 +1,10 @@
+{
+  "type": "cpp-loops",
+  "title": "Donguler (for/while/foreach)",
+  "subtitle": "Farkli dongu turlerinin kullanimi.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main()\n{\n    // for dongusu\n    cout << \"1'den 5'e kadar:\" << endl;\n    for (int i = 1; i <= 5; i++)\n    {\n        cout << \"Sayi: \" << i << endl;\n    }\n\n    // while dongusu\n    cout << \"\\nGeri sayim:\" << endl;\n    int counter = 5;\n    while (counter > 0)\n    {\n        cout << counter << endl;\n        counter--;\n    }\n\n    // for-each (range-based for) dongusu\n    cout << \"\\nMeyveler:\" << endl;\n    string fruits[] = {\"Elma\", \"Armut\", \"Muz\", \"Karpuz\"};\n    for (const string& fruit : fruits)\n    {\n        cout << \"- \" << fruit << endl;\n    }\n\n    // do-while dongusu\n    cout << \"\\nDo-while ornegi:\" << endl;\n    int n = 0;\n    do\n    {\n        cout << \"n = \" << n << endl;\n        n++;\n    } while (n < 3);\n\n    return 0;\n}"
+}

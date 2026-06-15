@@ -1,0 +1,10 @@
+{
+  "type": "go-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve degisken tanimlama.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc main() {\n\tvar age int = 25\n\tvar price float64 = 19.99\n\tvar name string = \"Ahmet\"\n\tvar isActive bool = true\n\n\tfmt.Println(\"Isim:\", name)\n\tfmt.Println(\"Yas:\", age)\n\tfmt.Println(\"Fiyat:\", price)\n\tfmt.Println(\"Aktif mi:\", isActive)\n\n\t// Kisa degisken tanimlama (:=)\n\tcity := \"Istanbul\"\n\tfmt.Println(\"\\nSehir:\", city)\n\n\t// Tip donusumu\n\tageText := strconv.Itoa(age)\n\tparsedAge, _ := strconv.Atoi(\"30\")\n\tparsedPrice, _ := strconv.ParseFloat(\"9.5\", 64)\n\n\tfmt.Println(\"\\nYas metni:\", ageText)\n\tfmt.Println(\"Donusturulen yas:\", parsedAge)\n\tfmt.Println(\"Donusturulen fiyat:\", parsedPrice)\n\n\t// const kullanimi\n\tconst Pi = 3.14159\n\tfmt.Println(\"\\nPi sayisi:\", Pi)\n\n\t// Coklu atama\n\tx, y, z := 1, 2, 3\n\tfmt.Println(\"\\nCoklu atama:\", x, y, z)\n}"
+}

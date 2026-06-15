@@ -1,0 +1,10 @@
+{
+  "type": "go-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc isPrime(number int) bool {\n\tif number < 2 {\n\t\treturn false\n\t}\n\n\tfor i := 2; i*i <= number; i++ {\n\t\tif number%i == 0 {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\n\nfunc main() {\n\tfmt.Println(\"1-50 arasindaki asal sayilar:\")\n\tvar primes []int\n\n\tfor i := 1; i <= 50; i++ {\n\t\tif isPrime(i) {\n\t\t\tprimes = append(primes, i)\n\t\t}\n\t}\n\n\tfmt.Println(primes)\n\tfmt.Println(\"\\nToplam asal sayi adedi:\", len(primes))\n\n\t// Tekil kontrol\n\ttestNumber := 97\n\tfmt.Println(\"\\n\", testNumber, \"asal mi:\", isPrime(testNumber))\n\n\ttestNumber = 100\n\tfmt.Println(testNumber, \"asal mi:\", isPrime(testNumber))\n}"
+}

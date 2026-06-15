@@ -1,0 +1,10 @@
+{
+  "type": "go-slices",
+  "title": "Slice Islemleri",
+  "subtitle": "Slice olusturma, ekleme ve dilimleme.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\nfunc main() {\n\tnumbers := []int{10, 25, 3, 47, 8}\n\tfmt.Println(\"Slice uzunlugu:\", len(numbers))\n\n\tsort.Ints(numbers)\n\tfmt.Println(\"Siralanmis slice:\", numbers)\n\n\t// Eleman ekleme (append)\n\tnumbers = append(numbers, 100)\n\tfmt.Println(\"\\n100 eklendi:\", numbers)\n\n\t// Dilimleme (slicing)\n\tfmt.Println(\"\\nDilimleme:\")\n\tfmt.Println(\"Ilk 3 eleman:\", numbers[:3])\n\tfmt.Println(\"Son 2 eleman:\", numbers[len(numbers)-2:])\n\n\t// Slice'i silme (belirli indeksi cikarma)\n\tindex := 0\n\tnumbers = append(numbers[:index], numbers[index+1:]...)\n\tfmt.Println(\"\\nIlk eleman silindi:\", numbers)\n\n\t// Toplam hesaplama\n\ttotal := 0\n\tfor _, n := range numbers {\n\t\ttotal += n\n\t}\n\tfmt.Println(\"\\nToplam:\", total)\n\n\t// 2 boyutlu slice (matris)\n\tmatrix := [][]int{{1, 2}, {3, 4}, {5, 6}}\n\tfmt.Println(\"\\nMatris:\")\n\tfor _, row := range matrix {\n\t\tfmt.Println(row)\n\t}\n}"
+}

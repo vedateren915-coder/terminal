@@ -1,0 +1,10 @@
+{
+  "type": "go-search",
+  "title": "Arama Algoritmalari",
+  "subtitle": "Dogrusal ve binary arama ornekleri.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"sort\"\n)\n\nfunc linearSearch(arr []int, target int) int {\n\tfor i, v := range arr {\n\t\tif v == target {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc binarySearch(arr []int, target int) int {\n\tleft, right := 0, len(arr)-1\n\n\tfor left <= right {\n\t\tmid := (left + right) / 2\n\n\t\tif arr[mid] == target {\n\t\t\treturn mid\n\t\t} else if arr[mid] < target {\n\t\t\tleft = mid + 1\n\t\t} else {\n\t\t\tright = mid - 1\n\t\t}\n\t}\n\treturn -1\n}\n\nfunc main() {\n\tnumbers := []int{4, 12, 7, 23, 9, 1, 18}\n\ttarget := 23\n\n\tlinearResult := linearSearch(numbers, target)\n\tfmt.Println(\"Dogrusal arama:\", target, \"indeks\", linearResult, \"'de bulundu\")\n\n\t// Binary arama icin dizi kopyalanip siralanmali\n\tsortedNumbers := make([]int, len(numbers))\n\tcopy(sortedNumbers, numbers)\n\tsort.Ints(sortedNumbers)\n\n\tbinaryResult := binarySearch(sortedNumbers, target)\n\tfmt.Println(\"Binary arama:\", target, \"indeks\", binaryResult, \"'de bulundu\")\n\n\tnotFound := linearSearch(numbers, 99)\n\tfmt.Println(\"\\n99 araniyor (bulunamayacak):\", notFound)\n}"
+}

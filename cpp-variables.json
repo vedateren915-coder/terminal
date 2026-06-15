@@ -1,0 +1,10 @@
+{
+  "type": "cpp-variables",
+  "title": "Degiskenler ve Tipler",
+  "subtitle": "Temel veri tipleri ve degisken tanimlama.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main()\n{\n    int age = 25;\n    double price = 19.99;\n    string name = \"Ahmet\";\n    bool isActive = true;\n    char grade = 'A';\n\n    cout << \"Isim: \" << name << endl;\n    cout << \"Yas: \" << age << endl;\n    cout << \"Fiyat: \" << price << endl;\n    cout << \"Aktif mi: \" << isActive << endl;\n    cout << \"Not: \" << grade << endl;\n\n    // Tip donusumu\n    string ageText = to_string(age);\n    int parsedAge = stoi(\"30\");\n    double parsedPrice = stod(\"9.5\");\n\n    cout << \"\\nYas metni: \" << ageText << endl;\n    cout << \"Donusturulen yas: \" << parsedAge << endl;\n    cout << \"Donusturulen fiyat: \" << parsedPrice << endl;\n\n    // auto ile otomatik tip cikarimi\n    auto city = string(\"Istanbul\");\n    cout << \"\\nSehir: \" << city << endl;\n\n    // const kullanimi\n    const double PI = 3.14159;\n    cout << \"Pi sayisi: \" << PI << endl;\n\n    return 0;\n}"
+}

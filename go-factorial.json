@@ -1,0 +1,10 @@
+{
+  "type": "go-factorial",
+  "title": "Faktoriyel Hesaplama",
+  "subtitle": "Recursive ve iteratif faktoriyel.",
+  "category": "Go",
+  "color": "teal",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "go",
+  "code": "package main\n\nimport \"fmt\"\n\nfunc factorialRecursive(n int) int {\n\tif n <= 1 {\n\t\treturn 1\n\t}\n\treturn n * factorialRecursive(n-1)\n}\n\nfunc factorialIterative(n int) int {\n\tresult := 1\n\tfor i := 2; i <= n; i++ {\n\t\tresult *= i\n\t}\n\treturn result\n}\n\nfunc main() {\n\tfmt.Println(\"Faktoriyel tablosu (0-10):\")\n\tfor i := 0; i <= 10; i++ {\n\t\tfmt.Println(i, \"! =\", factorialIterative(i))\n\t}\n\n\tfmt.Println(\"\\nRecursive 5! =\", factorialRecursive(5))\n\tfmt.Println(\"Iteratif 5! =\", factorialIterative(5))\n\n\t// Kombinasyon hesaplama: C(n,r) = n! / (r! * (n-r)!)\n\tn, r := 5, 2\n\tcombination := factorialIterative(n) / (factorialIterative(r) * factorialIterative(n-r))\n\tfmt.Printf(\"\\nC(%d,%d) = %d\\n\", n, r, combination)\n}"
+}

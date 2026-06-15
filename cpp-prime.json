@@ -1,0 +1,10 @@
+{
+  "type": "cpp-prime",
+  "title": "Asal Sayi Kontrolu",
+  "subtitle": "Asal sayilari bulma ve test etme.",
+  "category": "C++",
+  "color": "cyan",
+  "icon": "chevron.left.forwardslash.chevron.right",
+  "language": "cpp",
+  "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nbool isPrime(int number)\n{\n    if (number < 2) return false;\n\n    for (int i = 2; i * i <= number; i++)\n    {\n        if (number % i == 0) return false;\n    }\n    return true;\n}\n\nint main()\n{\n    cout << \"1-50 arasindaki asal sayilar:\" << endl;\n    vector<int> primes;\n\n    for (int i = 1; i <= 50; i++)\n    {\n        if (isPrime(i))\n        {\n            primes.push_back(i);\n        }\n    }\n\n    for (int p : primes) cout << p << \" \";\n    cout << endl;\n\n    cout << \"\\nToplam asal sayi adedi: \" << primes.size() << endl;\n\n    // Tekil kontrol\n    int testNumber = 97;\n    cout << \"\\n\" << testNumber << \" asal mi: \" << isPrime(testNumber) << endl;\n\n    testNumber = 100;\n    cout << testNumber << \" asal mi: \" << isPrime(testNumber) << endl;\n\n    return 0;\n}"
+}
